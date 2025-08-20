@@ -530,10 +530,13 @@ class ShoppingCart {
     message += `💰 Precio: ${Currency.formatPrice(product.price)}\n`;
     message += `⭐ Calificación: ${product.rating}/5 (${product.reviews} reseñas)\n\n`;
     message += "¡Hola! Me interesa este producto. ¿Podrías darme más información sobre:\n";
-    message += "• Disponibilidad\n";
-    message += "• Métodos de pago\n";
-    message += "• Tiempo de entrega\n";
-    message += "• Garantía\n\n";
+    message += "• Disponibilidad y origen del producto\n";
+    message += "• Métodos de pago disponibles\n";
+    message += "• Tiempo de entrega a Colombia (7-15 días)\n";
+    message += "• Proceso de importación\n";
+    message += "• Garantía y soporte\n\n";
+    message += "📍 *Ubicación en Colombia:*\n";
+    message += "Por favor, indica tu ciudad para calcular tiempo exacto de entrega.\n\n";
     message += "¡Gracias! 😊";
     
     // WhatsApp number (3115477984)
@@ -560,7 +563,7 @@ class ShoppingCart {
     
     // Create WhatsApp message
     let message = "🛍️ *Nuevo Pedido - PremiumDrop*\n\n";
-    message += "*Productos:*\n";
+    message += "*Productos solicitados:*\n";
     
     this.items.forEach((item, index) => {
       message += `${index + 1}. ${item.name}\n`;
@@ -570,9 +573,15 @@ class ShoppingCart {
     });
     
     message += `*Total de artículos:* ${itemCount}\n`;
-    message += `*Total a pagar:* ${Currency.formatPrice(total)}\n\n`;
+    message += `*Total estimado:* ${Currency.formatPrice(total)}\n\n`;
+    message += "📍 *Información importante:*\n";
+    message += "• Los productos son importados directamente de fabricantes internacionales\n";
+    message += "• Tiempo de entrega: 7-15 días hábiles en Colombia\n";
+    message += "• Envío gratuito en pedidos superiores a $200.000 COP\n";
+    message += "• Proceso de importación personalizada\n\n";
+    message += "¿Podrías confirmar tu ciudad en Colombia para el envío?\n\n";
     message += "¡Gracias por elegir PremiumDrop! 🚚\n";
-    message += "Responderemos pronto con los detalles de envío.";
+    message += "Nuestro equipo comercial te contactará con todos los detalles.";
     
     // WhatsApp number (3115477984)
     const whatsappNumber = "573115477984"; // Colombia country code + number
@@ -584,7 +593,7 @@ class ShoppingCart {
     
     // Show success message and clear cart
     setTimeout(() => {
-      alert('¡Tu pedido ha sido enviado por WhatsApp! Revisa tu app de WhatsApp.');
+      alert('¡Tu pedido ha sido enviado por WhatsApp! Revisa tu app de WhatsApp y confirma tu ubicación.');
       this.clearCart();
       
       // Close modal
