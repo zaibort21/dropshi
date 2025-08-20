@@ -107,22 +107,38 @@
     .cart-icon {
       position: relative;
       cursor: pointer;
+      padding: var(--spacing-2);
+      border-radius: var(--radius-lg);
+      transition: background-color var(--transition-fast);
+    }
+    
+    .cart-icon:hover {
+      background-color: var(--color-surface);
     }
     
     .cart-count {
       position: absolute;
       top: -8px;
       right: -8px;
-      background-color: var(--color-accent);
+      background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
       color: white;
       border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      font-size: var(--font-size-xs);
+      width: 22px;
+      height: 22px;
+      font-size: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
+      font-weight: 700;
+      border: 2px solid white;
+      animation: pulse 2s infinite;
+      box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
     
     .hero-section {
@@ -515,9 +531,10 @@
         </div>
         <div class="footer-section">
           <h3>Contact Info</h3>
-          <p>Email: support@premiumdrop.com</p>
-          <p>Phone: +1 (555) 123-4567</p>
-          <p>Address: 123 Commerce St, City, State 12345</p>
+          <p>📧 Email: support@premiumdrop.com</p>
+          <p>📱 WhatsApp: +57 311 547 7984</p>
+          <p>📞 Phone: +1 (555) 123-4567</p>
+          <p>📍 Envíos a toda Colombia</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -570,7 +587,7 @@
         <div id="cart-total" class="cart-total"></div>
         <div class="cart-actions">
           <button id="clear-cart" class="btn btn-secondary">Clear Cart</button>
-          <button id="checkout-btn" class="btn btn-primary">Proceed to Checkout</button>
+          <button id="checkout-btn" class="btn btn-primary">💬 Comprar por WhatsApp</button>
         </div>
       </div>
     </div>
