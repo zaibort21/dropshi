@@ -388,6 +388,96 @@
       border-radius: var(--radius-lg);
     }
     
+    /* Featured Carousel Styles */
+    .featured-section {
+      padding: var(--spacing-16) 0;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+    
+    .carousel-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .carousel-wrapper {
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: var(--spacing-6);
+    }
+    
+    .carousel-item {
+      flex: 0 0 300px;
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-normal);
+    }
+    
+    .carousel-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      z-index: 10;
+    }
+    
+    .carousel-btn:hover {
+      background: var(--color-accent);
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .carousel-btn-prev {
+      left: -25px;
+    }
+    
+    .carousel-btn-next {
+      right: -25px;
+    }
+    
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-2);
+      margin-top: var(--spacing-6);
+    }
+    
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-border);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    
+    .carousel-indicator.active {
+      background: var(--color-accent);
+    }
+    
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -408,6 +498,24 @@
       .category-filters {
         flex-direction: column;
         align-items: center;
+      }
+      
+      .carousel-item {
+        flex: 0 0 280px;
+      }
+      
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+      
+      .carousel-btn-prev {
+        left: -20px;
+      }
+      
+      .carousel-btn-next {
+        right: -20px;
       }
     }
   </style>
@@ -447,6 +555,25 @@
           <a href="#products" class="btn btn-primary">Shop Now</a>
           <a href="#about" class="btn btn-secondary">Learn More</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Carousel -->
+  <section id="featured" class="featured-section">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-btn-prev" id="carousel-prev">‹</button>
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Featured products will be populated by JavaScript -->
+          </div>
+        </div>
+        <button class="carousel-btn carousel-btn-next" id="carousel-next">›</button>
+      </div>
+      <div class="carousel-indicators" id="carousel-indicators">
+        <!-- Indicators will be populated by JavaScript -->
       </div>
     </div>
   </section>
@@ -535,6 +662,10 @@
           <p>📱 WhatsApp: +57 311 547 7984</p>
           <p>📞 Phone: +1 (555) 123-4567</p>
           <p>📍 Envíos a toda Colombia</p>
+          <div style="margin-top: 16px; padding: 12px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #007aff;">
+            <p style="margin: 0; font-size: 14px; color: #1d1d1f;"><strong>🏢 Importador/Distribuidor:</strong></p>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #6b7280;">Los pedidos son procesados por nuestro equipo comercial especializado en importación y distribución de productos premium. Contacto directo: +57 311 547 7984</p>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">

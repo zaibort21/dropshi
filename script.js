@@ -581,11 +581,146 @@ class ShoppingCart {
   }
 }
 
+// Featured Products Carousel
+class FeaturedCarousel {
+  constructor() {
+    this.currentSlide = 0;
+    this.itemsPerSlide = 4;
+    this.featuredProducts = [];
+    this.autoplayInterval = null;
+    this.init();
+  }
+
+  async init() {
+    // Wait for products to load
+    if (!productManager || !productManager.products.length) {
+      setTimeout(() => this.init(), 100);
+      return;
+    }
+    
+    this.setupFeaturedProducts();
+    this.render();
+    this.setupEventListeners();
+    this.startAutoplay();
+  }
+
+  setupFeaturedProducts() {
+    // Get top 8 products for carousel
+    this.featuredProducts = productManager.products
+      .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews)
+      .slice(0, 8);
+  }
+
+  render() {
+    const track = document.getElementById('carousel-track');
+    const indicators = document.getElementById('carousel-indicators');
+    
+    if (!track || !indicators) return;
+
+    // Render carousel items
+    track.innerHTML = this.featuredProducts.map(product => `
+      <div class="carousel-item">
+        ${productManager.createProductCard(product)}
+      </div>
+    `).join('');
+
+    // Calculate number of slides
+    const totalSlides = Math.ceil(this.featuredProducts.length / this.itemsPerSlide);
+    
+    // Render indicators
+    indicators.innerHTML = Array.from({length: totalSlides}, (_, i) => 
+      `<button class="carousel-indicator ${i === 0 ? 'active' : ''}" data-slide="${i}"></button>`
+    ).join('');
+
+    this.updateCarousel();
+  }
+
+  setupEventListeners() {
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const indicators = document.getElementById('carousel-indicators');
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => this.prevSlide());
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => this.nextSlide());
+    }
+
+    if (indicators) {
+      indicators.addEventListener('click', (e) => {
+        if (e.target.classList.contains('carousel-indicator')) {
+          this.goToSlide(parseInt(e.target.dataset.slide));
+        }
+      });
+    }
+
+    // Pause autoplay on hover
+    const carousel = document.querySelector('.carousel-container');
+    if (carousel) {
+      carousel.addEventListener('mouseenter', () => this.stopAutoplay());
+      carousel.addEventListener('mouseleave', () => this.startAutoplay());
+    }
+  }
+
+  updateCarousel() {
+    const track = document.getElementById('carousel-track');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    
+    if (!track) return;
+
+    const itemWidth = 300 + 24; // item width + gap
+    const offset = -this.currentSlide * (itemWidth * this.itemsPerSlide);
+    track.style.transform = `translateX(${offset}px)`;
+
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === this.currentSlide);
+    });
+  }
+
+  nextSlide() {
+    const totalSlides = Math.ceil(this.featuredProducts.length / this.itemsPerSlide);
+    this.currentSlide = (this.currentSlide + 1) % totalSlides;
+    this.updateCarousel();
+  }
+
+  prevSlide() {
+    const totalSlides = Math.ceil(this.featuredProducts.length / this.itemsPerSlide);
+    this.currentSlide = this.currentSlide === 0 ? totalSlides - 1 : this.currentSlide - 1;
+    this.updateCarousel();
+  }
+
+  goToSlide(index) {
+    this.currentSlide = index;
+    this.updateCarousel();
+  }
+
+  startAutoplay() {
+    this.stopAutoplay();
+    this.autoplayInterval = setInterval(() => this.nextSlide(), 5000);
+  }
+
+  stopAutoplay() {
+    if (this.autoplayInterval) {
+      clearInterval(this.autoplayInterval);
+      this.autoplayInterval = null;
+    }
+  }
+}
+
 // Initialize when DOM is loaded
 let productManager;
 let shoppingCart;
+let featuredCarousel;
 
 document.addEventListener('DOMContentLoaded', () => {
   productManager = new ProductManager();
   shoppingCart = new ShoppingCart();
+  
+  // Initialize carousel after products load
+  setTimeout(() => {
+    featuredCarousel = new FeaturedCarousel();
+  }, 500);
 });
