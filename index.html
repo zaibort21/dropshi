@@ -1,197 +1,532 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GameFix Store - Tienda Tecnológica</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>PremiumDrop - Premium Dropshipping Store | Quality Products at Unbeatable Prices</title>
+  <meta name="description" content="Discover premium quality products at unbeatable prices. Fast worldwide shipping, premium customer service, and satisfaction guaranteed.">
+  <meta name="keywords" content="dropshipping, premium products, electronics, fashion, home decor, gadgets, accessories">
+  <meta name="author" content="PremiumDrop">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="PremiumDrop - Premium Dropshipping Store">
+  <meta property="og:description" content="Discover premium quality products at unbeatable prices. Fast worldwide shipping and satisfaction guaranteed.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200">
+  <meta property="og:url" content="https://zaibort21.github.io/dropshi/">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PremiumDrop - Premium Dropshipping Store">
+  <meta name="twitter:description" content="Discover premium quality products at unbeatable prices.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: url('https://i.ibb.co/8Y1y5fB/gamer-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OnlineStore",
+    "name": "PremiumDrop",
+    "description": "Premium dropshipping store offering quality products at unbeatable prices",
+    "url": "https://zaibort21.github.io/dropshi/",
+    "logo": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Spanish"]
     }
-    header {
+  }
+  </script>
+  
+  <style>
+    /* Component-specific styles */
+    .header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-border-light);
+      z-index: 1000;
+    }
+    
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(0,0,0,0.8);
+      padding: var(--spacing-4) 0;
     }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
+    
+    .logo {
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      color: var(--color-primary);
       text-decoration: none;
     }
-    nav a:hover {
-      color: #0ff;
+    
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-6);
+      list-style: none;
     }
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem;
-      background: rgba(0,0,0,0.7);
+    
+    .nav-links a {
+      color: var(--color-text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition-fast);
     }
-    .hero h1 {
-      font-size: 3rem;
+    
+    .nav-links a:hover {
+      color: var(--color-accent);
     }
-    .hero button {
-      margin: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      background: #0ff;
-      border: none;
+    
+    .cart-icon {
+      position: relative;
       cursor: pointer;
     }
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-      background: rgba(0,0,0,0.8);
-    }
-    .producto {
-      background: #111;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .producto img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    .producto button {
-      background: #0ff;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-    .mantenimientos, .comentarios {
-      padding: 2rem;
-      background: rgba(0,0,0,0.85);
-    }
-    .mantenimientos video, .mantenimientos img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 1rem auto;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0,0,0,0.9);
-    }
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
+    
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: var(--color-accent);
       color: white;
       border-radius: 50%;
-      padding: 15px;
-      font-size: 2rem;
-      text-decoration: none;
-      z-index: 1000;
+      width: 20px;
+      height: 20px;
+      font-size: var(--font-size-xs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
     }
-    /* Media Query para móviles */
-    @media (max-width: 600px) {
-      header {
+    
+    .hero-section {
+      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-secondary) 100%);
+      padding: var(--spacing-20) 0;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      font-size: var(--font-size-5xl);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-6);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-subtitle {
+      font-size: var(--font-size-xl);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-8);
+    }
+    
+    .search-container {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto var(--spacing-8);
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: var(--spacing-4) var(--spacing-6);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      font-size: var(--font-size-base);
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+    
+    .search-input:focus {
+      border-color: var(--color-accent);
+    }
+    
+    .products-section {
+      padding: var(--spacing-20) 0;
+    }
+    
+    .section-title {
+      font-size: var(--font-size-3xl);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: var(--spacing-12);
+    }
+    
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-3);
+      margin-bottom: var(--spacing-12);
+    }
+    
+    .category-filter.active {
+      background-color: var(--color-accent);
+      color: white;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-6);
+      margin-bottom: var(--spacing-12);
+    }
+    
+    .product-card {
+      transition: all var(--transition-normal);
+    }
+    
+    .product-title {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      margin-bottom: var(--spacing-2);
+      line-height: 1.4;
+    }
+    
+    .product-description {
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      margin-bottom: var(--spacing-4);
+      line-height: 1.5;
+    }
+    
+    .product-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-2);
+      margin-bottom: var(--spacing-4);
+    }
+    
+    .feature-tag {
+      background-color: var(--color-surface);
+      color: var(--color-text-tertiary);
+      padding: var(--spacing-1) var(--spacing-2);
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-xs);
+      font-weight: 500;
+    }
+    
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-2);
+      margin-bottom: var(--spacing-4);
+    }
+    
+    .stars {
+      color: #fbbf24;
+      font-size: var(--font-size-sm);
+    }
+    
+    .rating-text {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+    }
+    
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-2);
+      margin-bottom: var(--spacing-4);
+    }
+    
+    .current-price {
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    
+    .original-price {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      text-decoration: line-through;
+    }
+    
+    .discount-badge {
+      position: absolute;
+      top: var(--spacing-3);
+      right: var(--spacing-3);
+      background-color: #ef4444;
+      color: white;
+      padding: var(--spacing-1) var(--spacing-2);
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-2);
+    }
+    
+    .pagination-btn {
+      min-width: 40px;
+    }
+    
+    .pagination-ellipsis {
+      padding: var(--spacing-2);
+      color: var(--color-text-secondary);
+    }
+    
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--color-accent);
+      color: white;
+      padding: var(--spacing-4) var(--spacing-6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      transform: translateX(100%);
+      transition: transform var(--transition-normal);
+      z-index: 1001;
+    }
+    
+    .notification.show {
+      transform: translateX(0);
+    }
+    
+    .notification.success {
+      background-color: #10b981;
+    }
+    
+    .footer {
+      background-color: var(--color-secondary);
+      color: white;
+      padding: var(--spacing-16) 0 var(--spacing-8);
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-8);
+      margin-bottom: var(--spacing-8);
+    }
+    
+    .footer-section h3 {
+      margin-bottom: var(--spacing-4);
+      font-size: var(--font-size-lg);
+    }
+    
+    .footer-section p,
+    .footer-section a {
+      color: #d1d5db;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+    
+    .footer-section a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--spacing-8);
+      border-top: 1px solid #374151;
+      color: #9ca3af;
+    }
+    
+    .no-products,
+    .error-message {
+      text-align: center;
+      padding: var(--spacing-12);
+      grid-column: 1 / -1;
+    }
+    
+    .loading-skeleton {
+      height: 200px;
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero-title {
+        font-size: var(--font-size-3xl);
+      }
+      
+      .hero-subtitle {
+        font-size: var(--font-size-lg);
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+      
+      .category-filters {
         flex-direction: column;
-        padding: 1rem 0.5rem;
-      }
-      nav a {
-        margin: 0 0.5rem;
-        font-size: 1rem;
-      }
-      .hero {
-        padding: 2rem 1rem;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .productos {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-      }
-      .mantenimientos, .comentarios {
-        padding: 1rem;
-      }
-      .whatsapp-btn {
-        padding: 10px;
-        font-size: 1.5rem;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h2>🎮 GameFix Store</h2>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#tienda">Tienda</a>
-      <a href="#mantenimientos">Mantenimientos</a>
-      <a href="#comentarios">Opiniones</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">🛍️ PremiumDrop</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="cart-icon">
+          🛒
+          <span id="cart-count" class="cart-count" style="display: none;">0</span>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero" id="inicio">
-    <h1>Reparación y Venta Tecnológica</h1>
-    <p>Mantén tu mundo conectado</p>
-    <button onclick="document.getElementById('tienda').scrollIntoView()">Ver Productos</button>
-    <button onclick="window.open('https://wa.me/573115477984','_blank')">Reservar Mantenimiento</button>
-  </section>
-
-  <section class="productos" id="tienda">
-    <!-- Ejemplo de producto -->
-    <div class="producto">
-      <img src="modelo.jpg" alt="Mouse Gamer">
-      <h3>Mouse Gamer RGB</h3>
-      <p>$85,000</p>
-      <button>Comprar</button>
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-content text-center">
+        <h1 class="hero-title">Discover Premium Products</h1>
+        <p class="hero-subtitle">Quality products at unbeatable prices with worldwide shipping</p>
+        
+        <div class="search-container">
+          <input type="text" id="search-input" class="search-input" placeholder="Search for products...">
+        </div>
+        
+        <div class="flex justify-center gap-4">
+          <a href="#products" class="btn btn-primary">Shop Now</a>
+          <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
     </div>
-    <!-- Más productos se añadirían aquí -->
   </section>
 
-  <section class="mantenimientos" id="mantenimientos">
-    <h2>Mantenimientos Realizados</h2>
-    <!-- Video de mantenimiento -->
-    <video width="400" controls poster="https://i.ibb.co/3y5tZVZ/pc-clean.jpg">
-      <source src="tu_video.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de video.
-    </video>
-    <br>
-    <img src="https://i.ibb.co/3y5tZVZ/pc-clean.jpg" alt="Mantenimiento PC" width="300">
-    <p>Revisión completa y limpieza profesional.</p>
-    <button onclick="window.open('https://wa.me/573115477984','_blank')">Reservar Cita</button>
+  <!-- Products Section -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <h2 class="section-title">Our Products</h2>
+      
+      <!-- Category Filters -->
+      <div id="category-filters" class="category-filters">
+        <!-- Categories will be populated by JavaScript -->
+      </div>
+      
+      <!-- Products Grid -->
+      <div id="products-grid" class="products-grid">
+        <!-- Products will be populated by JavaScript -->
+        <div class="loading-skeleton skeleton"></div>
+        <div class="loading-skeleton skeleton"></div>
+        <div class="loading-skeleton skeleton"></div>
+        <div class="loading-skeleton skeleton"></div>
+      </div>
+      
+      <!-- Pagination -->
+      <div id="pagination" class="pagination">
+        <!-- Pagination will be populated by JavaScript -->
+      </div>
+    </div>
   </section>
 
-  <section class="comentarios" id="comentarios">
-    <h2>Opiniones de Clientes</h2>
-    <div id="lista-comentarios"></div>
-    <form id="form-comentario">
-      <input type="text" placeholder="Tu nombre" required>
-      <textarea placeholder="Escribe tu reseña" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-surface">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Why Choose PremiumDrop?</h2>
+        <div class="grid grid-cols-3 gap-8 mt-12">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🚚</div>
+            <h3 class="text-xl font-semibold mb-2">Fast Shipping</h3>
+            <p class="text-secondary">Worldwide delivery in 3-7 business days</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🛡️</div>
+            <h3 class="text-xl font-semibold mb-2">Quality Guarantee</h3>
+            <p class="text-secondary">Premium products with satisfaction guarantee</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">💬</div>
+            <h3 class="text-xl font-semibold mb-2">24/7 Support</h3>
+            <p class="text-secondary">Customer service available around the clock</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer id="contacto">
-    <p>📍 Zipaquirá, Cundinamarca | 📱 3115477984</p>
-    <p>© 2025 GameFix Store</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>PremiumDrop</h3>
+          <p>Your trusted partner for premium quality products at unbeatable prices. We're committed to delivering excellence in every order.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="flex flex-col gap-2">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Customer Service</h3>
+          <div class="flex flex-col gap-2">
+            <a href="#">Shipping Info</a>
+            <a href="#">Returns</a>
+            <a href="#">FAQ</a>
+            <a href="#">Size Guide</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p>Email: support@premiumdrop.com</p>
+          <p>Phone: +1 (555) 123-4567</p>
+          <p>Address: 123 Commerce St, City, State 12345</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PremiumDrop. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <a href="https://wa.me/573115477984" class="whatsapp-btn">💬</a>
-
-  <script>
-    document.getElementById('form-comentario').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Comentario enviado. ¡Gracias por tu opinión!');
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
