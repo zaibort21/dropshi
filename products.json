@@ -1,0 +1,1785 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Bluetooth Earbuds Pro",
+    "price": 89.99,
+    "originalPrice": 149.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400",
+    "description": "Premium wireless earbuds with active noise cancellation and premium sound quality.",
+    "features": [
+      "Active Noise Cancellation",
+      "30-hour battery life",
+      "Wireless charging case"
+    ],
+    "rating": 4.8,
+    "reviews": 1234
+  },
+  {
+    "id": 2,
+    "name": "Smart Fitness Watch",
+    "price": 199.99,
+    "originalPrice": 299.99,
+    "category": "Wearables",
+    "image": "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400",
+    "description": "Advanced fitness tracking with heart rate monitoring and GPS functionality.",
+    "features": [
+      "Heart Rate Monitor",
+      "GPS Tracking",
+      "Water Resistant",
+      "7-day battery"
+    ],
+    "rating": 4.7,
+    "reviews": 892
+  },
+  {
+    "id": 3,
+    "name": "Minimalist Leather Wallet",
+    "price": 39.99,
+    "originalPrice": 79.99,
+    "category": "Accessories",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
+    "description": "Premium leather wallet with RFID blocking technology and minimalist design.",
+    "features": [
+      "RFID Blocking",
+      "Genuine Leather",
+      "Slim Design",
+      "Card Slots"
+    ],
+    "rating": 4.9,
+    "reviews": 567
+  },
+  {
+    "id": 4,
+    "name": "Portable Phone Stand",
+    "price": 24.99,
+    "originalPrice": 49.99,
+    "category": "Accessories",
+    "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400",
+    "description": "Adjustable and foldable phone stand compatible with all smartphone sizes.",
+    "features": [
+      "Adjustable Angle",
+      "Foldable Design",
+      "Universal Compatibility"
+    ],
+    "rating": 4.6,
+    "reviews": 743
+  },
+  {
+    "id": 5,
+    "name": "Wireless Charging Pad",
+    "price": 34.99,
+    "originalPrice": 59.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1609592806975-8b76dc09439b?w=400",
+    "description": "Fast wireless charging pad with LED indicator and non-slip surface.",
+    "features": [
+      "Fast Charging",
+      "LED Indicator",
+      "Non-slip Surface",
+      "Universal Compatibility"
+    ],
+    "rating": 4.5,
+    "reviews": 456
+  },
+  {
+    "id": 6,
+    "name": "Premium Coffee Mug Set",
+    "price": 49.99,
+    "originalPrice": 89.99,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400",
+    "description": "Set of 4 premium ceramic coffee mugs with elegant design and perfect grip.",
+    "features": [
+      "Ceramic Material",
+      "Dishwasher Safe",
+      "Heat Resistant",
+      "Set of 4"
+    ],
+    "rating": 4.8,
+    "reviews": 321
+  },
+  {
+    "id": 7,
+    "name": "Smart LED Light Bulbs",
+    "price": 29.99,
+    "originalPrice": 59.99,
+    "category": "Smart Home",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
+    "description": "Smart LED bulbs with color changing capability and app control.",
+    "features": [
+      "16 Million Colors",
+      "App Control",
+      "Voice Compatible",
+      "Energy Efficient"
+    ],
+    "rating": 4.7,
+    "reviews": 678
+  },
+  {
+    "id": 8,
+    "name": "Bluetooth Speaker",
+    "price": 79.99,
+    "originalPrice": 129.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400",
+    "description": "Portable Bluetooth speaker with deep bass and 360-degree sound.",
+    "features": [
+      "360\u00b0 Sound",
+      "Deep Bass",
+      "Waterproof",
+      "12-hour battery"
+    ],
+    "rating": 4.6,
+    "reviews": 543
+  },
+  {
+    "id": 9,
+    "name": "Ergonomic Mouse Pad",
+    "price": 19.99,
+    "originalPrice": 39.99,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400",
+    "description": "Ergonomic mouse pad with wrist support and smooth surface for precise tracking.",
+    "features": [
+      "Wrist Support",
+      "Smooth Surface",
+      "Non-slip Base",
+      "Easy to Clean"
+    ],
+    "rating": 4.4,
+    "reviews": 234
+  },
+  {
+    "id": 10,
+    "name": "Stainless Steel Water Bottle",
+    "price": 24.99,
+    "originalPrice": 44.99,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400",
+    "description": "Insulated stainless steel water bottle that keeps drinks cold for 24 hours.",
+    "features": [
+      "24h Cold",
+      "12h Hot",
+      "BPA Free",
+      "Leak Proof"
+    ],
+    "rating": 4.8,
+    "reviews": 987
+  },
+  {
+    "id": 11,
+    "name": "USB-C Hub",
+    "price": 59.99,
+    "originalPrice": 99.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400",
+    "description": "7-in-1 USB-C hub with HDMI, USB 3.0, and SD card reader.",
+    "features": [
+      "7-in-1 Design",
+      "4K HDMI",
+      "USB 3.0",
+      "SD Card Reader"
+    ],
+    "rating": 4.7,
+    "reviews": 445
+  },
+  {
+    "id": 12,
+    "name": "Yoga Mat",
+    "price": 34.99,
+    "originalPrice": 69.99,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1506629905607-c65e11bdc85d?w=400",
+    "description": "Premium non-slip yoga mat with extra cushioning and carrying strap.",
+    "features": [
+      "Non-slip Surface",
+      "Extra Cushioning",
+      "Carrying Strap",
+      "Eco-friendly"
+    ],
+    "rating": 4.9,
+    "reviews": 756
+  },
+  {
+    "id": 13,
+    "name": "Desktop Organizer",
+    "price": 27.99,
+    "originalPrice": 54.99,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400",
+    "description": "Bamboo desktop organizer with multiple compartments for office supplies.",
+    "features": [
+      "Bamboo Material",
+      "Multiple Compartments",
+      "Eco-friendly",
+      "Elegant Design"
+    ],
+    "rating": 4.6,
+    "reviews": 312
+  },
+  {
+    "id": 14,
+    "name": "Skincare Set",
+    "price": 89.99,
+    "originalPrice": 149.99,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400",
+    "description": "Complete skincare routine set with cleanser, serum, and moisturizer.",
+    "features": [
+      "Complete Routine",
+      "Natural Ingredients",
+      "Dermatologist Tested",
+      "All Skin Types"
+    ],
+    "rating": 4.8,
+    "reviews": 623
+  },
+  {
+    "id": 15,
+    "name": "Reading Light",
+    "price": 22.99,
+    "originalPrice": 44.99,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+    "description": "Rechargeable LED reading light with adjustable brightness and clip-on design.",
+    "features": [
+      "Adjustable Brightness",
+      "Rechargeable",
+      "Clip-on Design",
+      "Eye Protection"
+    ],
+    "rating": 4.5,
+    "reviews": 189
+  },
+  {
+    "id": 16,
+    "name": "Wireless Car Charger",
+    "price": 44.99,
+    "originalPrice": 79.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400",
+    "description": "Automatic wireless car charger with phone holder and fast charging.",
+    "features": [
+      "Auto Clamp",
+      "Fast Charging",
+      "360\u00b0 Rotation",
+      "Phone Holder"
+    ],
+    "rating": 4.7,
+    "reviews": 567
+  },
+  {
+    "id": 17,
+    "name": "Gaming Keyboard",
+    "price": 129.99,
+    "originalPrice": 199.99,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400",
+    "description": "Mechanical gaming keyboard with RGB backlighting and programmable keys.",
+    "features": [
+      "Mechanical Switches",
+      "RGB Backlight",
+      "Programmable Keys",
+      "Anti-ghosting"
+    ],
+    "rating": 4.8,
+    "reviews": 892
+  },
+  {
+    "id": 18,
+    "name": "Air Purifier",
+    "price": 179.99,
+    "originalPrice": 299.99,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
+    "description": "HEPA air purifier with smart sensors and quiet operation.",
+    "features": [
+      "HEPA Filter",
+      "Smart Sensors",
+      "Quiet Operation",
+      "App Control"
+    ],
+    "rating": 4.9,
+    "reviews": 1043
+  },
+  {
+    "id": 19,
+    "name": "Phone Camera Lens Kit",
+    "price": 39.99,
+    "originalPrice": 79.99,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=400",
+    "description": "Professional phone camera lens kit with wide-angle, macro, and fisheye lenses.",
+    "features": [
+      "3 Lens Types",
+      "Universal Clip",
+      "HD Quality",
+      "Portable Case"
+    ],
+    "rating": 4.6,
+    "reviews": 445
+  },
+  {
+    "id": 20,
+    "name": "Essential Oil Diffuser",
+    "price": 54.99,
+    "originalPrice": 99.99,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400",
+    "description": "Ultrasonic essential oil diffuser with 7 LED colors and timer function.",
+    "features": [
+      "Ultrasonic Technology",
+      "7 LED Colors",
+      "Timer Function",
+      "Auto Shut-off"
+    ],
+    "rating": 4.7,
+    "reviews": 723
+  },
+  {
+    "id": 21,
+    "name": "Wireless Headphones",
+    "price": 157,
+    "originalPrice": 237,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500048080297?w=400",
+    "description": "Premium wireless headphones with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.2,
+    "reviews": 860
+  },
+  {
+    "id": 22,
+    "name": "Smart Watch",
+    "price": 164,
+    "originalPrice": 259,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500051677220?w=400",
+    "description": "Premium smart watch with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.1,
+    "reviews": 479
+  },
+  {
+    "id": 23,
+    "name": "Phone Case",
+    "price": 123,
+    "originalPrice": 198,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500232686746?w=400",
+    "description": "Premium phone case with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 173
+  },
+  {
+    "id": 24,
+    "name": "Laptop Stand",
+    "price": 100,
+    "originalPrice": 177,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500056473905?w=400",
+    "description": "Premium laptop stand with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 170
+  },
+  {
+    "id": 25,
+    "name": "Keyboard",
+    "price": 212,
+    "originalPrice": 326,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500212736490?w=400",
+    "description": "Premium keyboard with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.1,
+    "reviews": 512
+  },
+  {
+    "id": 26,
+    "name": "Mouse",
+    "price": 69,
+    "originalPrice": 124,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500195293675?w=400",
+    "description": "Premium mouse with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.3,
+    "reviews": 578
+  },
+  {
+    "id": 27,
+    "name": "Monitor",
+    "price": 211,
+    "originalPrice": 332,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500286712062?w=400",
+    "description": "Premium monitor with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 605
+  },
+  {
+    "id": 28,
+    "name": "Webcam",
+    "price": 92,
+    "originalPrice": 168,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500189830067?w=400",
+    "description": "Premium webcam with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 408
+  },
+  {
+    "id": 29,
+    "name": "Coffee Maker",
+    "price": 27,
+    "originalPrice": 57,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500241697093?w=400",
+    "description": "Premium coffee maker with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 257
+  },
+  {
+    "id": 30,
+    "name": "Blender",
+    "price": 23,
+    "originalPrice": 42,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500294482654?w=400",
+    "description": "Premium blender with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.9,
+    "reviews": 227
+  },
+  {
+    "id": 31,
+    "name": "Kitchen Scale",
+    "price": 156,
+    "originalPrice": 258,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500119257046?w=400",
+    "description": "Premium kitchen scale with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 895
+  },
+  {
+    "id": 32,
+    "name": "Cutting Board",
+    "price": 216,
+    "originalPrice": 326,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500073419349?w=400",
+    "description": "Premium cutting board with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 423
+  },
+  {
+    "id": 33,
+    "name": "Storage Box",
+    "price": 77,
+    "originalPrice": 131,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500023193420?w=400",
+    "description": "Premium storage box with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 226
+  },
+  {
+    "id": 34,
+    "name": "Lamp",
+    "price": 190,
+    "originalPrice": 322,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500245650710?w=400",
+    "description": "Premium lamp with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.1,
+    "reviews": 479
+  },
+  {
+    "id": 35,
+    "name": "Mirror",
+    "price": 147,
+    "originalPrice": 254,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500190354967?w=400",
+    "description": "Premium mirror with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 786
+  },
+  {
+    "id": 36,
+    "name": "Pillow",
+    "price": 69,
+    "originalPrice": 146,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500057835251?w=400",
+    "description": "Premium pillow with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 5,
+    "reviews": 857
+  },
+  {
+    "id": 37,
+    "name": "Sunglasses",
+    "price": 197,
+    "originalPrice": 301,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500032905443?w=400",
+    "description": "Premium sunglasses with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 701
+  },
+  {
+    "id": 38,
+    "name": "Backpack",
+    "price": 97,
+    "originalPrice": 166,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500062239774?w=400",
+    "description": "Premium backpack with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 284
+  },
+  {
+    "id": 39,
+    "name": "Wallet",
+    "price": 90,
+    "originalPrice": 145,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500084317892?w=400",
+    "description": "Premium wallet with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 113
+  },
+  {
+    "id": 40,
+    "name": "Belt",
+    "price": 180,
+    "originalPrice": 280,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500016544293?w=400",
+    "description": "Premium belt with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 203
+  },
+  {
+    "id": 41,
+    "name": "Scarf",
+    "price": 146,
+    "originalPrice": 226,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500141463100?w=400",
+    "description": "Premium scarf with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 295
+  },
+  {
+    "id": 42,
+    "name": "Jewelry Set",
+    "price": 193,
+    "originalPrice": 305,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500015738318?w=400",
+    "description": "Premium jewelry set with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 703
+  },
+  {
+    "id": 43,
+    "name": "Handbag",
+    "price": 32,
+    "originalPrice": 86,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500129683934?w=400",
+    "description": "Premium handbag with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 98
+  },
+  {
+    "id": 44,
+    "name": "Watch",
+    "price": 69,
+    "originalPrice": 125,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500198829826?w=400",
+    "description": "Premium watch with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.3,
+    "reviews": 486
+  },
+  {
+    "id": 45,
+    "name": "Resistance Bands",
+    "price": 22,
+    "originalPrice": 38,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500146773638?w=400",
+    "description": "Premium resistance bands with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.7,
+    "reviews": 767
+  },
+  {
+    "id": 46,
+    "name": "Dumbbell Set",
+    "price": 158,
+    "originalPrice": 273,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500114454307?w=400",
+    "description": "Premium dumbbell set with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 513
+  },
+  {
+    "id": 47,
+    "name": "Water Bottle",
+    "price": 193,
+    "originalPrice": 332,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500050556034?w=400",
+    "description": "Premium water bottle with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.3,
+    "reviews": 882
+  },
+  {
+    "id": 48,
+    "name": "Gym Bag",
+    "price": 90,
+    "originalPrice": 160,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500148077737?w=400",
+    "description": "Premium gym bag with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 272
+  },
+  {
+    "id": 49,
+    "name": "Yoga Block",
+    "price": 165,
+    "originalPrice": 272,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500234037041?w=400",
+    "description": "Premium yoga block with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 622
+  },
+  {
+    "id": 50,
+    "name": "Exercise Mat",
+    "price": 38,
+    "originalPrice": 98,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500299730749?w=400",
+    "description": "Premium exercise mat with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 280
+  },
+  {
+    "id": 51,
+    "name": "Protein Shaker",
+    "price": 158,
+    "originalPrice": 239,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500115889842?w=400",
+    "description": "Premium protein shaker with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.7,
+    "reviews": 686
+  },
+  {
+    "id": 52,
+    "name": "Face Mask",
+    "price": 101,
+    "originalPrice": 187,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500163443208?w=400",
+    "description": "Premium face mask with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.2,
+    "reviews": 570
+  },
+  {
+    "id": 53,
+    "name": "Lip Balm",
+    "price": 156,
+    "originalPrice": 275,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500281846470?w=400",
+    "description": "Premium lip balm with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 5,
+    "reviews": 187
+  },
+  {
+    "id": 54,
+    "name": "Perfume",
+    "price": 21,
+    "originalPrice": 47,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500259868200?w=400",
+    "description": "Premium perfume with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 982
+  },
+  {
+    "id": 55,
+    "name": "Hair Brush",
+    "price": 39,
+    "originalPrice": 89,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500062280095?w=400",
+    "description": "Premium hair brush with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.3,
+    "reviews": 128
+  },
+  {
+    "id": 56,
+    "name": "Skincare Tool",
+    "price": 121,
+    "originalPrice": 207,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500092420778?w=400",
+    "description": "Premium skincare tool with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.7,
+    "reviews": 436
+  },
+  {
+    "id": 57,
+    "name": "Makeup Brush Set",
+    "price": 73,
+    "originalPrice": 157,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500086380004?w=400",
+    "description": "Premium makeup brush set with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 337
+  },
+  {
+    "id": 58,
+    "name": "Nail Kit",
+    "price": 20,
+    "originalPrice": 65,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500263102650?w=400",
+    "description": "Premium nail kit with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.3,
+    "reviews": 829
+  },
+  {
+    "id": 59,
+    "name": "Desk Organizer",
+    "price": 74,
+    "originalPrice": 136,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500284029705?w=400",
+    "description": "Premium desk organizer with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 682
+  },
+  {
+    "id": 60,
+    "name": "Pen Set",
+    "price": 209,
+    "originalPrice": 314,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500241353758?w=400",
+    "description": "Premium pen set with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 5,
+    "reviews": 1038
+  },
+  {
+    "id": 61,
+    "name": "Notebook",
+    "price": 198,
+    "originalPrice": 318,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500094693059?w=400",
+    "description": "Premium notebook with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 251
+  },
+  {
+    "id": 62,
+    "name": "Calendar",
+    "price": 149,
+    "originalPrice": 230,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500143063234?w=400",
+    "description": "Premium calendar with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 900
+  },
+  {
+    "id": 63,
+    "name": "File Folder",
+    "price": 66,
+    "originalPrice": 137,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500025432131?w=400",
+    "description": "Premium file folder with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 453
+  },
+  {
+    "id": 64,
+    "name": "Stapler",
+    "price": 70,
+    "originalPrice": 108,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500297320533?w=400",
+    "description": "Premium stapler with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 481
+  },
+  {
+    "id": 65,
+    "name": "Paper Clips",
+    "price": 32,
+    "originalPrice": 49,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500028358996?w=400",
+    "description": "Premium paper clips with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 269
+  },
+  {
+    "id": 66,
+    "name": "Gaming Mouse",
+    "price": 52,
+    "originalPrice": 98,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500078711106?w=400",
+    "description": "Premium gaming mouse with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 827
+  },
+  {
+    "id": 67,
+    "name": "Controller",
+    "price": 147,
+    "originalPrice": 261,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500170120998?w=400",
+    "description": "Premium controller with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.9,
+    "reviews": 429
+  },
+  {
+    "id": 68,
+    "name": "Headset",
+    "price": 29,
+    "originalPrice": 62,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500291112896?w=400",
+    "description": "Premium headset with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 942
+  },
+  {
+    "id": 69,
+    "name": "Gaming Chair",
+    "price": 174,
+    "originalPrice": 288,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500107119276?w=400",
+    "description": "Premium gaming chair with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 730
+  },
+  {
+    "id": 70,
+    "name": "Mouse Pad",
+    "price": 51,
+    "originalPrice": 96,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500108980622?w=400",
+    "description": "Premium mouse pad with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.7,
+    "reviews": 844
+  },
+  {
+    "id": 71,
+    "name": "Cable Management",
+    "price": 36,
+    "originalPrice": 70,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500032617069?w=400",
+    "description": "Premium cable management with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.2,
+    "reviews": 711
+  },
+  {
+    "id": 72,
+    "name": "LED Strip",
+    "price": 103,
+    "originalPrice": 195,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500010247350?w=400",
+    "description": "Premium led strip with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.1,
+    "reviews": 856
+  },
+  {
+    "id": 73,
+    "name": "Camera Tripod",
+    "price": 219,
+    "originalPrice": 366,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500024405354?w=400",
+    "description": "Premium camera tripod with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 716
+  },
+  {
+    "id": 74,
+    "name": "Memory Card",
+    "price": 105,
+    "originalPrice": 183,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500196291800?w=400",
+    "description": "Premium memory card with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 513
+  },
+  {
+    "id": 75,
+    "name": "Camera Bag",
+    "price": 41,
+    "originalPrice": 71,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500066310790?w=400",
+    "description": "Premium camera bag with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 545
+  },
+  {
+    "id": 76,
+    "name": "Lens Filter",
+    "price": 74,
+    "originalPrice": 136,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500006667998?w=400",
+    "description": "Premium lens filter with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 202
+  },
+  {
+    "id": 77,
+    "name": "Remote Shutter",
+    "price": 211,
+    "originalPrice": 343,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500148676026?w=400",
+    "description": "Premium remote shutter with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 486
+  },
+  {
+    "id": 78,
+    "name": "Photo Frame",
+    "price": 110,
+    "originalPrice": 187,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500107418943?w=400",
+    "description": "Premium photo frame with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 1032
+  },
+  {
+    "id": 79,
+    "name": "Wireless Headphones 2",
+    "price": 62,
+    "originalPrice": 102,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500209800553?w=400",
+    "description": "Premium wireless headphones with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.3,
+    "reviews": 461
+  },
+  {
+    "id": 80,
+    "name": "Smart Watch 2",
+    "price": 127,
+    "originalPrice": 224,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500244348202?w=400",
+    "description": "Premium smart watch with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 611
+  },
+  {
+    "id": 81,
+    "name": "Phone Case 2",
+    "price": 91,
+    "originalPrice": 185,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500125781611?w=400",
+    "description": "Premium phone case with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 931
+  },
+  {
+    "id": 82,
+    "name": "Laptop Stand 2",
+    "price": 158,
+    "originalPrice": 257,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500241684380?w=400",
+    "description": "Premium laptop stand with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.1,
+    "reviews": 598
+  },
+  {
+    "id": 83,
+    "name": "Keyboard 2",
+    "price": 117,
+    "originalPrice": 218,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500271580502?w=400",
+    "description": "Premium keyboard with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 68
+  },
+  {
+    "id": 84,
+    "name": "Mouse 2",
+    "price": 44,
+    "originalPrice": 109,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500035887951?w=400",
+    "description": "Premium mouse with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.9,
+    "reviews": 523
+  },
+  {
+    "id": 85,
+    "name": "Monitor 2",
+    "price": 160,
+    "originalPrice": 247,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500035133237?w=400",
+    "description": "Premium monitor with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 188
+  },
+  {
+    "id": 86,
+    "name": "Webcam 2",
+    "price": 67,
+    "originalPrice": 147,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500001405935?w=400",
+    "description": "Premium webcam with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.6,
+    "reviews": 406
+  },
+  {
+    "id": 87,
+    "name": "Coffee Maker 2",
+    "price": 44,
+    "originalPrice": 66,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500267224370?w=400",
+    "description": "Premium coffee maker with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.9,
+    "reviews": 597
+  },
+  {
+    "id": 88,
+    "name": "Blender 2",
+    "price": 189,
+    "originalPrice": 323,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500191293062?w=400",
+    "description": "Premium blender with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.9,
+    "reviews": 305
+  },
+  {
+    "id": 89,
+    "name": "Kitchen Scale 2",
+    "price": 50,
+    "originalPrice": 111,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500207712632?w=400",
+    "description": "Premium kitchen scale with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 600
+  },
+  {
+    "id": 90,
+    "name": "Cutting Board 2",
+    "price": 104,
+    "originalPrice": 165,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500163635771?w=400",
+    "description": "Premium cutting board with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.1,
+    "reviews": 941
+  },
+  {
+    "id": 91,
+    "name": "Storage Box 2",
+    "price": 116,
+    "originalPrice": 192,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500228310128?w=400",
+    "description": "Premium storage box with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.7,
+    "reviews": 168
+  },
+  {
+    "id": 92,
+    "name": "Lamp 2",
+    "price": 115,
+    "originalPrice": 208,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500263303453?w=400",
+    "description": "Premium lamp with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 883
+  },
+  {
+    "id": 93,
+    "name": "Mirror 2",
+    "price": 151,
+    "originalPrice": 266,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1500091283517?w=400",
+    "description": "Premium mirror with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 586
+  },
+  {
+    "id": 94,
+    "name": "Pillow 2",
+    "price": 154,
+    "originalPrice": 254,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500158678960?w=400",
+    "description": "Premium pillow with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 425
+  },
+  {
+    "id": 95,
+    "name": "Sunglasses 2",
+    "price": 143,
+    "originalPrice": 255,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500198404356?w=400",
+    "description": "Premium sunglasses with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 828
+  },
+  {
+    "id": 96,
+    "name": "Backpack 2",
+    "price": 137,
+    "originalPrice": 219,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500269656714?w=400",
+    "description": "Premium backpack with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.7,
+    "reviews": 598
+  },
+  {
+    "id": 97,
+    "name": "Wallet 2",
+    "price": 128,
+    "originalPrice": 209,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1500276009901?w=400",
+    "description": "Premium wallet with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 302
+  },
+  {
+    "id": 98,
+    "name": "Belt 2",
+    "price": 86,
+    "originalPrice": 137,
+    "category": "Gaming",
+    "image": "https://images.unsplash.com/photo-1500206444721?w=400",
+    "description": "Premium belt with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.3,
+    "reviews": 914
+  },
+  {
+    "id": 99,
+    "name": "Scarf 2",
+    "price": 43,
+    "originalPrice": 70,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500205958593?w=400",
+    "description": "Premium scarf with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.5,
+    "reviews": 218
+  },
+  {
+    "id": 100,
+    "name": "Jewelry Set 2",
+    "price": 212,
+    "originalPrice": 352,
+    "category": "Photography",
+    "image": "https://images.unsplash.com/photo-1500132763059?w=400",
+    "description": "Premium jewelry set with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 139
+  },
+  {
+    "id": 101,
+    "name": "Handbag 2",
+    "price": 160,
+    "originalPrice": 273,
+    "category": "Office",
+    "image": "https://images.unsplash.com/photo-1500216054104?w=400",
+    "description": "Premium handbag with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4,
+    "reviews": 916
+  },
+  {
+    "id": 102,
+    "name": "Watch 2",
+    "price": 125,
+    "originalPrice": 234,
+    "category": "Beauty",
+    "image": "https://images.unsplash.com/photo-1500280902082?w=400",
+    "description": "Premium watch with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 272
+  },
+  {
+    "id": 103,
+    "name": "Resistance Bands 2",
+    "price": 104,
+    "originalPrice": 182,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500165059937?w=400",
+    "description": "Premium resistance bands with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 420
+  },
+  {
+    "id": 104,
+    "name": "Dumbbell Set 2",
+    "price": 63,
+    "originalPrice": 128,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1500293590786?w=400",
+    "description": "Premium dumbbell set with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.8,
+    "reviews": 412
+  },
+  {
+    "id": 105,
+    "name": "Water Bottle 2",
+    "price": 75,
+    "originalPrice": 120,
+    "category": "Home & Kitchen",
+    "image": "https://images.unsplash.com/photo-1500144594673?w=400",
+    "description": "Premium water bottle with modern design and superior quality.",
+    "features": [
+      "Premium Quality",
+      "Modern Design",
+      "Durable Material",
+      "Easy to Use"
+    ],
+    "rating": 4.4,
+    "reviews": 721
+  }
+]
