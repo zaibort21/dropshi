@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameFix Store - Tienda Tecnológica</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://i.ibb.co/8Y1y5fB/gamer-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.8);
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #0ff;
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: rgba(0,0,0,0.7);
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero button {
+      margin: 1rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: #0ff;
+      border: none;
+      cursor: pointer;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      background: rgba(0,0,0,0.8);
+    }
+    .producto {
+      background: #111;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .producto img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .producto button {
+      background: #0ff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .mantenimientos, .comentarios {
+      padding: 2rem;
+      background: rgba(0,0,0,0.85);
+    }
+    .mantenimientos video, .mantenimientos img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.9);
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 2rem;
+      text-decoration: none;
+      z-index: 1000;
+    }
+    /* Media Query para móviles */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+      }
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 1rem;
+      }
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .productos {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      .mantenimientos, .comentarios {
+        padding: 1rem;
+      }
+      .whatsapp-btn {
+        padding: 10px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>🎮 GameFix Store</h2>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#mantenimientos">Mantenimientos</a>
+      <a href="#comentarios">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Reparación y Venta Tecnológica</h1>
+    <p>Mantén tu mundo conectado</p>
+    <button onclick="document.getElementById('tienda').scrollIntoView()">Ver Productos</button>
+    <button onclick="window.open('https://wa.me/573115477984','_blank')">Reservar Mantenimiento</button>
+  </section>
+
+  <section class="productos" id="tienda">
+    <!-- Ejemplo de producto -->
+    <div class="producto">
+      <img src="modelo.jpg" alt="Mouse Gamer">
+      <h3>Mouse Gamer RGB</h3>
+      <p>$85,000</p>
+      <button>Comprar</button>
+    </div>
+    <!-- Más productos se añadirían aquí -->
+  </section>
+
+  <section class="mantenimientos" id="mantenimientos">
+    <h2>Mantenimientos Realizados</h2>
+    <!-- Video de mantenimiento -->
+    <video width="400" controls poster="https://i.ibb.co/3y5tZVZ/pc-clean.jpg">
+      <source src="tu_video.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    <br>
+    <img src="https://i.ibb.co/3y5tZVZ/pc-clean.jpg" alt="Mantenimiento PC" width="300">
+    <p>Revisión completa y limpieza profesional.</p>
+    <button onclick="window.open('https://wa.me/573115477984','_blank')">Reservar Cita</button>
+  </section>
+
+  <section class="comentarios" id="comentarios">
+    <h2>Opiniones de Clientes</h2>
+    <div id="lista-comentarios"></div>
+    <form id="form-comentario">
+      <input type="text" placeholder="Tu nombre" required>
+      <textarea placeholder="Escribe tu reseña" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer id="contacto">
+    <p>📍 Zipaquirá, Cundinamarca | 📱 3115477984</p>
+    <p>© 2025 GameFix Store</p>
+  </footer>
+
+  <a href="https://wa.me/573115477984" class="whatsapp-btn">💬</a>
+
+  <script>
+    document.getElementById('form-comentario').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Comentario enviado. ¡Gracias por tu opinión!');
+    });
+  </script>
+</body>
+</html>
