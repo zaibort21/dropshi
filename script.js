@@ -1,3 +1,17 @@
+// Currency conversion utility
+const Currency = {
+  USD_TO_COP_RATE: 4000, // 1 USD = 4000 COP (approximate)
+  
+  formatPrice(usdPrice) {
+    const copPrice = Math.round(usdPrice * this.USD_TO_COP_RATE);
+    return `$${copPrice.toLocaleString('es-CO')} COP`;
+  },
+  
+  getPriceValue(usdPrice) {
+    return Math.round(usdPrice * this.USD_TO_COP_RATE);
+  }
+};
+
 // Product Management System
 class ProductManager {
   constructor() {
@@ -118,10 +132,10 @@ class ProductManager {
     document.getElementById('modal-product-rating').textContent = `${product.rating} (${product.reviews} reviews)`;
     
     // Update price
-    document.getElementById('modal-current-price').textContent = `$${product.price}`;
+    document.getElementById('modal-current-price').textContent = Currency.formatPrice(product.price);
     const originalPriceElement = document.getElementById('modal-original-price');
     if (product.originalPrice > product.price) {
-      originalPriceElement.textContent = `$${product.originalPrice}`;
+      originalPriceElement.textContent = Currency.formatPrice(product.originalPrice);
       originalPriceElement.style.display = 'inline';
     } else {
       originalPriceElement.style.display = 'none';
@@ -245,8 +259,8 @@ class ProductManager {
             <span class="rating-text">${product.rating} (${product.reviews} reviews)</span>
           </div>
           <div class="product-price">
-            <span class="current-price">$${product.price}</span>
-            ${product.originalPrice > product.price ? `<span class="original-price">$${product.originalPrice}</span>` : ''}
+            <span class="current-price">${Currency.formatPrice(product.price)}</span>
+            ${product.originalPrice > product.price ? `<span class="original-price">${Currency.formatPrice(product.originalPrice)}</span>` : ''}
           </div>
         </div>
         <div class="card-footer">
@@ -456,20 +470,20 @@ class ShoppingCart {
         <img src="${item.image}" alt="${item.name}" class="cart-item-image">
         <div class="cart-item-details">
           <div class="cart-item-title">${item.name}</div>
-          <div class="cart-item-price">$${item.price}</div>
+          <div class="cart-item-price">${Currency.formatPrice(item.price)}</div>
         </div>
         <div class="cart-item-quantity">
           <button class="quantity-btn" data-product-id="${item.id}" data-action="decrease">-</button>
           <span>${item.quantity}</span>
           <button class="quantity-btn" data-product-id="${item.id}" data-action="increase">+</button>
         </div>
-        <div class="cart-item-total">$${(item.price * item.quantity).toFixed(2)}</div>
+        <div class="cart-item-total">${Currency.formatPrice(item.price * item.quantity)}</div>
       </div>
     `).join('');
 
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     cartTotalContainer.innerHTML = `
-      <div>Total: $${total.toFixed(2)}</div>
+      <div>Total: ${Currency.formatPrice(total)}</div>
     `;
   }
 
@@ -513,7 +527,7 @@ class ShoppingCart {
     let message = "🛍️ *Consulta de Producto - PremiumDrop*\n\n";
     message += "*Producto de interés:*\n";
     message += `📦 ${product.name}\n`;
-    message += `💰 Precio: $${product.price}\n`;
+    message += `💰 Precio: ${Currency.formatPrice(product.price)}\n`;
     message += `⭐ Calificación: ${product.rating}/5 (${product.reviews} reseñas)\n\n`;
     message += "¡Hola! Me interesa este producto. ¿Podrías darme más información sobre:\n";
     message += "• Disponibilidad\n";
@@ -551,12 +565,12 @@ class ShoppingCart {
     this.items.forEach((item, index) => {
       message += `${index + 1}. ${item.name}\n`;
       message += `   Cantidad: ${item.quantity}\n`;
-      message += `   Precio: $${item.price}\n`;
-      message += `   Subtotal: $${(item.price * item.quantity).toFixed(2)}\n\n`;
+      message += `   Precio: ${Currency.formatPrice(item.price)}\n`;
+      message += `   Subtotal: ${Currency.formatPrice(item.price * item.quantity)}\n\n`;
     });
     
     message += `*Total de artículos:* ${itemCount}\n`;
-    message += `*Total a pagar:* $${total.toFixed(2)}\n\n`;
+    message += `*Total a pagar:* ${Currency.formatPrice(total)}\n\n`;
     message += "¡Gracias por elegir PremiumDrop! 🚚\n";
     message += "Responderemos pronto con los detalles de envío.";
     
