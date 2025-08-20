@@ -203,6 +203,18 @@ body {
   box-shadow: var(--shadow-md);
 }
 
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border: none;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #1bb55c 0%, #0f6b5c 100%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
 /* Card Component */
 .card {
   background-color: var(--color-background);
@@ -231,6 +243,15 @@ body {
   padding: var(--spacing-6);
   background-color: var(--color-surface-secondary);
   border-top: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.card-footer .btn {
+  width: 100%;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-2) var(--spacing-4);
 }
 
 /* Image Styling */
@@ -261,6 +282,16 @@ body {
   background: linear-gradient(90deg, var(--color-surface) 25%, var(--color-border-light) 50%, var(--color-surface) 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
+}
+
+.image-loaded {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-error {
+  opacity: 0.7;
+  filter: grayscale(1);
 }
 
 @keyframes loading {

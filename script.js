@@ -80,6 +80,17 @@ class ProductManager {
           const img = entry.target;
           img.src = img.dataset.src;
           img.classList.remove('skeleton');
+          
+          // Add error handling for images
+          img.onerror = () => {
+            img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f0f0f0"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>';
+            img.classList.add('image-error');
+          };
+          
+          img.onload = () => {
+            img.classList.add('image-loaded');
+          };
+          
           this.imageObserver.unobserve(img);
         }
       });
@@ -240,10 +251,13 @@ class ProductManager {
         </div>
         <div class="card-footer">
           <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
-            Add to Cart
+            🛒 Agregar al Carrito
           </button>
           <button class="btn btn-secondary view-details" data-product-id="${product.id}">
-            View Details
+            👁️ Ver Detalles
+          </button>
+          <button class="btn btn-whatsapp buy-whatsapp" data-product-id="${product.id}">
+            💬 Consultar por WhatsApp
           </button>
         </div>
       </div>
@@ -337,6 +351,9 @@ class ShoppingCart {
       if (e.target.classList.contains('add-to-cart')) {
         const productId = parseInt(e.target.dataset.productId);
         this.addToCart(productId);
+      } else if (e.target.classList.contains('buy-whatsapp')) {
+        const productId = parseInt(e.target.dataset.productId);
+        this.buyViaWhatsApp(productId);
       }
     });
 
@@ -488,24 +505,79 @@ class ShoppingCart {
     this.updateCartDisplay();
   }
 
+  buyViaWhatsApp(productId) {
+    const product = productManager.products.find(p => p.id === productId);
+    if (!product) return;
+
+    // Create WhatsApp message for single product
+    let message = "🛍️ *Consulta de Producto - PremiumDrop*\n\n";
+    message += "*Producto de interés:*\n";
+    message += `📦 ${product.name}\n`;
+    message += `💰 Precio: $${product.price}\n`;
+    message += `⭐ Calificación: ${product.rating}/5 (${product.reviews} reseñas)\n\n`;
+    message += "¡Hola! Me interesa este producto. ¿Podrías darme más información sobre:\n";
+    message += "• Disponibilidad\n";
+    message += "• Métodos de pago\n";
+    message += "• Tiempo de entrega\n";
+    message += "• Garantía\n\n";
+    message += "¡Gracias! 😊";
+    
+    // WhatsApp number (3115477984)
+    const whatsappNumber = "573115477984"; // Colombia country code + number
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+  }
+
   proceedToCheckout() {
     if (this.items.length === 0) {
       alert('Your cart is empty!');
       return;
     }
 
+    this.proceedToWhatsAppCheckout();
+  }
+
+  proceedToWhatsAppCheckout() {
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const itemCount = this.items.reduce((sum, item) => sum + item.quantity, 0);
     
-    alert(`Thank you for your purchase!\n\nItems: ${itemCount}\nTotal: $${total.toFixed(2)}\n\nThis is a demo store. In a real implementation, this would redirect to a payment processor.`);
+    // Create WhatsApp message
+    let message = "🛍️ *Nuevo Pedido - PremiumDrop*\n\n";
+    message += "*Productos:*\n";
     
-    // Clear cart after "purchase"
-    this.clearCart();
-    
-    // Close modal
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.classList.remove('show');
+    this.items.forEach((item, index) => {
+      message += `${index + 1}. ${item.name}\n`;
+      message += `   Cantidad: ${item.quantity}\n`;
+      message += `   Precio: $${item.price}\n`;
+      message += `   Subtotal: $${(item.price * item.quantity).toFixed(2)}\n\n`;
     });
+    
+    message += `*Total de artículos:* ${itemCount}\n`;
+    message += `*Total a pagar:* $${total.toFixed(2)}\n\n`;
+    message += "¡Gracias por elegir PremiumDrop! 🚚\n";
+    message += "Responderemos pronto con los detalles de envío.";
+    
+    // WhatsApp number (3115477984)
+    const whatsappNumber = "573115477984"; // Colombia country code + number
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message and clear cart
+    setTimeout(() => {
+      alert('¡Tu pedido ha sido enviado por WhatsApp! Revisa tu app de WhatsApp.');
+      this.clearCart();
+      
+      // Close modal
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.classList.remove('show');
+      });
+    }, 1000);
   }
 }
 
