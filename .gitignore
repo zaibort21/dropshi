@@ -42,3 +42,7 @@ Thumbs.db
 .cache/
 .npm
 .eslintcache
+
+# Backup files
+products_backup.json
+products_top50.json
