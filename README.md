@@ -188,7 +188,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 💬 Support
 
-For support, email support@premiumdrop.com or open an issue on GitHub.
+For support, email soporte@premiumdrop.com or open an issue on GitHub.
 
 ---
 
