@@ -482,9 +482,52 @@ class ShoppingCart {
     `).join('');
 
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    cartTotalContainer.innerHTML = `
-      <div>Total: ${Currency.formatPrice(total)}</div>
-    `;
+    
+    // Enhanced total display with automation
+    let totalHTML = `<div>Subtotal: ${Currency.formatPrice(total)}</div>`;
+    
+    if (window.colombiaAutomation) {
+      const location = window.colombiaAutomation.getSelectedLocation();
+      if (location.department && location.city) {
+        const dept = window.colombiaAutomation.colombianDepartments[location.department];
+        const subtotalCOP = Currency.getPriceValue(total);
+        const shippingCost = subtotalCOP >= 200000 ? 0 : dept.shippingCost;
+        const finalTotal = subtotalCOP + shippingCost;
+        
+        totalHTML += `
+          <div class="automation-summary">
+            <h4>📍 Resumen de envío a ${location.city}</h4>
+            <div class="summary-line">
+              <span>Subtotal:</span>
+              <span>${Currency.formatPrice(total)}</span>
+            </div>
+            <div class="summary-line">
+              <span>Envío:</span>
+              <span>${shippingCost > 0 ? `$${shippingCost.toLocaleString('es-CO')} COP` : 'GRATIS'}</span>
+            </div>
+            <div class="summary-line total">
+              <span>Total:</span>
+              <span>$${finalTotal.toLocaleString('es-CO')} COP</span>
+            </div>
+            <div class="summary-line">
+              <span>Entrega estimada:</span>
+              <span>${dept.deliveryDays.min}-${dept.deliveryDays.max} días</span>
+            </div>
+          </div>
+        `;
+      } else {
+        totalHTML += `
+          <div class="automation-summary">
+            <h4>📍 Selecciona tu ubicación</h4>
+            <p style="font-size: 13px; color: #6b7280; margin: 8px 0;">
+              Elige tu departamento y ciudad arriba para ver el costo de envío y tiempo de entrega exacto.
+            </p>
+          </div>
+        `;
+      }
+    }
+    
+    cartTotalContainer.innerHTML = totalHTML;
   }
 
   updateQuantity(productId, action) {
@@ -539,6 +582,14 @@ class ShoppingCart {
     message += "Por favor, indica tu ciudad para calcular tiempo exacto de entrega.\n\n";
     message += "¡Gracias! 😊";
     
+    // Enhance message with automation if location is selected
+    if (window.colombiaAutomation) {
+      const location = window.colombiaAutomation.getSelectedLocation();
+      if (location.department && location.city) {
+        message = window.colombiaAutomation.enhanceWhatsAppMessage(message, location.department, location.city);
+      }
+    }
+    
     // WhatsApp number (3115477984)
     const whatsappNumber = "573115477984"; // Colombia country code + number
     const encodedMessage = encodeURIComponent(message);
@@ -561,6 +612,23 @@ class ShoppingCart {
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const itemCount = this.items.reduce((sum, item) => sum + item.quantity, 0);
     
+    // Calculate total with shipping if automation is available
+    let finalTotal = total;
+    let shippingInfo = "";
+    
+    if (window.colombiaAutomation) {
+      finalTotal = window.colombiaAutomation.calculateTotalWithShipping(Currency.getPriceValue(total));
+      const location = window.colombiaAutomation.getSelectedLocation();
+      
+      if (location.department && location.city) {
+        const dept = window.colombiaAutomation.colombianDepartments[location.department];
+        const shippingCost = finalTotal > Currency.getPriceValue(total) ? dept.shippingCost : 0;
+        shippingInfo = `\n*Información de envío:*\n`;
+        shippingInfo += `• Destino: ${location.city}, ${dept.name}\n`;
+        shippingInfo += `• Costo de envío: ${shippingCost > 0 ? Currency.formatPrice(shippingCost / Currency.USD_TO_COP_RATE) : 'GRATIS'}\n`;
+      }
+    }
+    
     // Create WhatsApp message
     let message = "🛍️ *Nuevo Pedido - PremiumDrop*\n\n";
     message += "*Productos solicitados:*\n";
@@ -573,13 +641,31 @@ class ShoppingCart {
     });
     
     message += `*Total de artículos:* ${itemCount}\n`;
-    message += `*Total estimado:* ${Currency.formatPrice(total)}\n\n`;
+    message += `*Subtotal:* ${Currency.formatPrice(total)}\n`;
+    
+    if (shippingInfo) {
+      message += shippingInfo;
+    }
+    
+    message += `*Total final:* ${Currency.formatPrice(finalTotal / Currency.USD_TO_COP_RATE)}\n\n`;
     message += "📍 *Información importante:*\n";
     message += "• Los productos son importados directamente de fabricantes internacionales\n";
     message += "• Tiempo de entrega: 7-15 días hábiles en Colombia\n";
     message += "• Envío gratuito en pedidos superiores a $200.000 COP\n";
     message += "• Proceso de importación personalizada\n\n";
-    message += "¿Podrías confirmar tu ciudad en Colombia para el envío?\n\n";
+    
+    // Enhance message with automation if location is selected
+    if (window.colombiaAutomation) {
+      const location = window.colombiaAutomation.getSelectedLocation();
+      if (location.department && location.city) {
+        message = window.colombiaAutomation.enhanceWhatsAppMessage(message, location.department, location.city);
+      } else {
+        message += "¿Podrías confirmar tu ciudad en Colombia para el envío?\n\n";
+      }
+    } else {
+      message += "¿Podrías confirmar tu ciudad en Colombia para el envío?\n\n";
+    }
+    
     message += "¡Gracias por elegir PremiumDrop! 🚚\n";
     message += "Nuestro equipo comercial te contactará con todos los detalles.";
     
