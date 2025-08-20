@@ -48,6 +48,21 @@ class ProductManager {
       }
     });
 
+    // View Details functionality
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('view-details')) {
+        const productId = parseInt(e.target.dataset.productId);
+        this.showProductDetails(productId);
+      }
+    });
+
+    // Modal close functionality
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
+        this.closeModal();
+      }
+    });
+
     // Product cards lazy loading
     this.setupLazyLoading();
   }
@@ -69,6 +84,54 @@ class ProductManager {
         }
       });
     }, options);
+  }
+
+  showProductDetails(productId) {
+    const product = this.products.find(p => p.id === productId);
+    if (!product) return;
+
+    // Update modal content
+    document.getElementById('modal-product-title').textContent = product.name;
+    document.getElementById('modal-product-img').src = product.image;
+    document.getElementById('modal-product-img').alt = product.name;
+    document.getElementById('modal-product-description').textContent = product.description;
+    
+    // Update features
+    const featuresContainer = document.getElementById('modal-product-features');
+    featuresContainer.innerHTML = product.features.map(feature => 
+      `<span class="feature-tag">${feature}</span>`
+    ).join('');
+    
+    // Update rating
+    document.getElementById('modal-product-stars').innerHTML = this.renderStars(product.rating);
+    document.getElementById('modal-product-rating').textContent = `${product.rating} (${product.reviews} reviews)`;
+    
+    // Update price
+    document.getElementById('modal-current-price').textContent = `$${product.price}`;
+    const originalPriceElement = document.getElementById('modal-original-price');
+    if (product.originalPrice > product.price) {
+      originalPriceElement.textContent = `$${product.originalPrice}`;
+      originalPriceElement.style.display = 'inline';
+    } else {
+      originalPriceElement.style.display = 'none';
+    }
+    
+    // Set up add to cart button
+    const modalAddToCartBtn = document.getElementById('modal-add-to-cart');
+    modalAddToCartBtn.onclick = () => {
+      shoppingCart.addToCart(productId);
+      this.closeModal();
+    };
+    
+    // Show modal
+    const modal = document.getElementById('product-modal');
+    modal.classList.add('show');
+  }
+
+  closeModal() {
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.classList.remove('show');
+    });
   }
 
   getFilteredProducts() {
@@ -276,6 +339,27 @@ class ShoppingCart {
         this.addToCart(productId);
       }
     });
+
+    // Cart icon click
+    const cartIcon = document.querySelector('.cart-icon');
+    if (cartIcon) {
+      cartIcon.addEventListener('click', () => {
+        this.showCart();
+      });
+    }
+
+    // Cart modal actions
+    document.addEventListener('click', (e) => {
+      if (e.target.id === 'clear-cart') {
+        this.clearCart();
+      } else if (e.target.id === 'checkout-btn') {
+        this.proceedToCheckout();
+      } else if (e.target.classList.contains('quantity-btn')) {
+        const productId = parseInt(e.target.dataset.productId);
+        const action = e.target.dataset.action;
+        this.updateQuantity(productId, action);
+      }
+    });
   }
 
   addToCart(productId) {
@@ -327,6 +411,101 @@ class ShoppingCart {
       notification.classList.remove('show');
       setTimeout(() => notification.remove(), 300);
     }, 3000);
+  }
+
+  showCart() {
+    this.renderCartItems();
+    const modal = document.getElementById('cart-modal');
+    modal.classList.add('show');
+  }
+
+  renderCartItems() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalContainer = document.getElementById('cart-total');
+
+    if (this.items.length === 0) {
+      cartItemsContainer.innerHTML = `
+        <div class="empty-cart">
+          <h3>Your cart is empty</h3>
+          <p>Start shopping to add items to your cart!</p>
+        </div>
+      `;
+      cartTotalContainer.innerHTML = '';
+      return;
+    }
+
+    cartItemsContainer.innerHTML = this.items.map(item => `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+        <div class="cart-item-details">
+          <div class="cart-item-title">${item.name}</div>
+          <div class="cart-item-price">$${item.price}</div>
+        </div>
+        <div class="cart-item-quantity">
+          <button class="quantity-btn" data-product-id="${item.id}" data-action="decrease">-</button>
+          <span>${item.quantity}</span>
+          <button class="quantity-btn" data-product-id="${item.id}" data-action="increase">+</button>
+        </div>
+        <div class="cart-item-total">$${(item.price * item.quantity).toFixed(2)}</div>
+      </div>
+    `).join('');
+
+    const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    cartTotalContainer.innerHTML = `
+      <div>Total: $${total.toFixed(2)}</div>
+    `;
+  }
+
+  updateQuantity(productId, action) {
+    const item = this.items.find(item => item.id === productId);
+    if (!item) return;
+
+    if (action === 'increase') {
+      item.quantity += 1;
+    } else if (action === 'decrease') {
+      item.quantity -= 1;
+      if (item.quantity <= 0) {
+        this.removeFromCart(productId);
+        this.renderCartItems();
+        this.updateCartDisplay();
+        return;
+      }
+    }
+
+    this.saveCart();
+    this.renderCartItems();
+    this.updateCartDisplay();
+  }
+
+  removeFromCart(productId) {
+    this.items = this.items.filter(item => item.id !== productId);
+  }
+
+  clearCart() {
+    this.items = [];
+    this.saveCart();
+    this.renderCartItems();
+    this.updateCartDisplay();
+  }
+
+  proceedToCheckout() {
+    if (this.items.length === 0) {
+      alert('Your cart is empty!');
+      return;
+    }
+
+    const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const itemCount = this.items.reduce((sum, item) => sum + item.quantity, 0);
+    
+    alert(`Thank you for your purchase!\n\nItems: ${itemCount}\nTotal: $${total.toFixed(2)}\n\nThis is a demo store. In a real implementation, this would redirect to a payment processor.`);
+    
+    // Clear cart after "purchase"
+    this.clearCart();
+    
+    // Close modal
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.classList.remove('show');
+    });
   }
 }
 

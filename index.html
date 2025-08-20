@@ -526,6 +526,56 @@
     </div>
   </footer>
 
+  <!-- Product Details Modal -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-product-title">Product Details</h2>
+        <span class="modal-close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-product-info">
+          <div class="modal-product-image">
+            <img id="modal-product-img" src="" alt="">
+          </div>
+          <div class="modal-product-details">
+            <p id="modal-product-description"></p>
+            <div id="modal-product-features" class="modal-features"></div>
+            <div class="modal-rating">
+              <div id="modal-product-stars"></div>
+              <span id="modal-product-rating"></span>
+            </div>
+            <div class="modal-price">
+              <span id="modal-current-price" class="current-price"></span>
+              <span id="modal-original-price" class="original-price"></span>
+            </div>
+            <div class="modal-actions">
+              <button id="modal-add-to-cart" class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Shopping Cart</h2>
+        <span class="modal-close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items" class="cart-items"></div>
+        <div id="cart-total" class="cart-total"></div>
+        <div class="cart-actions">
+          <button id="clear-cart" class="btn btn-secondary">Clear Cart</button>
+          <button id="checkout-btn" class="btn btn-primary">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="script.js"></script>
 </body>
