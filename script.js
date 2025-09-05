@@ -19,7 +19,7 @@ class ProductManager {
     this.categories = [];
     this.currentFilter = 'all';
     this.currentPage = 1;
-  this.productsPerPage = 10;
+    this.productsPerPage = 10;
     this.init();
   }
 
@@ -341,15 +341,15 @@ class ProductManager {
 
     container.innerHTML = paginatedProducts.map(product => this.createProductCard(product)).join('');
     
-    // Setup lazy loading for new images
-    container.querySelectorAll('img[data-src]').forEach(img => {
-      this.imageObserver.observe(img);
-    });
+  // Setup lazy loading for new images
+  container.querySelectorAll('img[data-src]').forEach(img => {
+    this.imageObserver.observe(img);
+  });
 
   // Init carousels inside product cards
   setTimeout(() => { initCarousels(); }, 50);
 
-    this.updatePagination(products.length);
+  this.updatePagination(products.length);
   }
 
   createProductCard(product) {
