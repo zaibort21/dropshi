@@ -8,7 +8,7 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
+    "images": ["../aspiradora 1.png","../aspiradora 3.jpeg","../aspiradora2.png"],
     "tags": ["gel blaster"]
   },
   {
