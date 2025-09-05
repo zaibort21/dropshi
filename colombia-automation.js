@@ -8,7 +8,8 @@ class ColombiaAutomation {
       'bogota': {
         name: 'Bogotá D.C.',
         capital: 'Bogotá',
-        cities: ['Bogotá'],
+        // Ciudades atendidas desde bodega Bogotá
+        cities: ['Bogotá', 'Soacha', 'Chía', 'Zipaquirá', 'Funza', 'Madrid'],
         deliveryDays: { min: 4, max: 6 },
         // Tarifa desde bodega Bogotá (COP)
         shippingCost: 8000
@@ -16,7 +17,8 @@ class ColombiaAutomation {
       'valle': {
         name: 'Valle del Cauca',
         capital: 'Cali',
-        cities: ['Cali'],
+        // Ciudades atendidas desde bodega Cali
+        cities: ['Cali', 'Palmira', 'Buenaventura', 'Tuluá', 'Buga', 'Cartago', 'Jamundí'],
         deliveryDays: { min: 5, max: 7 },
         // Tarifa desde bodega Cali (COP)
         shippingCost: 9000
@@ -24,7 +26,8 @@ class ColombiaAutomation {
       'antioquia': {
         name: 'Antioquia',
         capital: 'Medellín',
-        cities: ['Medellín'],
+        // Ciudades atendidas desde bodega Medellín
+        cities: ['Medellín', 'Bello', 'Itagüí', 'Envigado', 'Sabaneta', 'Rionegro', 'La Ceja'],
         deliveryDays: { min: 5, max: 7 },
         // Tarifa desde bodega Medellín (COP)
         shippingCost: 10000
