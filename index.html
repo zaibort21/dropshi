@@ -519,6 +519,109 @@
         right: -20px;
       }
     }
+
+    /* Modal carousel styles */
+    .modal-body .modal-product-info {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .modal-product-image {
+      flex: 1 1 50%;
+      max-width: 560px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-product-details {
+      flex: 1 1 50%;
+      max-width: 520px;
+    }
+
+    .modal-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .modal-carousel .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .modal-carousel .carousel-slide {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .modal-carousel img {
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      background: linear-gradient(180deg, #fff, #f8fafc);
+    }
+
+    .modal-carousel .carousel-prev,
+    .modal-carousel .carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .modal-carousel .carousel-prev { left: 8px; }
+    .modal-carousel .carousel-next { right: 8px; }
+
+    .modal-carousel .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .modal-carousel .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.18);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .modal-carousel .carousel-dot.active {
+      background: var(--color-accent);
+      transform: scale(1.18);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    /* Responsive adjustments for modal */
+    @media (max-width: 900px) {
+      .modal-body .modal-product-info { flex-direction: column; }
+      .modal-product-image, .modal-product-details { max-width: 100%; }
+      .modal-carousel img { max-height: 320px; }
+    }
   </style>
 </head>
 <body>
