@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "sku": "TC-10",
+    "slug": "tc-10",
+    "title": "TC 10",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": ["gel blaster"]
+  },
+  {
+    "id": "2",
+    "sku": "TC-22",
+    "slug": "tc-22",
+    "title": "TC 22",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "3",
+    "sku": "TC-07",
+    "slug": "tc-07",
+    "title": "TC 07",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "4",
+    "sku": "TC-06",
+    "slug": "tc-06",
+    "title": "TC 06",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "5",
+    "sku": "TC-18",
+    "slug": "tc-18",
+    "title": "TC 18",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "6",
+    "sku": "TC-26",
+    "slug": "tc-26",
+    "title": "TC 26",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "7",
+    "sku": "TC-31",
+    "slug": "tc-31",
+    "title": "TC 31",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "8",
+    "sku": "TC-40",
+    "slug": "tc-40",
+    "title": "TC 40",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "9",
+    "sku": "TC-47",
+    "slug": "tc-47",
+    "title": "TC 47",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  },
+  {
+    "id": "10",
+    "sku": "TC-55",
+    "slug": "tc-55",
+    "title": "TC 55",
+    "price": 0,
+    "stock": 10,
+    "shortDescription": "Producto placeholder",
+    "descriptionHtml": "<p>Descripción editable.</p>",
+    "images": [],
+    "tags": []
+  }
+]
