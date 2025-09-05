@@ -3,41 +3,31 @@
 
 class ColombiaAutomation {
   constructor() {
+    // Solo los departamentos donde tenemos bodega: Bogotá, Valle (Cali) y Antioquia (Medellín)
     this.colombianDepartments = {
-      'antioquia': {
-        name: 'Antioquia',
-        capital: 'Medellín',
-        cities: ['Medellín', 'Bello', 'Itagüí', 'Envigado', 'Apartadó', 'Turbo'],
-        deliveryDays: { min: 7, max: 10 },
-        shippingCost: 15000
-      },
       'bogota': {
         name: 'Bogotá D.C.',
         capital: 'Bogotá',
         cities: ['Bogotá'],
-        deliveryDays: { min: 6, max: 9 },
-        shippingCost: 12000
+        deliveryDays: { min: 4, max: 6 },
+        // Tarifa desde bodega Bogotá (COP)
+        shippingCost: 8000
       },
       'valle': {
         name: 'Valle del Cauca',
         capital: 'Cali',
-        cities: ['Cali', 'Palmira', 'Buenaventura', 'Tuluá', 'Cartago'],
-        deliveryDays: { min: 8, max: 11 },
-        shippingCost: 16000
+        cities: ['Cali'],
+        deliveryDays: { min: 5, max: 7 },
+        // Tarifa desde bodega Cali (COP)
+        shippingCost: 9000
       },
-      'atlantico': {
-        name: 'Atlántico',
-        capital: 'Barranquilla',
-        cities: ['Barranquilla', 'Soledad', 'Malambo', 'Galapa'],
-        deliveryDays: { min: 9, max: 12 },
-        shippingCost: 18000
-      },
-      'santander': {
-        name: 'Santander',
-        capital: 'Bucaramanga',
-        cities: ['Bucaramanga', 'Floridablanca', 'Girón', 'Piedecuesta'],
-        deliveryDays: { min: 8, max: 11 },
-        shippingCost: 17000
+      'antioquia': {
+        name: 'Antioquia',
+        capital: 'Medellín',
+        cities: ['Medellín'],
+        deliveryDays: { min: 5, max: 7 },
+        // Tarifa desde bodega Medellín (COP)
+        shippingCost: 10000
       }
     };
 
@@ -271,9 +261,9 @@ class ColombiaAutomation {
 
     shippingDiv.innerHTML = `
       <div class="shipping-cost">
-        <strong>💰 Costo de envío a ${city}:</strong><br>
-        $${shippingCost.toLocaleString('es-CO')} COP<br>
-        <small>📦 Envío GRATIS en pedidos superiores a $${freeShippingThreshold.toLocaleString('es-CO')} COP</small>
+        <strong>💰 Envío desde bodega en ${department.capital} a ${city}:</strong><br>
+        Costo estándar: $${shippingCost.toLocaleString('es-CO')} COP<br>
+        <small>📦 Envío <strong>GRATIS</strong> en pedidos superiores a $${freeShippingThreshold.toLocaleString('es-CO')} COP</small>
       </div>
     `;
   }
@@ -434,9 +424,10 @@ class ColombiaAutomation {
     if (!department) return subtotal;
 
     const freeShippingThreshold = 200000;
-    const shippingCost = subtotal >= freeShippingThreshold ? 0 : department.shippingCost;
-    
-    return subtotal + shippingCost;
+  const shippingCost = subtotal >= freeShippingThreshold ? 0 : department.shippingCost;
+
+  // subtotal ya está en COP (se pasa Currency.getPriceValue(total) desde el cart)
+  return subtotal + shippingCost;
   }
 }
 
