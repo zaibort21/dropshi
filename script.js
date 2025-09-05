@@ -23,6 +23,20 @@ class ProductManager {
     this.init();
   }
 
+  // Mapa de traducción para las etiquetas de categoría (display only)
+  static CATEGORY_LABELS = {
+    'Sports & Outdoors': 'Deportes y aire libre',
+    'Electronics': 'Electrónica',
+    'Home & Kitchen': 'Hogar y Cocina',
+    'Office': 'Oficina',
+    'Accessories': 'Accesorios',
+    'Gaming': 'Gaming',
+    'Fashion': 'Moda',
+    'Beauty': 'Belleza',
+    'Photography': 'Fotografía',
+    'Wearables': 'Wearables'
+  };
+
   async init() {
     await this.loadProducts();
     this.normalizeProducts();
@@ -135,24 +149,69 @@ class ProductManager {
     const product = this.products.find(p => p.id === productId);
     if (!product) return;
 
-    // Update modal content
+    // Título
     document.getElementById('modal-product-title').textContent = product.name;
-    document.getElementById('modal-product-img').src = product.image;
-    document.getElementById('modal-product-img').alt = product.name;
-    document.getElementById('modal-product-description').textContent = product.description;
-    
-    // Update features
+
+    // Construir carrusel dentro del modal
+    const modalImgContainer = document.getElementById('modal-product-img-container');
+    if (modalImgContainer) {
+      modalImgContainer.innerHTML = '';
+      const carousel = document.createElement('div');
+      carousel.className = 'carousel modal-carousel';
+
+      const track = document.createElement('div');
+      track.className = 'carousel-track';
+
+      (product.images || [product.image]).forEach((src, idx) => {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-slide';
+        if (idx === 0) slide.classList.add('active');
+        const img = document.createElement('img');
+        img.src = src || '';
+        img.alt = `${product.name} - ${idx + 1}`;
+        slide.appendChild(img);
+        track.appendChild(slide);
+      });
+
+      carousel.appendChild(track);
+
+      const prev = document.createElement('button');
+      prev.className = 'carousel-prev carousel-btn';
+      prev.textContent = '‹';
+      const next = document.createElement('button');
+      next.className = 'carousel-next carousel-btn';
+      next.textContent = '›';
+      carousel.appendChild(prev);
+      carousel.appendChild(next);
+
+      const indicators = document.createElement('div');
+      indicators.className = 'carousel-indicators';
+      (product.images || [product.image]).forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = i === 0 ? 'carousel-dot active' : 'carousel-dot';
+        dot.dataset.index = i;
+        indicators.appendChild(dot);
+      });
+      carousel.appendChild(indicators);
+
+      modalImgContainer.appendChild(carousel);
+
+      this.initModalCarousel(carousel);
+    }
+
+    // Descripción
+    document.getElementById('modal-product-description').innerHTML = product.description || '';
+
+    // Features
     const featuresContainer = document.getElementById('modal-product-features');
-    featuresContainer.innerHTML = product.features.map(feature => 
-      `<span class="feature-tag">${feature}</span>`
-    ).join('');
-    
-    // Update rating
-    document.getElementById('modal-product-stars').innerHTML = this.renderStars(product.rating);
-  document.getElementById('modal-product-rating').textContent = `${product.rating} (${product.reviews} reseñas)`;
-    
-    // Update price
-    document.getElementById('modal-current-price').textContent = Currency.formatPrice(product.price);
+    featuresContainer.innerHTML = (product.features || []).map(feature => `<li>${feature}</li>`).join('');
+
+    // Rating
+    document.getElementById('modal-product-stars').innerHTML = this.renderStars(product.rating || 0);
+    document.getElementById('modal-product-rating').textContent = `${product.rating || 0} (${product.reviews || 0} reseñas)`;
+
+    // Price
+    document.getElementById('modal-current-price').textContent = Currency.formatPrice(product.price || 0);
     const originalPriceElement = document.getElementById('modal-original-price');
     if (product.originalPrice > product.price) {
       originalPriceElement.textContent = Currency.formatPrice(product.originalPrice);
@@ -160,17 +219,48 @@ class ProductManager {
     } else {
       originalPriceElement.style.display = 'none';
     }
-    
-    // Set up add to cart button
+
+    // Add to cart
     const modalAddToCartBtn = document.getElementById('modal-add-to-cart');
-    modalAddToCartBtn.onclick = () => {
-      shoppingCart.addToCart(productId);
-      this.closeModal();
-    };
-    
-    // Show modal
+    if (modalAddToCartBtn) {
+      modalAddToCartBtn.onclick = () => {
+        shoppingCart.addToCart(productId);
+        this.closeModal();
+      };
+    }
+
+    // Abrir modal
     const modal = document.getElementById('product-modal');
-    modal.classList.add('show');
+    if (modal) modal.classList.add('show');
+  }
+
+  initModalCarousel(carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prev = carousel.querySelector('.carousel-prev');
+    const next = carousel.querySelector('.carousel-next');
+    const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+    let index = slides.findIndex(s => s.classList.contains('active')) || 0;
+
+    function go(i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === index));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === index));
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev && (prev.onclick = () => go(index - 1));
+    next && (next.onclick = () => go(index + 1));
+    dots.forEach(d => d.onclick = () => go(parseInt(d.dataset.index)));
+
+    // keyboard support
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prev && prev.click();
+      if (e.key === 'ArrowRight') next && next.click();
+    });
+
+    go(index);
   }
 
   closeModal() {
@@ -215,12 +305,15 @@ class ProductManager {
     const container = document.getElementById('category-filters');
     if (!container) return;
 
-    container.innerHTML = this.categories.map(category => `
-      <button class="category-filter btn btn-secondary ${category === 'all' ? 'active' : ''}" 
-              data-category="${category}">
-  ${category === 'all' ? 'Todos los productos' : category}
-      </button>
-    `).join('');
+    container.innerHTML = this.categories.map(category => {
+      const label = category === 'all' ? 'Todos los productos' : (ProductManager.CATEGORY_LABELS[category] || category);
+      return `
+        <button class="category-filter btn btn-secondary ${category === 'all' ? 'active' : ''}" 
+                data-category="${category}">
+          ${label}
+        </button>
+      `;
+    }).join('');
   }
 
   renderProducts() {

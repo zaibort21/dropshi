@@ -1,270 +1,270 @@
 [
   {
     "id": 60,
-    "name": "Pen Set",
+    "name": "Set de bolígrafos premium",
     "price": 209,
     "originalPrice": 314,
     "category": "Sports & Outdoors",
     "image": "aspiradora 1.png",
-    "description": "Premium pen set with modern design and superior quality.",
+    "description": "Set de bolígrafos premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 5,
     "reviews": 1038
   },
   {
     "id": 36,
-    "name": "Pillow",
+    "name": "Almohada premium",
     "price": 69,
     "originalPrice": 146,
     "category": "Sports & Outdoors",
     "image": "https://images.unsplash.com/photo-1500057835251?w=400",
-    "description": "Premium pillow with modern design and superior quality.",
+    "description": "Almohada premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 5,
     "reviews": 857
   },
   {
     "id": 53,
-    "name": "Lip Balm",
+    "name": "Bálsamo labial premium",
     "price": 156,
     "originalPrice": 275,
     "category": "Electronics",
     "image": "https://images.unsplash.com/photo-1500281846470?w=400",
-    "description": "Premium lip balm with modern design and superior quality.",
+    "description": "Bálsamo labial premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 5,
     "reviews": 187
   },
   {
     "id": 18,
-    "name": "Air Purifier",
+    "name": "Purificador de aire HEPA",
     "price": 179.99,
     "originalPrice": 299.99,
     "category": "Home & Kitchen",
     "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
-    "description": "HEPA air purifier with smart sensors and quiet operation.",
+    "description": "Purificador de aire HEPA con sensores inteligentes y funcionamiento silencioso.",
     "features": [
-      "HEPA Filter",
-      "Smart Sensors",
-      "Quiet Operation",
-      "App Control"
+      "Filtro HEPA",
+      "Sensores inteligentes",
+      "Funcionamiento silencioso",
+      "Control por app"
     ],
     "rating": 4.9,
     "reviews": 1043
   },
   {
     "id": 12,
-    "name": "Yoga Mat",
+    "name": "Esterilla de yoga antideslizante",
     "price": 34.99,
     "originalPrice": 69.99,
     "category": "Sports & Outdoors",
     "image": "https://images.unsplash.com/photo-1506629905607-c65e11bdc85d?w=400",
-    "description": "Premium non-slip yoga mat with extra cushioning and carrying strap.",
+    "description": "Esterilla de yoga premium antideslizante con acolchado extra y correa de transporte.",
     "features": [
-      "Non-slip Surface",
-      "Extra Cushioning",
-      "Carrying Strap",
-      "Eco-friendly"
+      "Superficie antideslizante",
+      "Acolchado extra",
+      "Correa de transporte",
+      "Ecológica"
     ],
     "rating": 4.9,
     "reviews": 756
   },
   {
     "id": 87,
-    "name": "Coffee Maker 2",
+    "name": "Cafetera premium",
     "price": 44,
     "originalPrice": 66,
     "category": "Office",
     "image": "https://images.unsplash.com/photo-1500267224370?w=400",
-    "description": "Premium coffee maker with modern design and superior quality.",
+    "description": "Cafetera premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.9,
     "reviews": 597
   },
   {
     "id": 3,
-    "name": "Minimalist Leather Wallet",
+    "name": "Cartera de cuero minimalista",
     "price": 39.99,
     "originalPrice": 79.99,
     "category": "Accessories",
     "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
-    "description": "Premium leather wallet with RFID blocking technology and minimalist design.",
+    "description": "Cartera de cuero premium con tecnología de bloqueo RFID y diseño minimalista.",
     "features": [
-      "RFID Blocking",
-      "Genuine Leather",
-      "Slim Design",
-      "Card Slots"
+      "Bloqueo RFID",
+      "Cuero genuino",
+      "Diseño delgado",
+      "Ranuras para tarjetas"
     ],
     "rating": 4.9,
     "reviews": 567
   },
   {
     "id": 84,
-    "name": "Mouse 2",
+    "name": "Mouse inalámbrico premium",
     "price": 44,
     "originalPrice": 109,
     "category": "Sports & Outdoors",
     "image": "https://images.unsplash.com/photo-1500035887951?w=400",
-    "description": "Premium mouse with modern design and superior quality.",
+    "description": "Mouse inalámbrico premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.9,
     "reviews": 523
   },
   {
     "id": 67,
-    "name": "Controller",
+    "name": "Controlador premium",
     "price": 147,
     "originalPrice": 261,
     "category": "Office",
     "image": "https://images.unsplash.com/photo-1500170120998?w=400",
-    "description": "Premium controller with modern design and superior quality.",
+    "description": "Controlador premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.9,
     "reviews": 429
   },
   {
     "id": 88,
-    "name": "Blender 2",
+    "name": "Licuadora premium",
     "price": 189,
     "originalPrice": 323,
     "category": "Gaming",
     "image": "https://images.unsplash.com/photo-1500191293062?w=400",
-    "description": "Premium blender with modern design and superior quality.",
+    "description": "Licuadora premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.9,
     "reviews": 305
   },
   {
     "id": 30,
-    "name": "Blender",
+    "name": "Licuadora compacta",
     "price": 23,
     "originalPrice": 42,
     "category": "Home & Kitchen",
     "image": "https://images.unsplash.com/photo-1500294482654?w=400",
-    "description": "Premium blender with modern design and superior quality.",
+    "description": "Licuadora compacta premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.9,
     "reviews": 227
   },
   {
     "id": 1,
-    "name": "Wireless Bluetooth Earbuds Pro",
+    "name": "Auriculares inalámbricos Pro",
     "price": 89.99,
     "originalPrice": 149.99,
     "category": "Electronics",
     "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400",
-    "description": "Premium wireless earbuds with active noise cancellation and premium sound quality.",
+    "description": "Auriculares inalámbricos premium con cancelación activa de ruido y calidad de sonido superior.",
     "features": [
-      "Active Noise Cancellation",
-      "30-hour battery life",
-      "Wireless charging case"
+      "Cancelación activa de ruido",
+      "Hasta 30 horas de batería",
+      "Estuche con carga inalámbrica"
     ],
     "rating": 4.8,
     "reviews": 1234
   },
   {
     "id": 10,
-    "name": "Stainless Steel Water Bottle",
+    "name": "Botella térmica de acero inoxidable",
     "price": 24.99,
     "originalPrice": 44.99,
     "category": "Sports & Outdoors",
     "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400",
-    "description": "Insulated stainless steel water bottle that keeps drinks cold for 24 hours.",
+    "description": "Botella térmica de acero inoxidable que mantiene las bebidas frías por 24 horas.",
     "features": [
-      "24h Cold",
-      "12h Hot",
-      "BPA Free",
-      "Leak Proof"
+      "Mantiene 24h fría",
+      "Mantiene 12h caliente",
+      "Libre de BPA",
+      "A prueba de fugas"
     ],
     "rating": 4.8,
     "reviews": 987
   },
   {
     "id": 62,
-    "name": "Calendar",
+    "name": "Calendario premium",
     "price": 149,
     "originalPrice": 230,
     "category": "Home & Kitchen",
     "image": "https://images.unsplash.com/photo-1500143063234?w=400",
-    "description": "Premium calendar with modern design and superior quality.",
+    "description": "Calendario premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.8,
     "reviews": 900
   },
   {
     "id": 31,
-    "name": "Kitchen Scale",
+    "name": "Báscula de cocina premium",
     "price": 156,
     "originalPrice": 258,
     "category": "Fashion",
     "image": "https://images.unsplash.com/photo-1500119257046?w=400",
-    "description": "Premium kitchen scale with modern design and superior quality.",
+    "description": "Báscula de cocina premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.8,
     "reviews": 895
   },
   {
     "id": 17,
-    "name": "Gaming Keyboard",
+    "name": "Teclado gaming mecánico",
     "price": 129.99,
     "originalPrice": 199.99,
     "category": "Gaming",
     "image": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400",
-    "description": "Mechanical gaming keyboard with RGB backlighting and programmable keys.",
+    "description": "Teclado gaming mecánico con retroiluminación RGB y teclas programables.",
     "features": [
-      "Mechanical Switches",
-      "RGB Backlight",
-      "Programmable Keys",
+      "Interruptores mecánicos",
+      "Retroiluminación RGB",
+      "Teclas programables",
       "Anti-ghosting"
     ],
     "rating": 4.8,
@@ -272,291 +272,19 @@
   },
   {
     "id": 95,
-    "name": "Sunglasses 2",
+    "name": "Gafas de sol premium",
     "price": 143,
     "originalPrice": 255,
     "category": "Home & Kitchen",
     "image": "https://images.unsplash.com/photo-1500198404356?w=400",
-    "description": "Premium sunglasses with modern design and superior quality.",
+    "description": "Gafas de sol premium con diseño moderno y calidad superior.",
     "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
     ],
     "rating": 4.8,
     "reviews": 828
-  },
-  {
-    "id": 59,
-    "name": "Desk Organizer",
-    "price": 74,
-    "originalPrice": 136,
-    "category": "Sports & Outdoors",
-    "image": "https://images.unsplash.com/photo-1500284029705?w=400",
-    "description": "Premium desk organizer with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 682
-  },
-  {
-    "id": 14,
-    "name": "Skincare Set",
-    "price": 89.99,
-    "originalPrice": 149.99,
-    "category": "Beauty",
-    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400",
-    "description": "Complete skincare routine set with cleanser, serum, and moisturizer.",
-    "features": [
-      "Complete Routine",
-      "Natural Ingredients",
-      "Dermatologist Tested",
-      "All Skin Types"
-    ],
-    "rating": 4.8,
-    "reviews": 623
-  },
-  {
-    "id": 80,
-    "name": "Smart Watch 2",
-    "price": 127,
-    "originalPrice": 224,
-    "category": "Beauty",
-    "image": "https://images.unsplash.com/photo-1500244348202?w=400",
-    "description": "Premium smart watch with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 611
-  },
-  {
-    "id": 94,
-    "name": "Pillow 2",
-    "price": 154,
-    "originalPrice": 254,
-    "category": "Home & Kitchen",
-    "image": "https://images.unsplash.com/photo-1500158678960?w=400",
-    "description": "Premium pillow with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 425
-  },
-  {
-    "id": 104,
-    "name": "Dumbbell Set 2",
-    "price": 63,
-    "originalPrice": 128,
-    "category": "Sports & Outdoors",
-    "image": "https://images.unsplash.com/photo-1500293590786?w=400",
-    "description": "Premium dumbbell set with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 412
-  },
-  {
-    "id": 6,
-    "name": "Premium Coffee Mug Set",
-    "price": 49.99,
-    "originalPrice": 89.99,
-    "category": "Home & Kitchen",
-    "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400",
-    "description": "Set of 4 premium ceramic coffee mugs with elegant design and perfect grip.",
-    "features": [
-      "Ceramic Material",
-      "Dishwasher Safe",
-      "Heat Resistant",
-      "Set of 4"
-    ],
-    "rating": 4.8,
-    "reviews": 321
-  },
-  {
-    "id": 50,
-    "name": "Exercise Mat",
-    "price": 38,
-    "originalPrice": 98,
-    "category": "Fashion",
-    "image": "https://images.unsplash.com/photo-1500299730749?w=400",
-    "description": "Premium exercise mat with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 280
-  },
-  {
-    "id": 48,
-    "name": "Gym Bag",
-    "price": 90,
-    "originalPrice": 160,
-    "category": "Fashion",
-    "image": "https://images.unsplash.com/photo-1500148077737?w=400",
-    "description": "Premium gym bag with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 272
-  },
-  {
-    "id": 29,
-    "name": "Coffee Maker",
-    "price": 27,
-    "originalPrice": 57,
-    "category": "Office",
-    "image": "https://images.unsplash.com/photo-1500241697093?w=400",
-    "description": "Premium coffee maker with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 257
-  },
-  {
-    "id": 76,
-    "name": "Lens Filter",
-    "price": 74,
-    "originalPrice": 136,
-    "category": "Photography",
-    "image": "https://images.unsplash.com/photo-1500006667998?w=400",
-    "description": "Premium lens filter with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 202
-  },
-  {
-    "id": 85,
-    "name": "Monitor 2",
-    "price": 160,
-    "originalPrice": 247,
-    "category": "Fashion",
-    "image": "https://images.unsplash.com/photo-1500035133237?w=400",
-    "description": "Premium monitor with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 188
-  },
-  {
-    "id": 100,
-    "name": "Jewelry Set 2",
-    "price": 212,
-    "originalPrice": 352,
-    "category": "Photography",
-    "image": "https://images.unsplash.com/photo-1500132763059?w=400",
-    "description": "Premium jewelry set with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 139
-  },
-  {
-    "id": 39,
-    "name": "Wallet",
-    "price": 90,
-    "originalPrice": 145,
-    "category": "Beauty",
-    "image": "https://images.unsplash.com/photo-1500084317892?w=400",
-    "description": "Premium wallet with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 113
-  },
-  {
-    "id": 43,
-    "name": "Handbag",
-    "price": 32,
-    "originalPrice": 86,
-    "category": "Sports & Outdoors",
-    "image": "https://images.unsplash.com/photo-1500129683934?w=400",
-    "description": "Premium handbag with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.8,
-    "reviews": 98
-  },
-  {
-    "id": 2,
-    "name": "Smart Fitness Watch",
-    "price": 199.99,
-    "originalPrice": 299.99,
-    "category": "Wearables",
-    "image": "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400",
-    "description": "Advanced fitness tracking with heart rate monitoring and GPS functionality.",
-    "features": [
-      "Heart Rate Monitor",
-      "GPS Tracking",
-      "Water Resistant",
-      "7-day battery"
-    ],
-    "rating": 4.7,
-    "reviews": 892
-  },
-  {
-    "id": 70,
-    "name": "Mouse Pad",
-    "price": 51,
-    "originalPrice": 96,
-    "category": "Sports & Outdoors",
-    "image": "https://images.unsplash.com/photo-1500108980622?w=400",
-    "description": "Premium mouse pad with modern design and superior quality.",
-    "features": [
-      "Premium Quality",
-      "Modern Design",
-      "Durable Material",
-      "Easy to Use"
-    ],
-    "rating": 4.7,
-    "reviews": 844
   }
 ]
