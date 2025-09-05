@@ -167,7 +167,7 @@ class ProductManager {
         slide.className = 'carousel-slide';
         if (idx === 0) slide.classList.add('active');
         const img = document.createElement('img');
-        img.src = src || '';
+        img.src = encodeURI(src || '');
         img.alt = `${product.name} - ${idx + 1}`;
         slide.appendChild(img);
         track.appendChild(slide);
@@ -356,7 +356,7 @@ class ProductManager {
     const discountPercentage = Math.round((1 - product.price / product.originalPrice) * 100);
     let imageHtml = '';
     if (product.images && product.images.length > 0) {
-      const slides = product.images.map((img, idx) => `\n            <div class="carousel-slide"><img data-src="${img}" alt="${product.name} - ${idx+1}" loading="lazy"></div>`).join('');
+  const slides = product.images.map((img, idx) => `\n            <div class="carousel-slide"><img data-src="${encodeURI(img)}" alt="${product.name} - ${idx+1}" loading="lazy"></div>`).join('');
       imageHtml = `
         <div class="carousel">
           <div class="carousel-track">
@@ -372,7 +372,7 @@ class ProductManager {
         </div>
       `;
     } else {
-      imageHtml = `<div class="image-container"><img class="image-responsive skeleton" data-src="${product.image || ''}" alt="${product.name}" loading="lazy"></div>`;
+  imageHtml = `<div class="image-container"><img class="image-responsive skeleton" data-src="${encodeURI(product.image || '')}" alt="${product.name}" loading="lazy"></div>`;
     }
 
     return `
@@ -613,7 +613,7 @@ class ShoppingCart {
 
     cartItemsContainer.innerHTML = this.items.map(item => `
       <div class="cart-item">
-        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+        <img src="${encodeURI(item.image)}" alt="${item.name}" class="cart-item-image">
         <div class="cart-item-details">
           <div class="cart-item-title">${item.name}</div>
           <div class="cart-item-price">${Currency.formatPrice(item.price)}</div>
