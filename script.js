@@ -19,16 +19,36 @@ class ProductManager {
     this.categories = [];
     this.currentFilter = 'all';
     this.currentPage = 1;
-    this.productsPerPage = 12;
+  this.productsPerPage = 10;
     this.init();
   }
 
   async init() {
     await this.loadProducts();
+    this.normalizeProducts();
     this.extractCategories();
     this.setupEventListeners();
     this.renderProducts();
     this.renderCategories();
+  }
+
+  // Normaliza campos de productos para compatibilidad con diferentes esquemas
+  normalizeProducts() {
+    this.products = this.products.map(p => {
+      const prod = { ...p };
+      // nombre
+      if (!prod.name && prod.title) prod.name = prod.title;
+      // descripción principal
+      if (!prod.description) prod.description = prod.descriptionHtml ? prod.descriptionHtml.replace(/<[^>]+>/g, '') : (prod.shortDescription || '');
+      // imágenes: mantener `images` o convertir `image`
+      if (!prod.images || prod.images.length === 0) {
+        if (prod.image) prod.images = [prod.image];
+      }
+      // precios por defecto
+      if (typeof prod.price === 'undefined') prod.price = 0;
+      if (typeof prod.originalPrice === 'undefined') prod.originalPrice = prod.price;
+      return prod;
+    });
   }
 
   async loadProducts() {
@@ -36,8 +56,8 @@ class ProductManager {
       const response = await fetch('./products.json');
       this.products = await response.json();
     } catch (error) {
-      console.error('Error loading products:', error);
-      this.showError('Failed to load products. Please try again later.');
+      console.error('Error cargando productos:', error);
+      this.showError('No se pudieron cargar los productos. Intenta nuevamente más tarde.');
     }
   }
 
@@ -129,7 +149,7 @@ class ProductManager {
     
     // Update rating
     document.getElementById('modal-product-stars').innerHTML = this.renderStars(product.rating);
-    document.getElementById('modal-product-rating').textContent = `${product.rating} (${product.reviews} reviews)`;
+  document.getElementById('modal-product-rating').textContent = `${product.rating} (${product.reviews} reseñas)`;
     
     // Update price
     document.getElementById('modal-current-price').textContent = Currency.formatPrice(product.price);
@@ -198,7 +218,7 @@ class ProductManager {
     container.innerHTML = this.categories.map(category => `
       <button class="category-filter btn btn-secondary ${category === 'all' ? 'active' : ''}" 
               data-category="${category}">
-        ${category === 'all' ? 'All Products' : category}
+  ${category === 'all' ? 'Todos los productos' : category}
       </button>
     `).join('');
   }
@@ -219,8 +239,8 @@ class ProductManager {
     if (paginatedProducts.length === 0) {
       container.innerHTML = `
         <div class="no-products">
-          <h3>No products found</h3>
-          <p>Try adjusting your search or filter criteria.</p>
+          <h3>No se encontraron productos</h3>
+          <p>Intenta ajustar tu búsqueda o filtros.</p>
         </div>
       `;
       return;
@@ -233,46 +253,57 @@ class ProductManager {
       this.imageObserver.observe(img);
     });
 
+  // Init carousels inside product cards
+  setTimeout(() => { initCarousels(); }, 50);
+
     this.updatePagination(products.length);
   }
 
   createProductCard(product) {
     const discountPercentage = Math.round((1 - product.price / product.originalPrice) * 100);
-    
+    let imageHtml = '';
+    if (product.images && product.images.length > 0) {
+      const slides = product.images.map((img, idx) => `\n            <div class="carousel-slide"><img data-src="${img}" alt="${product.name} - ${idx+1}" loading="lazy"></div>`).join('');
+      imageHtml = `
+        <div class="carousel">
+          <div class="carousel-track">
+            ${slides}
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn prev">‹</button>
+            <button class="carousel-btn next">›</button>
+          </div>
+          <div class="carousel-indicators">
+            ${product.images.map((_,i)=>`<button data-index="${i}" ${i===0? 'class="active"':''}></button>`).join('')}
+          </div>
+        </div>
+      `;
+    } else {
+      imageHtml = `<div class="image-container"><img class="image-responsive skeleton" data-src="${product.image || ''}" alt="${product.name}" loading="lazy"></div>`;
+    }
+
     return `
       <div class="card product-card fade-in" data-product-id="${product.id}">
-        <div class="image-container">
-          <img class="image-responsive skeleton" 
-               data-src="${product.image}" 
-               alt="${product.name}"
-               loading="lazy">
-          ${discountPercentage > 0 ? `<div class="discount-badge">-${discountPercentage}%</div>` : ''}
-        </div>
+        ${imageHtml}
         <div class="card-body">
           <h3 class="product-title">${product.name}</h3>
           <p class="product-description">${product.description}</p>
           <div class="product-features">
-            ${product.features.slice(0, 3).map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
+            ${ (product.features||[]).slice(0, 3).map(feature => `<span class="feature-tag">${feature}</span>`).join('') }
           </div>
           <div class="product-rating">
-            ${this.renderStars(product.rating)}
-            <span class="rating-text">${product.rating} (${product.reviews} reviews)</span>
+            ${this.renderStars(product.rating||0)}
+            <span class="rating-text">${(product.rating||0)} (${product.reviews||0} reseñas)</span>
           </div>
           <div class="product-price">
-            <span class="current-price">${Currency.formatPrice(product.price)}</span>
+            <span class="current-price">${Currency.formatPrice(product.price||0)}</span>
             ${product.originalPrice > product.price ? `<span class="original-price">${Currency.formatPrice(product.originalPrice)}</span>` : ''}
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
-            🛒 Agregar al Carrito
-          </button>
-          <button class="btn btn-secondary view-details" data-product-id="${product.id}">
-            👁️ Ver Detalles
-          </button>
-          <button class="btn btn-whatsapp buy-whatsapp" data-product-id="${product.id}">
-            💬 Consultar por WhatsApp
-          </button>
+          <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">🛒 Agregar al Carrito</button>
+          <button class="btn btn-secondary view-details" data-product-id="${product.id}">👁️ Ver Detalles</button>
+          <button class="btn btn-whatsapp buy-whatsapp" data-product-id="${product.id}">💬 Consultar por WhatsApp</button>
         </div>
       </div>
     `;
@@ -305,7 +336,7 @@ class ProductManager {
       <button class="btn btn-secondary pagination-btn" 
               ${this.currentPage === 1 ? 'disabled' : ''} 
               onclick="productManager.goToPage(${this.currentPage - 1})">
-        Previous
+  Anterior
       </button>
     `;
 
@@ -326,7 +357,7 @@ class ProductManager {
       <button class="btn btn-secondary pagination-btn" 
               ${this.currentPage === totalPages ? 'disabled' : ''} 
               onclick="productManager.goToPage(${this.currentPage + 1})">
-        Next
+  Siguiente
       </button>
     `;
 
@@ -350,6 +381,28 @@ class ProductManager {
       `;
     }
   }
+}
+
+// Carousel initializer (autoplay + controls)
+function initCarousels(){
+  document.querySelectorAll('.carousel').forEach(car => {
+    const track = car.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prev = car.querySelector('.carousel-btn.prev');
+    const next = car.querySelector('.carousel-btn.next');
+    const indicators = Array.from(car.querySelectorAll('.carousel-indicators button'));
+    let idx = 0;
+    function go(i){ idx = (i+slides.length)%slides.length; track.style.transform = `translateX(-${idx*100}%)`; indicators.forEach((b,bi)=> b.classList.toggle('active', bi===idx)); }
+    prev && prev.addEventListener('click', ()=> { go(idx-1); });
+    next && next.addEventListener('click', ()=> { go(idx+1); });
+    indicators.forEach((btn,i)=> btn.addEventListener('click', ()=> go(i)));
+    // autoplay
+    let interval = setInterval(()=> go(idx+1), 3500);
+    car.addEventListener('mouseenter', ()=> clearInterval(interval));
+    car.addEventListener('mouseleave', ()=> interval = setInterval(()=> go(idx+1), 3500));
+    // initial
+    go(0);
+  });
 }
 
 // Shopping Cart Management
@@ -429,7 +482,7 @@ class ShoppingCart {
     const notification = document.createElement('div');
     notification.className = 'notification success';
     notification.innerHTML = `
-      <span>✓ ${productName} added to cart</span>
+      <span>✓ ${productName} agregado al carrito</span>
     `;
     
     document.body.appendChild(notification);
@@ -457,8 +510,8 @@ class ShoppingCart {
     if (this.items.length === 0) {
       cartItemsContainer.innerHTML = `
         <div class="empty-cart">
-          <h3>Your cart is empty</h3>
-          <p>Start shopping to add items to your cart!</p>
+          <h3>Tu carrito está vacío</h3>
+          <p>Comienza a comprar para añadir artículos a tu carrito.</p>
         </div>
       `;
       cartTotalContainer.innerHTML = '';
@@ -601,7 +654,7 @@ class ShoppingCart {
 
   proceedToCheckout() {
     if (this.items.length === 0) {
-      alert('Your cart is empty!');
+      alert('¡Tu carrito está vacío!');
       return;
     }
 

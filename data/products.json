@@ -3,13 +3,17 @@
     "id": "1",
     "sku": "TC-10",
     "slug": "tc-10",
-    "title": "TC 10",
-    "price": 0,
-    "stock": 10,
-    "shortDescription": "Producto placeholder",
-    "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": ["../aspiradora 1.png","../aspiradora 3.jpeg","../aspiradora2.png"],
-    "tags": ["gel blaster"]
+  "title": "Aspiradora Premium TC-10",
+  "name": "Aspiradora Premium TC-10",
+  "price": 0,
+  "originalPrice": 0,
+  "stock": 10,
+  "shortDescription": "Aspiradora portátil de alto rendimiento para el hogar.",
+  "descriptionHtml": "<p>Aspiradora portátil con motor silencioso, gran potencia de succión y accesorios para diferentes superficies.</p>",
+  "description": "Aspiradora portátil con motor silencioso, gran potencia de succión y accesorios para diferentes superficies.",
+  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
+  "tags": ["aspiradora","hogar","limpieza"],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "2",
@@ -20,8 +24,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "3",
@@ -32,8 +37,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "4",
@@ -44,8 +50,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "5",
@@ -56,8 +63,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "6",
@@ -68,8 +76,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "7",
@@ -80,8 +89,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "8",
@@ -92,8 +102,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "9",
@@ -104,8 +115,9 @@
     "stock": 10,
     "shortDescription": "Producto placeholder",
     "descriptionHtml": "<p>Descripción editable.</p>",
-    "images": [],
-    "tags": []
+  "images": [],
+  "tags": [],
+  "features": ["Productos premium","Alta calidad","Materiales durables"]
   },
   {
     "id": "10",
