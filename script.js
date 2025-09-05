@@ -860,9 +860,18 @@ class FeaturedCarousel {
   }
 
   setupFeaturedProducts() {
-    // Get top 8 products for carousel
-    this.featuredProducts = productManager.products
-      .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews)
+    // Prefer products explicitly marked as featured in the catalog
+    const all = productManager.products || [];
+    const featuredFlagged = all.filter(p => p.featured === true);
+    if (featuredFlagged.length > 0) {
+      this.featuredProducts = featuredFlagged.slice(0, 8);
+      return;
+    }
+
+    // Fallback: Get top 8 products by rating/reviews
+    this.featuredProducts = all
+      .slice() // copy
+      .sort((a, b) => (b.rating || 0) - (a.rating || 0) || (b.reviews || 0) - (a.reviews || 0))
       .slice(0, 8);
   }
 
@@ -872,12 +881,22 @@ class FeaturedCarousel {
     
     if (!track || !indicators) return;
 
-    // Render carousel items
-    track.innerHTML = this.featuredProducts.map(product => `
+    // Render lightweight carousel items (ensure images load inside carousel)
+    track.innerHTML = this.featuredProducts.map(product => {
+      const imgSrc = encodeURI((product.images && product.images[0]) || product.image || '');
+      const title = product.name || product.title || '';
+      const price = Currency.formatPrice(product.price || 0);
+      return `
       <div class="carousel-item">
-        ${productManager.createProductCard(product)}
+        <div class="carousel-card">
+          <div class="carousel-thumb"><img src="${imgSrc}" alt="${title}" style="width:100%;height:auto;max-height:180px;object-fit:contain;border-radius:8px;"/></div>
+          <div class="carousel-meta" style="padding:12px 16px;">
+            <div style="font-weight:600;margin-bottom:6px;">${title}</div>
+            <div style="color:var(--color-text-secondary);font-size:14px;margin-bottom:8px;">${price}</div>
+          </div>
+        </div>
       </div>
-    `).join('');
+    `}).join('');
 
     // Calculate number of slides
     const totalSlides = Math.ceil(this.featuredProducts.length / this.itemsPerSlide);
