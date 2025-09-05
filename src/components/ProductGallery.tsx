@@ -21,7 +21,7 @@ export interface ProductGalleryProps {
  * wraps around when reaching the end. Thumbnails are rendered horizontally
  * below the primary image and can be scrolled on smaller screens.
  */
-export default function ProductGallery({ images, placeholder = "/product-placeholder.jpg" }: ProductGalleryProps) {
+export default function ProductGallery({ images, placeholder = "/placeholders/product-placeholder.jpg" }: ProductGalleryProps) {
   // If no images exist, fall back to an array containing the placeholder. This
   // simplifies the logic for selecting the active image.
   const imageList = images && images.length > 0 ? images : [placeholder];
@@ -50,9 +50,10 @@ export default function ProductGallery({ images, placeholder = "/product-placeho
         <Image
           src={imageList[current]}
           alt={`Imagen ${current + 1} de ${imageList.length}`}
-          fill
-          sizes="(min-width: 768px) 50vw, 100vw"
-          className="rounded-lg object-contain"
+          layout="fill"
+          objectFit="contain"
+          priority
+          className="rounded-lg"
         />
       </div>
       {/* Thumbnail navigation */}
@@ -62,13 +63,11 @@ export default function ProductGallery({ images, placeholder = "/product-placeho
             key={index}
             type="button"
             onClick={() => setCurrent(index)}
-            className={`relative w-20 h-20 flex-shrink-0 border-2 ${
-              current === index ? "border-blue-600" : "border-transparent"
-            } rounded-md focus:outline-none`}
+            className={`relative w-20 h-20 flex-shrink-0 border-2 ${current === index ? 'border-blue-600' : 'border-transparent'} rounded-md focus:outline-none`}
             aria-label={`Seleccionar imagen ${index + 1}`}
             aria-selected={current === index}
           >
-            <Image src={url} alt={`Miniatura ${index + 1}`} fill sizes="80px" className="rounded object-cover" />
+            <Image src={url} alt={`Miniatura ${index + 1}`} layout="fill" objectFit="cover" className="rounded" />
           </button>
         ))}
       </div>
