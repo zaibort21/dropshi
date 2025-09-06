@@ -12,6 +12,18 @@ const Currency = {
   }
 };
 
+// Normaliza y codifica una ruta de imagen solo si no está ya codificada (evita doble-encoding)
+function safeSrc(src) {
+  if (!src) return '';
+  try {
+    // Si ya contiene un % seguido de dos hex, asumimos que está codificada y no re-codificamos
+    if (/%[0-9A-Fa-f]{2}/.test(src)) return src;
+  } catch (e) {
+    // ignore
+  }
+  return encodeURI(src);
+}
+
 // Product Management System
 class ProductManager {
   constructor() {
@@ -57,6 +69,24 @@ class ProductManager {
       // imágenes: mantener `images` o convertir `image`
       if (!prod.images || prod.images.length === 0) {
         if (prod.image) prod.images = [prod.image];
+      }
+      // resolver rutas locales: si la entrada es solo un nombre, buscar en carpetas comunes
+      if (prod.images && prod.images.length) {
+        prod.images = prod.images.map(src => {
+          if (!src) return src;
+          // si es URL absoluta o ruta relativa ya con slash, dejarla
+          if (/^(https?:)?\/\//i.test(src) || src.startsWith('/') || src.startsWith('./') || src.includes('/')) {
+            return src;
+          }
+          // intento preferente: carpeta `imagenes/` (usada en el repo), luego `assets/images/`
+          // encodeURI para espacios y caracteres especiales
+          const encoded = encodeURI(src);
+          return `imagenes/${encoded}`;
+        });
+        // Asegurar que `image` principal apunte a la primera imagen normalizada (evita miniaturas rotas)
+        if (!prod.image && prod.images.length) {
+          prod.image = prod.images[0];
+        }
       }
       // precios por defecto
       if (typeof prod.price === 'undefined') prod.price = 0;
@@ -166,8 +196,8 @@ class ProductManager {
         const slide = document.createElement('div');
         slide.className = 'carousel-slide';
         if (idx === 0) slide.classList.add('active');
-        const img = document.createElement('img');
-        img.src = encodeURI(src || '');
+  const img = document.createElement('img');
+  img.src = safeSrc(src || '');
         img.alt = `${product.name} - ${idx + 1}`;
         slide.appendChild(img);
         track.appendChild(slide);
@@ -356,7 +386,7 @@ class ProductManager {
     const discountPercentage = Math.round((1 - product.price / product.originalPrice) * 100);
     let imageHtml = '';
     if (product.images && product.images.length > 0) {
-  const slides = product.images.map((img, idx) => `\n            <div class="carousel-slide"><img data-src="${encodeURI(img)}" alt="${product.name} - ${idx+1}" loading="lazy"></div>`).join('');
+  const slides = product.images.map((img, idx) => `\n            <div class="carousel-slide"><img data-src="${safeSrc(img)}" alt="${product.name} - ${idx+1}" loading="lazy"></div>`).join('');
       imageHtml = `
         <div class="carousel">
           <div class="carousel-track">
@@ -372,7 +402,7 @@ class ProductManager {
         </div>
       `;
     } else {
-  imageHtml = `<div class="image-container"><img class="image-responsive skeleton" data-src="${encodeURI(product.image || '')}" alt="${product.name}" loading="lazy"></div>`;
+  imageHtml = `<div class="image-container"><img class="image-responsive skeleton" data-src="${safeSrc(product.image || '')}" alt="${product.name}" loading="lazy"></div>`;
     }
 
     return `
@@ -611,21 +641,24 @@ class ShoppingCart {
       return;
     }
 
-    cartItemsContainer.innerHTML = this.items.map(item => `
-      <div class="cart-item">
-        <img src="${encodeURI(item.image)}" alt="${item.name}" class="cart-item-image">
-        <div class="cart-item-details">
-          <div class="cart-item-title">${item.name}</div>
-          <div class="cart-item-price">${Currency.formatPrice(item.price)}</div>
+      cartItemsContainer.innerHTML = this.items.map(item => {
+        const thumb = safeSrc((item.images && item.images[0]) || item.image || '');
+        return `
+        <div class="cart-item">
+          <img src="${thumb}" alt="${item.name}" class="cart-item-image">
+          <div class="cart-item-details">
+            <div class="cart-item-title">${item.name}</div>
+            <div class="cart-item-price">${Currency.formatPrice(item.price)}</div>
+          </div>
+          <div class="cart-item-quantity">
+            <button class="quantity-btn" data-product-id="${item.id}" data-action="decrease">-</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-btn" data-product-id="${item.id}" data-action="increase">+</button>
+          </div>
+          <div class="cart-item-total">${Currency.formatPrice(item.price * item.quantity)}</div>
         </div>
-        <div class="cart-item-quantity">
-          <button class="quantity-btn" data-product-id="${item.id}" data-action="decrease">-</button>
-          <span>${item.quantity}</span>
-          <button class="quantity-btn" data-product-id="${item.id}" data-action="increase">+</button>
-        </div>
-        <div class="cart-item-total">${Currency.formatPrice(item.price * item.quantity)}</div>
-      </div>
-    `).join('');
+      `;
+      }).join('');
 
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
@@ -883,7 +916,7 @@ class FeaturedCarousel {
 
     // Render lightweight carousel items (ensure images load inside carousel)
     track.innerHTML = this.featuredProducts.map(product => {
-      const imgSrc = encodeURI((product.images && product.images[0]) || product.image || '');
+      const imgSrc = safeSrc((product.images && product.images[0]) || product.image || '');
       const title = product.name || product.title || '';
       const price = Currency.formatPrice(product.price || 0);
       return `

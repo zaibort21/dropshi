@@ -1,12 +1,13 @@
 [
   {
     "id": 60,
-    "name": "Set de bolígrafos premium",
+    "name": "Aspirador De Coche Doble Proposito",
     "price": 209,
     "originalPrice": 314,
-    "category": "Sports & Outdoors",
-    "image": "aspiradora 1.png",
-    "description": "Set de bolígrafos premium con diseño moderno y calidad superior.",
+    "category": "Hogar",
+  "image": "aspiradora 1.png",
+  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora 2.png"],
+"description": "✨ Aspirador de coche 2 en 1: Succión y Soplado 6000 Pa\n\nCaracterísticas principales:\n\n🔋 Motor sin escobillas de cobre puro: potencia real de 6000 Pa para una limpieza profunda y eficiente.\n\n💨 Succión potente y constante: elimina polvo, migas y suciedad persistente sin pérdida de fuerza ni sobrecalentamiento.\n\n🔌 Diseño inalámbrico y portátil: olvídate de los cables, úsalo fácilmente en cualquier lugar.\n\n💧 Uso en seco y húmedo: aspira polvo, agua, arena o grava sin complicaciones, ideal para todo tipo de residuos.\n\n🌀 Función 2 en 1: aspira y sopla: limpia tu coche, teclado o esquinas difíciles, y también infla globos u objetos con rapidez.\n\n🧹 Limpieza multifuncional: accede sin esfuerzo a rincones, grietas, debajo de los asientos y zonas de difícil acceso.",
     "features": [
       "Productos premium",
       "Diseño moderno",
@@ -36,13 +37,13 @@
   },
   {
     "id": 53,
-    "name": "Bálsamo labial premium",
+    "name": "Enterizo Atletic Largo",
     "price": 156,
     "originalPrice": 275,
     "category": "Electronics",
-  "image": "https://images.unsplash.com/photo-1500281846470?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Bálsamo labial premium con diseño moderno y calidad superior.",
+  "image": "enterizo.jpeg",
+  "images": ["enterizo2.jpeg","enterizo3.jpeg","enterizo4.jpeg","enterizo5.jpeg","enterizo6.jpeg","enterizo7.jpeg"],
+  "description": "Enterizo Atletic Largo con diseño moderno y calidad superior.",
     "features": [
       "Productos premium",
       "Diseño moderno",

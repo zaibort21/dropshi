@@ -50,6 +50,13 @@ foreach ($item in $list) {
     $url = $item.url
     if (-not $url) { Write-Warning "Item sin url: $($item | ConvertTo-Json -Compress)"; continue }
 
+    # Omitir rutas locales (assets/ o rutas relativas)
+    if ($url -match '^(\.|/|assets/|\.\/|assets\\)') { Write-Host "Saltando recurso local: $url"; continue }
+
+    # provider si existe
+    $provider = if ($item.provider) { $item.provider } else { 'provider-unknown' }
+    $providerSafe = $provider -replace '[\\/:*?"<>|]', '-' -replace '\s+', '-'
+
     $fileName = if ($item.fileName) { $item.fileName } else {
         $uri = [System.Uri]$url
         [System.IO.Path]::GetFileName($uri.LocalPath)
@@ -57,7 +64,12 @@ foreach ($item in $list) {
 
     # Reemplazar caracteres inválidos
     $safeName = $fileName -replace '[\\/:*?"<>|]', '-' -replace '\s+', ' '
-    $dest = Join-Path -Path $absImagesFolder -ChildPath $safeName
+
+    # Carpeta por proveedor
+    $providerFolder = Join-Path -Path $absImagesFolder -ChildPath $providerSafe
+    if (-not (Test-Path $providerFolder)) { New-Item -ItemType Directory -Path $providerFolder | Out-Null }
+
+    $dest = Join-Path -Path $providerFolder -ChildPath $safeName
 
     try {
         Write-Host "Descargando $url -> $dest"
