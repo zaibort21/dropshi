@@ -1,0 +1,13 @@
+{
+  "name": "dropshi-scripts",
+  "version": "1.0.0",
+  "description": "Scripts para extraer y descargar imágenes desde el panel de Dropi",
+  "main": "scrape-dropi.js",
+  "scripts": {
+    "scrape": "node ./scripts/scrape-dropi.js"
+  },
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "puppeteer-core": "^20.0.0"
+  }
+}
