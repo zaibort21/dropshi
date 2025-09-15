@@ -1,14 +1,14 @@
 // Currency conversion utility
 const Currency = {
-  USD_TO_COP_RATE: 4000, // 1 USD = 4000 COP (approximate)
-  
-  formatPrice(usdPrice) {
-    const copPrice = Math.round(usdPrice * this.USD_TO_COP_RATE);
-    return `$${copPrice.toLocaleString('es-CO')} COP`;
+  // Now treating prices in products.json as COP integers
+  formatPrice(copPrice) {
+    // accept numbers or numeric strings
+    const n = Math.round(Number(copPrice) || 0);
+    return `$${n.toLocaleString('es-CO')} COP`;
   },
   
-  getPriceValue(usdPrice) {
-    return Math.round(usdPrice * this.USD_TO_COP_RATE);
+  getPriceValue(copPrice) {
+    return Math.round(Number(copPrice) || 0);
   }
 };
 
@@ -682,11 +682,11 @@ class ShoppingCart {
             </div>
             <div class="summary-line">
               <span>Envío:</span>
-              <span>${shippingCost > 0 ? `$${shippingCost.toLocaleString('es-CO')} COP` : 'GRATIS'}</span>
+              <span>${shippingCost > 0 ? Currency.formatPrice(shippingCost) : 'GRATIS'}</span>
             </div>
             <div class="summary-line total">
               <span>Total:</span>
-              <span>$${finalTotal.toLocaleString('es-CO')} COP</span>
+              <span>${Currency.formatPrice(finalTotal)}</span>
             </div>
             <div class="summary-line">
               <span>Entrega estimada:</span>
@@ -802,9 +802,9 @@ class ShoppingCart {
       if (location.department && location.city) {
         const dept = window.colombiaAutomation.colombianDepartments[location.department];
         const shippingCost = finalTotal > Currency.getPriceValue(total) ? dept.shippingCost : 0;
-        shippingInfo = `\n*Información de envío:*\n`;
-        shippingInfo += `• Destino: ${location.city}, ${dept.name}\n`;
-        shippingInfo += `• Costo de envío: ${shippingCost > 0 ? Currency.formatPrice(shippingCost / Currency.USD_TO_COP_RATE) : 'GRATIS'}\n`;
+  shippingInfo = `\n*Información de envío:*\n`;
+  shippingInfo += `• Destino: ${location.city}, ${dept.name}\n`;
+  shippingInfo += `• Costo de envío: ${shippingCost > 0 ? Currency.formatPrice(shippingCost) : 'GRATIS'}\n`;
       }
     }
     
@@ -826,7 +826,7 @@ class ShoppingCart {
       message += shippingInfo;
     }
     
-    message += `*Total final:* ${Currency.formatPrice(finalTotal / Currency.USD_TO_COP_RATE)}\n\n`;
+  message += `*Total final:* ${Currency.formatPrice(finalTotal)}\n\n`;
     message += "📍 *Información importante:*\n";
     message += "• Los productos son importados directamente de fabricantes internacionales\n";
     message += "• Tiempo de entrega: 7-15 días hábiles en Colombia\n";
