@@ -110,8 +110,9 @@ class ProductManager {
 
   async loadProducts() {
     try {
-      const response = await fetch('./products.json');
-      this.products = await response.json();
+      // Append a timestamp to avoid stale cached responses (helps when deploying updates)
+      const resp = await fetch(`./products.json?t=${Date.now()}`, { cache: 'no-store' });
+      this.products = await resp.json();
     } catch (error) {
       console.error('Error cargando productos:', error);
       this.showError('No se pudieron cargar los productos. Intenta nuevamente más tarde.');
@@ -171,8 +172,9 @@ class ProductManager {
   setupLazyLoading() {
     const options = {
       root: null,
-      rootMargin: '50px',
-      threshold: 0.1
+      // Increase rootMargin on mobile so images start loading earlier when scrolling
+      rootMargin: '200px',
+      threshold: 0.05
     };
 
     this.imageObserver = new IntersectionObserver((entries) => {
@@ -215,16 +217,47 @@ class ProductManager {
       const track = document.createElement('div');
       track.className = 'carousel-track';
 
+      // Render image slides
       (product.images || [product.image]).forEach((src, idx) => {
         const slide = document.createElement('div');
         slide.className = 'carousel-slide';
         if (idx === 0) slide.classList.add('active');
-  const img = document.createElement('img');
-  img.src = safeSrc(src || '');
+        const img = document.createElement('img');
+        img.src = safeSrc(src || '');
         img.alt = `${product.name} - ${idx + 1}`;
+        // Fallback inline SVG if image fails to load
+        img.onerror = () => {
+          img.onerror = null;
+          img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>';
+          img.classList.add('image-error');
+        };
         slide.appendChild(img);
         track.appendChild(slide);
       });
+
+      // If the product has a video, add a video slide at the end
+      if (product.video) {
+        const vidSlide = document.createElement('div');
+        vidSlide.className = 'carousel-slide';
+        const video = document.createElement('video');
+        video.controls = true;
+        video.preload = 'metadata';
+        video.src = safeSrc(product.video);
+        video.style.maxWidth = '100%';
+        video.style.maxHeight = '420px';
+        video.onloadeddata = () => {
+          // no-op for now
+        };
+        video.onerror = () => {
+          // replace with fallback image if video fails
+          const fallback = document.createElement('img');
+          fallback.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Video no disponible</text></svg>';
+          vidSlide.innerHTML = '';
+          vidSlide.appendChild(fallback);
+        };
+        vidSlide.appendChild(video);
+        track.appendChild(vidSlide);
+      }
 
       carousel.appendChild(track);
 
@@ -300,6 +333,19 @@ class ProductManager {
       slides.forEach((s, idx) => s.classList.toggle('active', idx === index));
       dots.forEach((d, idx) => d.classList.toggle('active', idx === index));
       track.style.transform = `translateX(-${index * 100}%)`;
+
+      // Pause any videos that are not visible; avoid autoplay but ensure only active video can play
+      slides.forEach((s, idx) => {
+        const vid = s.querySelector('video');
+        if (vid) {
+          if (idx === index) {
+            // keep paused by default; user can press play
+            // vid.play().catch(()=>{});
+          } else {
+            try { vid.pause(); vid.currentTime = 0; } catch (e) {}
+          }
+        }
+      });
     }
 
     prev && (prev.onclick = () => go(index - 1));
