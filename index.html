@@ -761,14 +761,14 @@
       .modal-body .modal-product-info { flex-direction: column; }
       .modal-product-image, .modal-product-details { max-width: 100%; }
       .modal-carousel img { max-height: 320px; }
-      /* Make product images responsive and fit card width on very small screens */
-      .product-card .carousel-track img,
-      .product-card .image-container img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: center center; /* centrar la imagen */
-        max-height: 360px;
+
+      /* Eliminar espacio y padding en carousel modal para móvil */
+      .modal-carousel .carousel-track {
+        gap: 0 !important;
+        flex-wrap: nowrap !important;
+      }
+      .modal-carousel .carousel-slide {
+        padding: 0 !important;
       }
     }
 
@@ -806,6 +806,15 @@
   width: 100% !important;
   min-width: 100% !important;
   box-sizing: border-box;
+}
+
+/* Quitar gap y padding en carousel modal */
+.modal-carousel .carousel-track {
+  gap: 0 !important;
+  flex-wrap: nowrap !important;
+}
+.modal-carousel .carousel-slide {
+  padding: 0 !important;
 }
   </style>
 </head>

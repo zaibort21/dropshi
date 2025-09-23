@@ -18,19 +18,14 @@
     "reviews": 1038
   },
   {
-    "id": 36,
-    "name": "Leggins Suplex Bota Campana",
-  "price": 50000,
-  "originalPrice": 50000,
-    "category": "deportes y aire libre",
-  "image": "leggins.jpeg",
-  "images": ["leggins 2.jpeg","leggins 3.png","leggins.jpeg"],
-  "description": "Almohada premium con diseño moderno y calidad superior.",
-  "sizes": {
-    "S": 250,
-    "M": 250,
-    "L": 250
-  },
+  "id": 36,
+  "name": "Lampara Parlante Led De Astronauta",
+  "price": 120000,
+  "originalPrice": 120000,
+  "category": "Electronica,hogar",
+  "image": "lamparaparlante.webp",
+  "images": ["lamparaparlante.webp","lamparaparlante1.webp","lamparaparlante2.webp"],
+"description": "El Parlante Bluetooth Levitante eleva tu música—literalmente. Su base magnética hace flotar el altavoz mientras proyecta sonido 360° claro y envolvente. Se empareja en segundos con tu móvil, tablet o PC y ofrece horas de reproducción sin cables. Es una pieza decorativa que añade un toque futurista a sala, estudio o escritorio, ideal para relajarte, trabajar o sorprender a tus invitados.\n\nHighlights\n\nLevitación magnética real (efecto “wow”).\n\nAudio 360° equilibrado.\n\nBluetooth estable y de largo alcance.\n\nBatería recargable para uso inalámbrico.\n\nCompatible con iOS/Android/PC.",
     "features": [
       "Productos premium",
       "Diseño moderno",
