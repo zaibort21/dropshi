@@ -423,6 +423,77 @@
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg);
     }
+
+    /* Universal carousel fixes: ensure slides take full width and images are centered */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      background: transparent;
+    }
+
+    .carousel .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
+      will-change: transform;
+      align-items: center;
+    }
+
+    .carousel .carousel-slide {
+      flex: 0 0 100%;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 8px 12px;
+    }
+
+    .carousel .carousel-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      object-position: center center;  /* centrar la imagen */
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Controls positioned over the carousel so they don't create extra space */
+    .carousel .carousel-controls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateY(-50%);
+      pointer-events: none;
+      padding: 0 8px;
+    }
+
+    .carousel .carousel-controls .carousel-btn {
+      pointer-events: auto;
+      background: rgba(255,255,255,0.95);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--color-primary);
+    }
+
+    .carousel .carousel-indicators {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 8px;
+    }
     
     .carousel-btn {
       position: absolute;
@@ -519,6 +590,44 @@
       }
     }
 
+    /* Ensure product card carousels show one slide at a time and center images */
+    .products-grid .carousel,
+    .product-card .carousel {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .products-grid .carousel .carousel-track,
+    .product-card .carousel .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
+      width: 100%;
+      align-items: center;
+      gap: 0 !important;  /* eliminar separación entre slides */
+    }
+
+    .products-grid .carousel .carousel-slide,
+    .product-card .carousel .carousel-slide {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 !important;  /* quitar padding para centrar bien la imagen */
+      box-sizing: border-box;
+    }
+
+    .products-grid .carousel .carousel-slide img,
+    .product-card .carousel .carousel-slide img {
+      width: 100%;
+  max-width: 420px;
+  max-height: 300px;
+      height: auto;
+      object-fit: contain;
+      object-position: center center;  /* centrar la imagen */
+      display: block;
+      margin: 0 auto;
+    }
+
     /* Modal carousel styles */
     .modal-body .modal-product-info {
       display: flex;
@@ -534,30 +643,46 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
     }
 
     .modal-product-details {
       flex: 1 1 50%;
       max-width: 520px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-6);
     }
 
     .modal-carousel {
       position: relative;
       width: 100%;
+      height: 400px;
       overflow: hidden;
     }
 
     .modal-carousel .carousel-track {
       display: flex;
+      flex-direction: column;  /* vertical */
       transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
     }
 
     .modal-carousel .carousel-slide {
-      flex: 0 0 100%;
+      flex: none;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px;
+    }
+
+    .modal-carousel .carousel-slide img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+      object-position: center center;
     }
 
     .modal-carousel img {
@@ -615,6 +740,22 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
+
+    /* Force horizontal carousel in modal */
+    .modal-carousel .carousel-track {
+      flex-direction: row !important;
+    }
+    .modal-carousel {
+      height: auto !important;
+    }
+    .modal-product-image {
+      max-height: none !important;
+    }
+    .modal-product-details {
+      display: block !important;
+      grid-template-columns: none !important;
+    }
+
     /* Responsive adjustments for modal */
     @media (max-width: 900px) {
       .modal-body .modal-product-info { flex-direction: column; }
@@ -626,6 +767,7 @@
         width: 100%;
         height: auto;
         object-fit: contain;
+        object-position: center center; /* centrar la imagen */
         max-height: 360px;
       }
     }
@@ -637,6 +779,34 @@
       .product-card .image-container img { max-height: 300px; }
       .carousel-btn { display: none; } /* hide big carousel buttons on tiny screens */
     }
+
+    /* Mostrar solo un slide en modal: flex track y overflow oculto */
+.modal-carousel {
+  overflow: hidden;
+}
+.modal-carousel .carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+.modal-carousel .carousel-slide {
+  flex: 0 0 100%;
+}
+
+/* Refinamiento modal carousel para un slide visible */
+.modal-product-image .modal-carousel {
+  width: 100% !important;
+  overflow: hidden !important;
+}
+.modal-product-image .modal-carousel .carousel-track {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+.modal-product-image .modal-carousel .carousel-slide {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box;
+}
   </style>
 </head>
 <body>

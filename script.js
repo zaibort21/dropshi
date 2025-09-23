@@ -598,11 +598,14 @@ function initCarousels(){
   document.querySelectorAll('.carousel').forEach(car => {
     const track = car.querySelector('.carousel-track');
     const slides = Array.from(track.children);
+    // Ensure each slide takes full carousel width (fix mobile sliding where slides appear cut)
+    const carWidth = car.clientWidth || car.getBoundingClientRect().width;
+    slides.forEach(s => { s.style.flex = '0 0 ' + carWidth + 'px'; });
     const prev = car.querySelector('.carousel-btn.prev');
     const next = car.querySelector('.carousel-btn.next');
     const indicators = Array.from(car.querySelectorAll('.carousel-indicators button'));
     let idx = 0;
-    function go(i){ idx = (i+slides.length)%slides.length; track.style.transform = `translateX(-${idx*100}%)`; indicators.forEach((b,bi)=> b.classList.toggle('active', bi===idx)); }
+    function go(i){ idx = (i+slides.length)%slides.length; track.style.transform = `translateX(-${idx * carWidth}px)`; indicators.forEach((b,bi)=> b.classList.toggle('active', bi===idx)); }
     prev && prev.addEventListener('click', ()=> { go(idx-1); });
     next && next.addEventListener('click', ()=> { go(idx+1); });
     indicators.forEach((btn,i)=> btn.addEventListener('click', ()=> go(i)));
@@ -610,6 +613,13 @@ function initCarousels(){
     let interval = setInterval(()=> go(idx+1), 3500);
     car.addEventListener('mouseenter', ()=> clearInterval(interval));
     car.addEventListener('mouseleave', ()=> interval = setInterval(()=> go(idx+1), 3500));
+    // Recompute slide widths on resize (handles orientation changes)
+    window.addEventListener('resize', () => {
+      const newWidth = car.clientWidth || car.getBoundingClientRect().width;
+      slides.forEach(s => { s.style.flex = '0 0 ' + newWidth + 'px'; });
+      // Reposition track to current index with new width
+      track.style.transform = `translateX(-${idx * newWidth}px)`;
+    });
     // initial
     go(0);
   });
@@ -1011,7 +1021,7 @@ class FeaturedCarousel {
       const price = Currency.formatPrice(product.price || 0);
       return `
       <div class="carousel-item">
-        <div class="carousel-card">
+        <div class="carousel-card featured-click" data-product-id="${product.id}">
           <div class="carousel-thumb"><img src="${imgSrc}" alt="${title}" style="width:100%;height:auto;max-height:180px;object-fit:contain;border-radius:8px;"/></div>
           <div class="carousel-meta" style="padding:12px 16px;">
             <div style="font-weight:600;margin-bottom:6px;">${title}</div>
@@ -1049,6 +1059,22 @@ class FeaturedCarousel {
       indicators.addEventListener('click', (e) => {
         if (e.target.classList.contains('carousel-indicator')) {
           this.goToSlide(parseInt(e.target.dataset.slide));
+        }
+      });
+    }
+
+    // Delegated click handler: open product modal when a featured item is clicked
+    const track = document.getElementById('carousel-track');
+    if (track) {
+      track.addEventListener('click', (e) => {
+        const el = e.target.closest('.featured-click');
+        if (el && el.dataset && el.dataset.productId) {
+          const pid = parseInt(el.dataset.productId);
+          if (window.productManager && typeof window.productManager.showProductDetails === 'function') {
+            window.productManager.showProductDetails(pid);
+            // scroll to products section lightly to show modal context
+            document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       });
     }
@@ -1121,3 +1147,28 @@ document.addEventListener('DOMContentLoaded', () => {
     featuredCarousel = new FeaturedCarousel();
   }, 500);
 });
+
+// Navegación del carousel en modal
+(function() {
+  const carousel = document.querySelector('.modal-carousel');
+  if (!carousel) return;
+  const track = carousel.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  let index = 0;
+  const prev = carousel.querySelector('.carousel-prev');
+  const next = carousel.querySelector('.carousel-next');
+
+  function update() {
+    const offset = -index * carousel.clientWidth;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  prev && prev.addEventListener('click', () => {
+    index = Math.max(0, index - 1);
+    update();
+  });
+  next && next.addEventListener('click', () => {
+    index = Math.min(slides.length - 1, index + 1);
+    update();
+  });
+})();
