@@ -2,11 +2,11 @@
   {
     "id": 60,
     "name": "Aspirador De Coche Doble Proposito",
-  "price": 836000,
-  "originalPrice": 1256000,
+  "price": 40000,
+  "originalPrice": 40000,
     "category": "Hogar",
   "image": "aspiradora 1.png",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora 2.png"],
+  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
 "description": "✨ Aspirador de coche 2 en 1: Succión y Soplado 6000 Pa\n\nCaracterísticas principales:\n\n🔋 Motor sin escobillas de cobre puro: potencia real de 6000 Pa para una limpieza profunda y eficiente.\n\n💨 Succión potente y constante: elimina polvo, migas y suciedad persistente sin pérdida de fuerza ni sobrecalentamiento.\n\n🔌 Diseño inalámbrico y portátil: olvídate de los cables, úsalo fácilmente en cualquier lugar.\n\n💧 Uso en seco y húmedo: aspira polvo, agua, arena o grava sin complicaciones, ideal para todo tipo de residuos.\n\n🌀 Función 2 en 1: aspira y sopla: limpia tu coche, teclado o esquinas difíciles, y también infla globos u objetos con rapidez.\n\n🧹 Limpieza multifuncional: accede sin esfuerzo a rincones, grietas, debajo de los asientos y zonas de difícil acceso.",
     "features": [
       "Productos premium",
@@ -20,12 +20,17 @@
   {
     "id": 36,
     "name": "Leggins Suplex Bota Campana",
-  "price": 276000,
-  "originalPrice": 584000,
-    "category": "Sports & Outdoors",
+  "price": 50000,
+  "originalPrice": 50000,
+    "category": "deportes y aire libre",
   "image": "leggins.jpeg",
   "images": ["leggins 2.jpeg","leggins 3.png","leggins.jpeg"],
   "description": "Almohada premium con diseño moderno y calidad superior.",
+  "sizes": {
+    "S": 250,
+    "M": 250,
+    "L": 250
+  },
     "features": [
       "Productos premium",
       "Diseño moderno",
@@ -38,11 +43,24 @@
   {
     "id": 53,
     "name": "Enterizo Atletic Largo",
-  "price": 624000,
-  "originalPrice": 1100000,
-    "category": "Electronics",
-  "image": "enterizo.jpeg",
-  "images": ["enterizo2.jpeg","enterizo3.jpeg","enterizo4.jpeg","enterizo5.jpeg","enterizo6.jpeg","enterizo7.jpeg"],
+  "price": 70000,
+  "originalPrice": 70000,
+    "category": "deportes y aire libre",
+  "image": "Enterizo1.jpg",
+  "images": ["Enterizo1.jpg","Enterizo2.jpg","Enterizo3.jpg","Enterizo4.jpg","Enterizo5.jpg","Enterizo6.jpg","Enterizo7.jpg"],
+  "sizes": {
+    "S": 100,
+    "M": 100,
+    "L": 100,
+    "XL": 100
+  },
+  "colors": {
+    "verde militar": { "S": 100, "M": 100, "L": 100 },
+    "gris claro": { "S": 100, "M": 100, "L": 100 },
+    "negro": { "S": 100, "M": 100, "L": 100 },
+    "blanco": { "S": 100, "M": 100, "L": 100 },
+    "lila": { "S": 100, "M": 100, "L": 100 }
+  },
   "description": "Enterizo Atletic Largo con diseño moderno y calidad superior.",
     "features": [
       "Productos premium",
@@ -56,11 +74,11 @@
   {
     "id": 18,
     "name": "Parlante Jbl Xl Xtreme 4",
-  "price": 603960,
-  "originalPrice": 1199960,
-    "category": "Home & Kitchen",
+  "price": 150000,
+  "originalPrice": 150000,
+    "category": "Electronica,hogar",
   "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
-  "images": ["bafleJbl.jpeg","bafleJBL.1.jpeg","ParlanteJBL.jpeg"],
+  "images": ["ParlanteJBL.webp","bafleJBL.png","bafleJBL.1png.png"],
 "description": "Parlante Bluetooth JBL Xtreme Réplica 1.1\n\nPotencia y diseño que impresionan\nEl JBL Xtreme Réplica 1.1 es el compañero perfecto para tus fiestas y reuniones. Su asa de transporte con correa desmontable le da un toque moderno y práctico, ideal para llevarlo a cualquier lugar. Su diseño robusto y estilo casi militar resalta, mientras sus dos radiadores de graves visibles vibran al ritmo de la música para ofrecer graves profundos y potentes que se sienten.\n\nSonido fuerte y nítido\nGracias a sus cuatro controladores y dos radiadores de graves, este parlante entrega un sonido claro y equilibrado incluso en volúmenes altos, con potencia de salida de 20W RMS (300W PMPO). Perfecto para ambientar espacios grandes sin necesidad de subirlo al máximo.\n\nCaracterísticas principales\n\nMedidas: 30 x 12.8 x 14.5 cm\nMaterial: Plástico + ABS de alta calidad\nBocinas: 78 mm x2 (10W c/u)\nBatería: 1.800 mAh, hasta 6 horas de reproducción (según volumen)\nFrecuencia de respuesta: 80 Hz – 15 kHz\nFunciones: Bocina, Radio FM, entrada TF, USB, AUX, TWS\nPartyBoost: Conecta dos parlantes iguales para duplicar el sonido\nResistencia: Protección contra salpicaduras IPX6\nPeso: 1.3 kg\n\nIncluye en la caja\nParlante JBL Xtreme Réplica 1.1\nCorrea de hombro ajustable\nCable de carga tipo C\nManual de usuario (Empaque protegido con bolsa de burbuja)\n\nRecomendaciones\nPromocionar todos los colores disponibles para atraer más clientes.\nAsegurar que la publicidad refleje fielmente el producto, reduciendo devoluciones por expectativas incorrectas.",
     "features": [
       "Filtro HEPA",
@@ -73,13 +91,14 @@
   },
   {
     "id": 12,
-    "name": "Esterilla de yoga antideslizante",
-  "price": 139960,
-  "originalPrice": 279960,
-    "category": "Sports & Outdoors",
-  "image": "https://images.unsplash.com/photo-1506629905607-c65e11bdc85d?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Esterilla de yoga premium antideslizante con acolchado extra y correa de transporte.",
+    "name": "Enterizo Corto Deportivo con Cierre y Cuello Alto",
+  "price": 80000,
+  "originalPrice": 80000,
+    "category": "deportes y aire libre",
+  "image": "enterizocorto1.jpg",
+  "images": ["enterizocorto1.jpg","enterizocorto2.jpg","enterizocorto3.jpg","enterizocorto4.jpg","enterizocorto5.jpg","enterizocorto6.jpeg"],
+  "video": "enterizocorto.mp4",
+  "description": "Enterizo Corto Deportivo con Cierre y Cuello Alto con diseño moderno y calidad superior.",  
     "features": [
       "Superficie antideslizante",
       "Acolchado extra",
@@ -91,13 +110,13 @@
   },
   {
     "id": 87,
-    "name": "Cafetera premium",
-  "price": 176000,
-  "originalPrice": 264000,
+    "name": "Escurridor Soporte De Platos Y Cubiertos",
+  "price": 70000,
+  "originalPrice": 70000,
     "category": "Office",
-  "image": "https://images.unsplash.com/photo-1500267224370?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Cafetera premium con diseño moderno y calidad superior.",
+  "image": "escurridor.png",
+   
+  "description": "Escurridor Soporte De Platos Y Cubiertos   con diseño moderno y calidad superior.",
     "features": [
       "Productos premium",
       "Diseño moderno",
@@ -109,13 +128,13 @@
   },
   {
     "id": 3,
-    "name": "Cartera de cuero minimalista",
-  "price": 159960,
-  "originalPrice": 319960,
+    "name": "Diadema Bose 700 Bt Con Estuche",
+  "price": 75000,
+  "originalPrice": 75000,
     "category": "Accessories",
-  "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Cartera de cuero premium con tecnología de bloqueo RFID y diseño minimalista.",
+  "image": "bosepubli.png",
+  "images": ["bose.jpg","bose2.jpg","bose3.jpg","bose4.jpg","bose5.jpg","bose6.jpg","bose7.jpg"],
+"description": "🎧 Diadema Bluetooth 700 – Potencia y Comodidad en un Solo Producto\n\nEnergía y estilo para los amantes de la tecnología.\nSumérgete en una experiencia de sonido de alta definición con una diadema diseñada para acompañarte en cada momento del día. Su diseño elegante, materiales de calidad y controles intuitivos hacen que disfrutes tu música y llamadas sin esfuerzo.\n\n🌟 Características Principales\n\nConexión inalámbrica avanzada: Empareja fácilmente con tu dispositivo vía Bluetooth, cambia de canción, pausa, ajusta el volumen o sintoniza emisoras FM, todo desde los botones integrados.\n\nMicrófono manos libres: Realiza y recibe llamadas sin interrupciones mientras te mueves.\n\nSonido de alta definición con cancelación de ruido: Aíslate del exterior y escucha tu música con máxima claridad.\n\nComodidad prolongada: Almohadillas acolchadas y ajustables de 10 x 8 cm, suaves al tacto para horas de uso sin molestias.\n\nOpciones de reproducción flexibles: Reproduce música desde tarjeta microSD o a través de su puerto 3.5 mm cuando no uses Bluetooth.\n\n💎 Especificaciones Técnicas\n\nEntradas: Auxiliar, tarjeta SD y USB-C (para carga).\n\nDistancia de transmisión: Hasta 8 metros sin obstáculos.\n\nTiempo de reproducción: Aproximadamente 5 horas continuas.\n\nTiempo de carga: Solo 2 horas.\n\nMateriales: Policarbonato resistente y cuero sintético de alta calidad.\n\n📦 Contenido del Paquete\n\n1 Diadema Bluetooth 700.\n\n1 Cable de carga USB-C.\n\n1 Cable auxiliar de 3.5 mm.\n\n1 Manual de usuario.\n\n1 Estuche de transporte.\n\nPor qué elegirla:\nLa Diadema Bluetooth 700 combina tecnología, comodidad y diseño elegante en un solo dispositivo. Perfecta para quienes desean libertad de movimiento, un sonido envolvente y estilo moderno en cualquier lugar.",
     "features": [
       "Bloqueo RFID",
       "Cuero genuino",
@@ -127,13 +146,13 @@
   },
   {
     "id": 84,
-    "name": "Mouse inalámbrico premium",
-  "price": 176000,
-  "originalPrice": 436000,
-    "category": "Sports & Outdoors",
-  "image": "https://images.unsplash.com/photo-1500035887951?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Mouse inalámbrico premium con diseño moderno y calidad superior.",
+    "name": "Proyector Smart Hy300 Pro",
+  "price": 200000,
+  "originalPrice": 200000,
+    "category": "Electronica,hogar",
+  "image": "proyector.jpeg",
+  "images": ["proyector1.jpeg","proyector2.jpeg","proyector3.jpeg","proyector4.jpeg"],
+"description": "Obtén una experiencia visual inmersiva como nunca antes con el HY-300 Pro, tu proyector inteligente diseñado para transformar cualquier espacio en tu propio cine. Con tecnología de lente avanzada, el HY-300 Pro ofrece colores primarios vibrantes y una nitidez sobresaliente que te permite ver cada detalle con claridad profesional.\n\nCaracterísticas destacadas:\n\n- Resolución nativa HD (720p) con soporte para contenido 4K: Disfruta de imágenes nítidas, realistas y definidas, incluso en pantallas de gran tamaño.\n- Sistema operativo Android integrado: Acceso directo a apps como Netflix, YouTube, Prime Video, y miles más. Sin necesidad de dispositivos extra.\n- Conectividad moderna y completa: WiFi dual (2.4G y 5G), Bluetooth, HDMI, USB y entrada/salida de audio. Fácil conexión con tu teléfono, consola o laptop.\n- Proyección flexible y pantalla grande: Capacidad de producir imágenes de entre 40 hasta 130 pulgadas, con corrección trapezoidal automática o manual para alinear con precisión la imagen.\n- Diseño portátil y silencioso: Ligero, compacto y con ventilador de bajo ruido (< 25 dB), ideal para usar en interiores o exteriores.\n- Duración y brillo óptimo: Vida útil estimada de la lámpara de aprox. 50,000 horas, lo que garantiza muchas funciones sin preocupaciones.",
     "features": [
       "Productos premium",
       "Diseño moderno",
@@ -145,13 +164,13 @@
   },
   {
     "id": 67,
-    "name": "Controlador premium",
-  "price": 588000,
-  "originalPrice": 1044000,
+    "name": "Cepillo Secador De Aguacate Nube",
+  "price": 70000,
+  "originalPrice": 70000,
     "category": "Office",
-  "image": "https://images.unsplash.com/photo-1500170120998?w=400",
+  "image": "cepillo.png",
   "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Controlador premium con diseño moderno y calidad superior.",
+"description": "Cepillo Secador de Cerámica NUBE\n\nBrillo, suavidad y estilo profesional en minutos\n\nEl Cepillo Secador NUBE combina la potencia de un secador con la precisión de un cepillo de salón, ofreciendo un peinado rápido y resultados dignos de un profesional. Su revestimiento de cerámica y tecnología iónica con extractos de aguacate liberan iones negativos que reducen el frizz, protegen la fibra capilar y dejan el cabello sedoso y brillante.\n\n🌟 Características Destacadas\n\nPotencia de 1300 W: Secado y modelado eficiente para todo tipo de cabello, desde el más fino hasta el más grueso.\n\n3 niveles de calor ajustable: Controla la temperatura según tus necesidades: secado rápido, peinado diario o acabado final.\n\nCalentamiento ultrarrápido: Listo para usar en segundos, ideal para las rutinas más ajetreadas.\n\nCable giratorio 360° y punta fría: Máxima comodidad y libertad de movimiento, sin enredos.\n\nVoltaje universal 110-240 V, 50-60 Hz: Perfecto para viajar, sin necesidad de convertidor.\n\n💇‍♀️ Beneficios\n\nReduce el frizz y aporta un brillo natural gracias a su tecnología iónica.\n\nProtege el cabello mientras seca y estiliza, manteniéndolo suave y saludable.\n\nIdeal tanto para uso doméstico como para salones de belleza, garantizando un acabado profesional en cada pasada.",
     "features": [
       "Productos premium",
       "Diseño moderno",
@@ -163,13 +182,13 @@
   },
   {
     "id": 88,
-    "name": "Licuadora premium",
-  "price": 756000,
-  "originalPrice": 1292000,
+    "name": "Secador Profesional Dyson",
+  "price": 120000,
+  "originalPrice": 120000,
     "category": "Gaming",
-  "image": "https://images.unsplash.com/photo-1500191293062?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Licuadora premium con diseño moderno y calidad superior.",
+  "image": "secador.webp",
+  "images": ["secador1.webp","secador3.png","secador2.webp"],
+"description": "🌟 Secador Profesional Dyson Supersonic Iónico – Motor Digital 🌟\n\nTeléfono único de atención ONE TECH: 324 358 5129\n\nRedefine tu rutina de peinado con el Dyson Supersonic, un secador de alto rendimiento diseñado para cuidar la salud de tu cabello mientras logras resultados de salón en casa.\n\n✨ Principales beneficios\n\nSecado ultrarrápido y eficiente: Motor digital Dyson de 1600 W que genera un flujo de aire potente y constante.\n\nTecnología iónica avanzada: Reduce el frizz, aumenta el brillo natural y protege la fibra capilar.\n\nControl total: 3 velocidades y varias configuraciones de calor para un peinado preciso, adaptable a cualquier tipo de cabello.\n\nDiseño ergonómico y profesional: Ligero, balanceado y silencioso, ideal para uso prolongado sin fatiga.\n\n⚡ Especificaciones técnicas\n\nVoltaje: 110 V\n\nPotencia: 1600 W\n\nVelocidades: 3\n\nModo iónico: Sí\n\nUso profesional: Sí",
     "features": [
       "Productos premium",
       "Diseño moderno",
@@ -178,130 +197,5 @@
     ],
     "rating": 4.9,
     "reviews": 305
-  },
-  {
-    "id": 30,
-    "name": "Licuadora compacta",
-  "price": 92000,
-  "originalPrice": 168000,
-    "category": "Home & Kitchen",
-  "image": "https://images.unsplash.com/photo-1500294482654?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Licuadora compacta premium con diseño moderno y calidad superior.",
-    "features": [
-      "Productos premium",
-      "Diseño moderno",
-      "Material duradero",
-      "Fácil de usar"
-    ],
-    "rating": 4.9,
-    "reviews": 227
-  },
-  {
-    "id": 1,
-    "name": "Auriculares inalámbricos Pro",
-  "price": 359960,
-  "originalPrice": 599960,
-    "category": "Electronics",
-  "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Auriculares inalámbricos premium con cancelación activa de ruido y calidad de sonido superior.",
-    "features": [
-      "Cancelación activa de ruido",
-      "Hasta 30 horas de batería",
-      "Estuche con carga inalámbrica"
-    ],
-    "rating": 4.8,
-    "reviews": 1234
-  },
-  {
-    "id": 10,
-    "name": "Botella térmica de acero inoxidable",
-  "price": 99960,
-  "originalPrice": 179960,
-    "category": "Sports & Outdoors",
-  "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Botella térmica de acero inoxidable que mantiene las bebidas frías por 24 horas.",
-    "features": [
-      "Mantiene 24h fría",
-      "Mantiene 12h caliente",
-      "Libre de BPA",
-      "A prueba de fugas"
-    ],
-    "rating": 4.8,
-    "reviews": 987
-  },
-  {
-    "id": 62,
-    "name": "Calendario premium",
-  "price": 596000,
-  "originalPrice": 920000,
-    "category": "Home & Kitchen",
-  "image": "https://images.unsplash.com/photo-1500143063234?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Calendario premium con diseño moderno y calidad superior.",
-    "features": [
-      "Productos premium",
-      "Diseño moderno",
-      "Material duradero",
-      "Fácil de usar"
-    ],
-    "rating": 4.8,
-    "reviews": 900
-  },
-  {
-    "id": 31,
-    "name": "Báscula de cocina premium",
-  "price": 624000,
-  "originalPrice": 1032000,
-    "category": "Fashion",
-  "image": "https://images.unsplash.com/photo-1500119257046?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Báscula de cocina premium con diseño moderno y calidad superior.",
-    "features": [
-      "Productos premium",
-      "Diseño moderno",
-      "Material duradero",
-      "Fácil de usar"
-    ],
-    "rating": 4.8,
-    "reviews": 895
-  },
-  {
-    "id": 17,
-    "name": "Teclado gaming mecánico",
-  "price": 519960,
-  "originalPrice": 799960,
-    "category": "Gaming",
-  "image": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Teclado gaming mecánico con retroiluminación RGB y teclas programables.",
-    "features": [
-      "Interruptores mecánicos",
-      "Retroiluminación RGB",
-      "Teclas programables",
-      "Anti-ghosting"
-    ],
-    "rating": 4.8,
-    "reviews": 892
-  },
-  {
-    "id": 95,
-    "name": "Gafas de sol premium",
-  "price": 572000,
-  "originalPrice": 1020000,
-    "category": "Home & Kitchen",
-  "image": "https://images.unsplash.com/photo-1500198404356?w=400",
-  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
-  "description": "Gafas de sol premium con diseño moderno y calidad superior.",
-    "features": [
-      "Productos premium",
-      "Diseño moderno",
-      "Material duradero",
-      "Fácil de usar"
-    ],
-    "rating": 4.8,
-    "reviews": 828
   }
 ]

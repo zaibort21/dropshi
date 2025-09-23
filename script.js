@@ -24,6 +24,19 @@ function safeSrc(src) {
   return encodeURI(src);
 }
 
+// Debounce utility to limit how often a function is called
+function debounce(fn, wait = 200) {
+  let timeout;
+  return function(...args) {
+    const later = () => {
+      timeout = null;
+      fn.apply(this, args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 // Product Management System
 class ProductManager {
   constructor() {
@@ -114,9 +127,19 @@ class ProductManager {
     // Search functionality
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        this.searchProducts(e.target.value);
-      });
+      // Debounced input to avoid filtering on every keystroke
+      const handler = debounce((e) => {
+        const q = (e.target.value || '').trim();
+        // reset to first page when performing a search
+        this.currentPage = 1;
+        if (q === '') {
+          // empty query -> show filtered by category (if any)
+          this.renderProducts();
+        } else {
+          this.searchProducts(q);
+        }
+      }, 250);
+      searchInput.addEventListener('input', handler);
     }
 
     // Filter functionality
@@ -307,11 +330,25 @@ class ProductManager {
   }
 
   searchProducts(query) {
+    const q = (query || '').toString().toLowerCase().trim();
+    if (!q) return this.renderProducts();
+
     const filteredProducts = this.products.filter(product => {
-      return product.name.toLowerCase().includes(query.toLowerCase()) ||
-             product.description.toLowerCase().includes(query.toLowerCase()) ||
-             product.category.toLowerCase().includes(query.toLowerCase());
+      // Respect category filter if set
+      if (this.currentFilter && this.currentFilter !== 'all' && product.category !== this.currentFilter) return false;
+
+      const name = (product.name || '').toString().toLowerCase();
+      const desc = (product.description || '').toString().toLowerCase();
+      const category = (product.category || '').toString().toLowerCase();
+      const features = (product.features || []).join(' ').toString().toLowerCase();
+      const tags = (product.tags || []).join(' ').toString().toLowerCase();
+      const sku = (product.sku || '').toString().toLowerCase();
+
+      return name.includes(q) || desc.includes(q) || category.includes(q) || features.includes(q) || tags.includes(q) || sku.includes(q);
     });
+
+    // show results starting on page 1
+    this.currentPage = 1;
     this.renderProductsFromArray(filteredProducts);
   }
 
@@ -410,7 +447,7 @@ class ProductManager {
         ${imageHtml}
         <div class="card-body">
           <h3 class="product-title">${product.name}</h3>
-          <p class="product-description">${product.description}</p>
+          <p class="product-description truncated" title="${(product.description||'').replace(/"/g,'&quot;')}">${product.description}</p>
           <div class="product-features">
             ${ (product.features||[]).slice(0, 3).map(feature => `<span class="feature-tag">${feature}</span>`).join('') }
           </div>
@@ -669,8 +706,8 @@ class ShoppingCart {
       const location = window.colombiaAutomation.getSelectedLocation();
       if (location.department && location.city) {
         const dept = window.colombiaAutomation.colombianDepartments[location.department];
-        const subtotalCOP = Currency.getPriceValue(total);
-        const shippingCost = subtotalCOP >= 200000 ? 0 : dept.shippingCost;
+  const subtotalCOP = Currency.getPriceValue(total);
+  const shippingCost = subtotalCOP >= 100000 ? 0 : dept.shippingCost;
         const finalTotal = subtotalCOP + shippingCost;
         
         totalHTML += `
@@ -683,6 +720,9 @@ class ShoppingCart {
             <div class="summary-line">
               <span>Envío:</span>
               <span>${shippingCost > 0 ? Currency.formatPrice(shippingCost) : 'GRATIS'}</span>
+            </div>
+            <div class="summary-line" style="font-size:12px;color:#6b7280;">
+              <em>Nota: el costo es aproximado y puede subir o bajar según la ciudad y la transportadora.</em>
             </div>
             <div class="summary-line total">
               <span>Total:</span>

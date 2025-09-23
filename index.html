@@ -157,10 +157,8 @@
       font-weight: 700;
       line-height: 1.1;
       margin-bottom: var(--spacing-6);
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #fff; /* usar color sólido para mejor legibilidad */
+      text-shadow: 0 6px 26px rgba(0,0,0,0.6);
     }
     
     .hero-subtitle {
@@ -644,17 +642,21 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-section">
+  <!-- Hero Section (imagen de fondo) -->
+  <section id="home" class="hero-section hero-bg" style="background-image: url('imagenes/fondo.png'); background-size:cover; background-position:center;">
+    <div class="hero-overlay">
+      <!-- Fallback debug img (oculta) -->
+      <img src="imagenes/fondo.png" alt="fondo" style="display:none; width:1px; height:1px; object-fit:cover;">
+    </div>
     <div class="container">
       <div class="hero-content text-center">
         <h1 class="hero-title">Descubre productos premium</h1>
         <p class="hero-subtitle">Productos de calidad a precios inmejorables con envío dentro de Colombia</p>
-        
+
         <div class="search-container">
           <input type="text" id="search-input" class="search-input" placeholder="Buscar productos...">
         </div>
-        
+
         <div class="flex justify-center gap-4">
           <a href="#products" class="btn btn-primary">Comprar ahora</a>
           <a href="#about" class="btn btn-secondary">Conócenos</a>
@@ -718,9 +720,18 @@
         <div class="max-w-4xl mx-auto mb-16">
           <p class="text-lg text-secondary mb-6">Somos una empresa especializada en importación y distribución de productos premium, enfocada principalmente en Colombia con visión internacional.</p>
           <div class="bg-white p-6 rounded-lg shadow-sm border-left-accent">
-            <h3 class="text-xl font-semibold mb-4">🏢 Nuestro Modelo de Negocio</h3>
-            <p class="text-secondary mb-4">Los productos que ofrecemos provienen directamente de fabricantes internacionales reconocidos, principalmente de Asia, Estados Unidos y Europa. Nuestro equipo comercial especializado gestiona toda la cadena de importación, desde la selección de proveedores hasta la entrega en tu puerta.</p>
-            <p class="text-secondary"><strong>Proceso de pedidos:</strong> Una vez confirmes tu pedido por WhatsApp, nuestro equipo inicia el proceso de importación personalizada, garantizando que recibas productos auténticos y de la más alta calidad.</p>
+              <h3 class="text-xl font-semibold mb-4">🏢 Nuestro Modelo de Negocio</h3>
+              <p class="text-secondary mb-4">Colaboramos con proveedores colombianos: emprendedores y fabricantes locales que desarrollan productos propios con visión de marca personal. Nuestro enfoque es potenciar iniciativas nacionales ofreciendo soporte en diseño, calidad y comercialización.</p>
+
+              <ul class="text-secondary" style="margin-left: 1rem; margin-top: 0.5rem;">
+                <li><strong>Apoyo a emprendimientos locales:</strong> trabajamos con marcas y creadores colombianos para impulsar su crecimiento y visibilidad.</li>
+                <li><strong>Productos con identidad propia:</strong> promovemos desarrollos con marca personal, diseño diferenciado y trazabilidad desde su origen.</li>
+                <li><strong>Calidad verificada:</strong> coordinamos controles y verificaciones antes del despacho para garantizar estándares acordes a nuestras políticas.</li>
+                <li><strong>Atención y despacho local:</strong> coordinación directa con el proveedor para tiempos de entrega competitivos y seguimiento personalizado.</li>
+                <li><strong>Relación cercana:</strong> comunicación directa vía WhatsApp para consultas, ajustes y seguimiento postventa.</li>
+              </ul>
+
+              <p class="text-secondary" style="margin-top:0.75rem;"><strong>Proceso de pedidos:</strong> Al confirmar tu pedido por WhatsApp coordinamos con el proveedor local para preparar, verificar y despachar tu producto. Esto nos permite ofrecer atención cercana, tiempos de entrega competitivos y seguimiento personalizado durante todo el proceso.</p>
           </div>
         </div>
 
@@ -743,7 +754,8 @@
         </div>
 
         <!-- Shipping Info -->
-        <div class="mt-16 bg-white p-8 rounded-lg shadow-sm">
+        <div class="shipping-widget">
+          <div class="mt-16 bg-white p-8 rounded-lg shadow-sm">
           <h3 class="text-2xl font-semibold mb-6">📦 Información de Envíos</h3>
           <div class="grid grid-cols-2 gap-8 text-left">
             <div>
@@ -764,6 +776,7 @@
                 <li>• Consulta disponibilidad por WhatsApp</li>
               </ul>
             </div>
+          </div>
           </div>
         </div>
       </div>

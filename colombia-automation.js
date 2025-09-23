@@ -3,35 +3,32 @@
 
 class ColombiaAutomation {
   constructor() {
-    // Solo los departamentos donde tenemos bodega: Bogotá, Valle (Cali) y Antioquia (Medellín)
+    // Cobertura nacional (departamentos y ciudades representativas). Esto permite mostrar alcance
+    // aproximado de transportadoras como Servientrega, Envia, Interrapidísimo, Coordinadora, TCC, Veloces, Domina, 99minutos, Futura.
     this.colombianDepartments = {
-      'bogota': {
-        name: 'Bogotá D.C.',
-        capital: 'Bogotá',
-        // Ciudades atendidas desde bodega Bogotá
-        cities: ['Bogotá', 'Soacha', 'Chía', 'Zipaquirá', 'Funza', 'Madrid'],
-        deliveryDays: { min: 4, max: 6 },
-        // Tarifa desde bodega Bogotá (COP)
-        shippingCost: 8000
-      },
-      'valle': {
-        name: 'Valle del Cauca',
-        capital: 'Cali',
-        // Ciudades atendidas desde bodega Cali
-        cities: ['Cali', 'Palmira', 'Buenaventura', 'Tuluá', 'Buga', 'Cartago', 'Jamundí'],
-        deliveryDays: { min: 5, max: 7 },
-        // Tarifa desde bodega Cali (COP)
-        shippingCost: 9000
-      },
-      'antioquia': {
-        name: 'Antioquia',
-        capital: 'Medellín',
-        // Ciudades atendidas desde bodega Medellín
-        cities: ['Medellín', 'Bello', 'Itagüí', 'Envigado', 'Sabaneta', 'Rionegro', 'La Ceja'],
-        deliveryDays: { min: 5, max: 7 },
-        // Tarifa desde bodega Medellín (COP)
-        shippingCost: 10000
-      }
+      "bogota": { name: "Bogotá D.C.", capital: "Bogotá", cities: ["Bogotá", "Soacha", "Chía", "Zipaquirá", "Funza", "Mosquera"], deliveryDays: {min:3,max:5}, shippingCost: 8000 },
+      "antioquia": { name: "Antioquia", capital: "Medellín", cities: ["Medellín", "Bello", "Itagüí", "Envigado", "Sabaneta", "Rionegro"], deliveryDays: {min:4,max:7}, shippingCost: 10000 },
+      "valle": { name: "Valle del Cauca", capital: "Cali", cities: ["Cali", "Palmira", "Buenaventura", "Tuluá", "Buga", "Cartago"], deliveryDays: {min:4,max:7}, shippingCost: 9000 },
+      "cundinamarca": { name: "Cundinamarca", capital: "Bogotá (reg.)", cities: ["Soacha", "Chía", "Zipaquirá", "Facatativá", "Girardot"], deliveryDays: {min:4,max:7}, shippingCost: 9000 },
+      "santander": { name: "Santander", capital: "Bucaramanga", cities: ["Bucaramanga", "Floridablanca", "Girón", "Piedecuesta"], deliveryDays: {min:5,max:8}, shippingCost: 12000 },
+      "boyaca": { name: "Boyacá", capital: "Tunja", cities: ["Tunja", "Sogamoso", "Duitama", "Chiquinquirá"], deliveryDays: {min:5,max:8}, shippingCost: 14000 },
+      "tolima": { name: "Tolima", capital: "Ibagué", cities: ["Ibagué", "Melgar", "Lérida", "Espinal"], deliveryDays: {min:5,max:8}, shippingCost: 12000 },
+      "magdalena": { name: "Magdalena", capital: "Santa Marta", cities: ["Santa Marta", "Ciénaga", "Paraná"], deliveryDays: {min:6,max:10}, shippingCost: 16000 },
+      "atlántico": { name: "Atlántico", capital: "Barranquilla", cities: ["Barranquilla", "Soledad", "Malambo"], deliveryDays: {min:4,max:7}, shippingCost: 11000 },
+      "bolivar": { name: "Bolívar", capital: "Cartagena", cities: ["Cartagena", "Magangué", "Turbaná"], deliveryDays: {min:6,max:10}, shippingCost: 18000 },
+      "risaralda": { name: "Risaralda", capital: "Pereira", cities: ["Pereira", "Dosquebradas", "Santa Rosa de Cabal"], deliveryDays: {min:4,max:7}, shippingCost: 11000 },
+      "quindio": { name: "Quindío", capital: "Armenia", cities: ["Armenia", "Calarcá", "La Tebaida"], deliveryDays: {min:4,max:7}, shippingCost: 11000 },
+      "nariño": { name: "Nariño", capital: "Pasto", cities: ["Pasto", "Tumaco", "Ipiales"], deliveryDays: {min:6,max:12}, shippingCost: 20000 },
+      "caqueta": { name: "Caquetá", capital: "Florencia", cities: ["Florencia"], deliveryDays: {min:8,max:14}, shippingCost: 26000 },
+      "putumayo": { name: "Putumayo", capital: "Mocoa", cities: ["Mocoa"], deliveryDays: {min:8,max:14}, shippingCost: 28000 },
+      "amazonas": { name: "Amazonas", capital: "Leticia", cities: ["Leticia"], deliveryDays: {min:10,max:18}, shippingCost: 40000 },
+      "cesar": { name: "Cesar", capital: "Valledupar", cities: ["Valledupar", "Aguachica"], deliveryDays: {min:6,max:10}, shippingCost: 15000 },
+      "cordoba": { name: "Córdoba", capital: "Montería", cities: ["Montería", "Cereté"], deliveryDays: {min:6,max:10}, shippingCost: 15000 },
+      "sucre": { name: "Sucre", capital: "Sincelejo", cities: ["Sincelejo", "Sincé"], deliveryDays: {min:6,max:10}, shippingCost: 15000 },
+      "huila": { name: "Huila", capital: "Neiva", cities: ["Neiva", "Pitalito"], deliveryDays: {min:6,max:10}, shippingCost: 15000 },
+      "caqueta2": { name: "Caquetá (sec.)", capital: "Florencia", cities: ["Florencia"], deliveryDays: {min:8,max:14}, shippingCost: 26000 },
+      "santander2": { name: "Santander (sec.)", capital: "Bucaramanga", cities: ["Bucaramanga"], deliveryDays: {min:5,max:9}, shippingCost: 12000 }
+      // Nota: Esta lista es representativa — para cobertura completa se puede mapear con APIs de las transportadoras.
     };
 
     this.holidays2024 = [
@@ -260,12 +257,12 @@ class ColombiaAutomation {
     }
 
     const shippingCost = department.shippingCost;
-    const freeShippingThreshold = 200000; // 200,000 COP
+  const freeShippingThreshold = 100000; // 100,000 COP (nuevo umbral)
 
     shippingDiv.innerHTML = `
       <div class="shipping-cost">
         <strong>💰 Envío desde bodega en ${department.capital} a ${city}:</strong><br>
-        Costo estándar: $${shippingCost.toLocaleString('es-CO')} COP<br>
+        Costo aproximado: $${shippingCost.toLocaleString('es-CO')} COP (este valor puede subir o bajar según la ciudad y la transportadora)<br>
         <small>📦 Envío <strong>GRATIS</strong> en pedidos superiores a $${freeShippingThreshold.toLocaleString('es-CO')} COP</small>
       </div>
     `;
