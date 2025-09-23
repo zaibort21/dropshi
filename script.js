@@ -240,9 +240,13 @@ class ProductManager {
         const vidSlide = document.createElement('div');
         vidSlide.className = 'carousel-slide';
         const video = document.createElement('video');
-        video.controls = true;
-        video.preload = 'metadata';
-        video.src = safeSrc(product.video);
+  video.controls = true;
+  video.preload = 'metadata';
+  video.src = safeSrc(product.video);
+  // Enable muted autoplay behavior: many mobile browsers allow autoplay only when muted.
+  video.muted = true;
+  video.playsInline = true;
+  video.autoplay = false; // we'll call play() programmatically when the slide becomes active
         video.style.maxWidth = '100%';
         video.style.maxHeight = '420px';
         video.onloadeddata = () => {
@@ -338,13 +342,13 @@ class ProductManager {
       slides.forEach((s, idx) => {
         const vid = s.querySelector('video');
         if (vid) {
-          if (idx === index) {
-            // keep paused by default; user can press play
-            // vid.play().catch(()=>{});
-          } else {
-            try { vid.pause(); vid.currentTime = 0; } catch (e) {}
+            if (idx === index) {
+              // Try to play muted video when its slide becomes active (allowed in many browsers)
+              try { vid.muted = true; vid.play().catch(()=>{}); } catch (e) {}
+            } else {
+              try { vid.pause(); vid.currentTime = 0; } catch (e) {}
+            }
           }
-        }
       });
     }
 
