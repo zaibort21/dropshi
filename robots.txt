@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zaibort21.github.io/dropshi/sitemap.xml

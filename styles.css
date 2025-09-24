@@ -427,6 +427,12 @@ header, .header { position: sticky; top: 0; z-index: 1000; backdrop-filter: blur
 /* Responsive grid tweak to ensure cards wrap nicely */
 #products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
 
+/* Tabla de envíos simple */
+.tabla-envio{width:100%;max-width:720px;border-collapse:collapse;margin:14px auto;font:500 14px system-ui}
+.tabla-envio th, .tabla-envio td{border:1px solid #e5e7eb;padding:10px}
+.tabla-envio th{background:#f9fafb;text-align:left}
+.tabla-envio caption{font-weight:700;margin-bottom:8px}
+
 .image-responsive {
   width: 100%;
   height: auto;
