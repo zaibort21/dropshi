@@ -192,5 +192,43 @@
     ],
     "rating": 4.9,
     "reviews": 305
-  }
+  },
+{
+  "id": 98,
+  "name": "Colección Exclusiva de Cuadros para el Hogar",
+  "price": 170000,
+  "originalPrice": 170000,
+  "category": "Hogar",
+  "image": "cuadro4.jpg",
+  "images": ["cuadro1.jpg","cuadro2.jpg","cuadro3.jpg","cuadro4.jpg","cuadro5.jpg","cuadro6.jpg","cuadro7.jpg","cuadro8.jpg","cuadro9.jpg","cuadro10.jpg"],
+  "description": "Transforma tus espacios con nuestra colección de cuadros exclusivos, impresos en alta calidad y listos para colgar. Disponibles en dos configuraciones: Retablos de 3 piezas y Retablos de 5 piezas.",
+  "features": [
+    "Impresión premium",
+    "Marco resistente",
+    "Varios tamaños",
+    "Listo para colgar"
+  ],
+  "rating": 4.9,
+  "reviews": 305,
+  "variants": [
+    {
+      "id": "retablos-3",
+      "name": "RETABLOS DE 3 PIEZAS",
+      "price": 170000,
+      "currency": "COP",
+      "sku": "CUAD-3",
+      "description": "Materiales:\n➖ 3 retablos de madera tipo MDF de 12mm de espesor entamborado.\n➡️ 3 de 70x40cm\n✅ Impresión de alta definición en vinilo adhesivo con laminado brillante.\n✅ Fácil instalación.\n✅ Medida total del cuadro con los 3 retablos: 70x120cm.",
+      "images": ["cuadro1.jpg","cuadro2.jpg","cuadro3.jpg"]
+    },
+    {
+      "id": "retablos-5",
+      "name": "RETABLOS DE 5 PIEZAS",
+      "price": 220000,
+      "currency": "COP",
+      "sku": "CUAD-5",
+      "description": "Materiales:\n➖ 5 retablos de madera tipo MDF de 9mm de espesor.\n➡️ 1 de 78X24cm\n➡️ 2 de 60X24cm\n➡️ 2 de 45X18 cm\n\n✅ Impresión de alta definición en vinilo adhesivo.\n✅ Caimán para cada retablo que facilita su instalación.\n✅ Medida total del cuadro con los 5 retablos: 114x78cm.",
+      "images": ["cuadro4.jpg","cuadro5.jpg","cuadro6.jpg"]
+    }
+  ]
+}
 ]
