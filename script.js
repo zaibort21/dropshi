@@ -24,6 +24,48 @@ function safeSrc(src) {
   return encodeURI(src);
 }
 
+// Intenta varias rutas candidatas para una imagen (ayuda con mayúsculas, prefijos, espacios)
+function imageCandidates(src) {
+  if (!src) return [];
+  const candidates = new Set();
+  try {
+    candidates.add(safeSrc(src));
+  } catch (e) {}
+  // common local locations
+  const plain = src.replace(/^\.\/|^\//, '');
+  candidates.add(`imagenes/${encodeURI(plain)}`);
+  candidates.add(`./imagenes/${encodeURI(plain)}`);
+  candidates.add(encodeURI(plain));
+  // lowercase variants
+  try {
+    const lower = plain.toLowerCase();
+    candidates.add(`imagenes/${encodeURI(lower)}`);
+    candidates.add(encodeURI(lower));
+  } catch (e) {}
+  return Array.from(candidates);
+}
+
+function loadImageWithFallback(img, src, context = {}) {
+  const cands = imageCandidates(src);
+  let i = 0;
+  function tryNext() {
+    if (i >= cands.length) {
+      console.error('[Image] all candidates failed', { original: src, tried: cands, context });
+      img.onerror = null;
+      img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>';
+      img.classList.add('image-error');
+      return;
+    }
+    const trySrc = cands[i++];
+    img.onerror = () => {
+      console.warn('[Image] candidate failed, trying next', { trySrc, context });
+      tryNext();
+    };
+    img.src = trySrc;
+  }
+  tryNext();
+}
+
 // Debounce utility to limit how often a function is called
 function debounce(fn, wait = 200) {
   let timeout;
@@ -241,7 +283,7 @@ class ProductManager {
         slide.className = 'carousel-slide';
         if (idx === 0) slide.classList.add('active');
   const img = document.createElement('img');
-  img.src = safeSrc(src || '');
+  loadImageWithFallback(img, src || '', { product: product.name, idx });
   img.alt = `${product.name} - ${idx + 1}`;
   img.loading = 'lazy';
   // default size hints to reduce layout shift (can ajustarse luego)
@@ -328,7 +370,7 @@ class ProductManager {
               s.className = 'carousel-slide';
               if (idx === 0) s.classList.add('active');
               const im = document.createElement('img');
-              im.src = safeSrc(src || '');
+              loadImageWithFallback(im, src || '', { product: product.name, variant: v && v.name, idx });
               im.alt = `${product.name} - ${idx + 1}`;
               im.loading = 'lazy';
               im.width = 600; im.height = 600;
