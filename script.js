@@ -287,6 +287,83 @@ class ProductManager {
       modalImgContainer.appendChild(carousel);
 
       this.initModalCarousel(carousel);
+
+      // Variant selector: si el producto tiene variantes, renderizar botones que actualizan
+      const variantsContainer = document.getElementById('modal-variants');
+      if (variantsContainer) {
+        variantsContainer.innerHTML = '';
+        if (product.variants && Array.isArray(product.variants) && product.variants.length) {
+          // helper: reconstruir carrusel con imágenes dadas
+          const buildCarousel = (images) => {
+            modalImgContainer.innerHTML = '';
+            const c = document.createElement('div');
+            c.className = 'carousel modal-carousel';
+            const t = document.createElement('div');
+            t.className = 'carousel-track';
+            (images || []).forEach((src, idx) => {
+              const s = document.createElement('div');
+              s.className = 'carousel-slide';
+              if (idx === 0) s.classList.add('active');
+              const im = document.createElement('img');
+              im.src = safeSrc(src || '');
+              im.alt = `${product.name} - ${idx + 1}`;
+              im.onerror = () => { im.onerror = null; im.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>'; };
+              s.appendChild(im);
+              t.appendChild(s);
+            });
+            c.appendChild(t);
+            const pbtn = document.createElement('button'); pbtn.className = 'carousel-prev carousel-btn'; pbtn.textContent = '‹';
+            const nbtn = document.createElement('button'); nbtn.className = 'carousel-next carousel-btn'; nbtn.textContent = '›';
+            c.appendChild(pbtn); c.appendChild(nbtn);
+            const inds = document.createElement('div'); inds.className = 'carousel-indicators';
+            (images || []).forEach((_, i) => { const dot = document.createElement('button'); dot.className = i === 0 ? 'carousel-dot active' : 'carousel-dot'; dot.dataset.index = i; inds.appendChild(dot); });
+            c.appendChild(inds);
+            modalImgContainer.appendChild(c);
+            // init carousel behavior
+            this.initModalCarousel(c);
+          };
+
+          product.variants.forEach((v, idx) => {
+            const b = document.createElement('button');
+            b.className = 'variant-btn' + (idx === 0 ? ' active' : '');
+            // mostrar nombre y precio corto en el botón
+            b.textContent = `${v.name} · ${Currency.formatPrice(v.price)}`;
+            b.dataset.variantId = v.id;
+            b.onclick = (ev) => {
+              // marcar activo
+              variantsContainer.querySelectorAll('.variant-btn').forEach(x => x.classList.remove('active'));
+              b.classList.add('active');
+
+              // actualizar precio y originalPrice
+              document.getElementById('modal-current-price').textContent = Currency.formatPrice(v.price || product.price || 0);
+              const origEl = document.getElementById('modal-original-price');
+              if (product.originalPrice && product.originalPrice > (v.price || product.price)) {
+                origEl.textContent = Currency.formatPrice(product.originalPrice);
+                origEl.style.display = 'inline';
+              } else {
+                origEl.style.display = 'none';
+              }
+
+              // actualizar descripción para incluir detalles de la variante
+              const descEl = document.getElementById('modal-product-description');
+              descEl.innerHTML = '';
+              if (product.description) descEl.innerHTML += `<div>${product.description}</div>`;
+              if (v.description) descEl.innerHTML += `<div style="margin-top:.5rem;font-weight:600">${v.name}</div><div>${v.description.replace(/\n/g,'<br/>')}</div>`;
+
+              // reconstruir carrusel con imágenes de la variante si existen, si no usar product.images
+              const imgs = (v.images && v.images.length) ? v.images.map(src => safeSrc(src)) : (product.images || []).map(src => safeSrc(src));
+              buildCarousel(imgs);
+            };
+            variantsContainer.appendChild(b);
+          });
+
+          // activar la primera variante por defecto
+          const firstBtn = variantsContainer.querySelector('.variant-btn');
+          if (firstBtn) setTimeout(() => firstBtn.click(), 50);
+        } else {
+          variantsContainer.innerHTML = '';
+        }
+      }
     }
 
     // Descripción

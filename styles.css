@@ -433,6 +433,11 @@ header, .header { position: sticky; top: 0; z-index: 1000; backdrop-filter: blur
 .tabla-envio th{background:#f9fafb;text-align:left}
 .tabla-envio caption{font-weight:700;margin-bottom:8px}
 
+/* Variant selector styles */
+#modal-variants{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.variant-btn{padding:8px 12px;border-radius:10px;border:1px solid var(--color-border);background:#fff;cursor:pointer}
+.variant-btn.active{border-color:var(--color-accent);background:linear-gradient(135deg,#e6f7ff, #f0fbff)}
+
 .image-responsive {
   width: 100%;
   height: auto;
