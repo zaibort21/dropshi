@@ -240,11 +240,16 @@ class ProductManager {
         const slide = document.createElement('div');
         slide.className = 'carousel-slide';
         if (idx === 0) slide.classList.add('active');
-        const img = document.createElement('img');
-        img.src = safeSrc(src || '');
-        img.alt = `${product.name} - ${idx + 1}`;
+  const img = document.createElement('img');
+  img.src = safeSrc(src || '');
+  img.alt = `${product.name} - ${idx + 1}`;
+  img.loading = 'lazy';
+  // default size hints to reduce layout shift (can ajustarse luego)
+  img.width = 600; img.height = 600;
+  img.classList.add('modal-image');
         // Fallback inline SVG if image fails to load
         img.onerror = () => {
+          console.error('[Modal Image] failed to load', { src: img.src, product: product.name, index: idx });
           img.onerror = null;
           img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>';
           img.classList.add('image-error');
@@ -325,7 +330,10 @@ class ProductManager {
               const im = document.createElement('img');
               im.src = safeSrc(src || '');
               im.alt = `${product.name} - ${idx + 1}`;
-              im.onerror = () => { im.onerror = null; im.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>'; };
+              im.loading = 'lazy';
+              im.width = 600; im.height = 600;
+              im.classList.add('modal-image');
+              im.onerror = () => { console.error('[Variant Image] failed to load', { src: im.src, product: product.name, variant: v && v.name }); im.onerror = null; im.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>'; };
               s.appendChild(im);
               t.appendChild(s);
             });
