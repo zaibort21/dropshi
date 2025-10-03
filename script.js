@@ -100,6 +100,24 @@ class ProductManager {
         if (!prod.image && prod.images.length) {
           prod.image = prod.images[0];
         }
+        // Normalizar imágenes de variantes (si existen)
+        if (prod.variants && Array.isArray(prod.variants)) {
+          prod.variants = prod.variants.map(v => {
+            const variant = { ...v };
+            if (variant.images && variant.images.length) {
+              variant.images = variant.images.map(src => {
+                if (!src) return src;
+                if (/^(https?:)?\/\//i.test(src) || src.startsWith('/') || src.startsWith('./') || src.includes('/')) {
+                  return src;
+                }
+                return `imagenes/${encodeURI(src)}`;
+              });
+            }
+            // ensure variant price numeric
+            if (typeof variant.price !== 'undefined') variant.price = Number(variant.price);
+            return variant;
+          });
+        }
       }
       // precios por defecto
       if (typeof prod.price === 'undefined') prod.price = 0;
