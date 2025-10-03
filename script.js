@@ -418,8 +418,17 @@ class ProductManager {
               if (product.description) descEl.innerHTML += `<div>${product.description}</div>`;
               if (v.description) descEl.innerHTML += `<div style="margin-top:.5rem;font-weight:600">${v.name}</div><div>${v.description.replace(/\n/g,'<br/>')}</div>`;
 
+              // setear variante seleccionada en el estado del modal
+              this.currentModalVariant = v.id;
+
               // reconstruir carrusel con imágenes de la variante si existen, si no usar product.images
-              const imgs = (v.images && v.images.length) ? v.images.map(src => safeSrc(src)) : (product.images || []).map(src => safeSrc(src));
+              const rawImgs = (v.images && v.images.length) ? v.images : (product.images || []);
+              const imgs = rawImgs.map(src => {
+                if (!src) return src;
+                // si ya contiene 'imagenes/' asumir ruta correcta, si no prefix
+                if (src.startsWith('imagenes/') || src.startsWith('./imagenes/') || src.startsWith('/imagenes/')) return src;
+                return `imagenes/${encodeURI(src)}`;
+              });
               buildCarousel(imgs);
             };
             variantsContainer.appendChild(b);
