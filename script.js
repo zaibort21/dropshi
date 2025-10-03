@@ -391,7 +391,9 @@ class ProductManager {
     const modalAddToCartBtn = document.getElementById('modal-add-to-cart');
     if (modalAddToCartBtn) {
       modalAddToCartBtn.onclick = () => {
-        shoppingCart.addToCart(productId);
+        // add selected variant if any
+        const variantId = this.currentModalVariant || null;
+        shoppingCart.addToCart(productId, variantId);
         this.closeModal();
       };
     }
@@ -743,16 +745,35 @@ class ShoppingCart {
     });
   }
 
-  addToCart(productId) {
+  addToCart(productId, variantId = null) {
     const product = productManager.products.find(p => p.id === productId);
     if (!product) return;
 
-    const existingItem = this.items.find(item => item.id === productId);
-    
+    // resolve variant if provided
+    let variant = null;
+    if (variantId && product.variants && Array.isArray(product.variants)) {
+      variant = product.variants.find(v => v.id === variantId) || null;
+    }
+
+    // Use a composite key to differentiate same product different variants
+    const key = variant ? `${productId}::${variant.id}` : `${productId}`;
+
+    const existingItem = this.items.find(item => item.key === key);
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      this.items.push({ ...product, quantity: 1 });
+      const item = {
+        key,
+        id: productId,
+        variantId: variant ? variant.id : null,
+        variantName: variant ? variant.name : null,
+        name: product.name,
+        price: variant && variant.price ? variant.price : (product.price || 0),
+        originalPrice: product.originalPrice || product.price || 0,
+        images: (variant && variant.images && variant.images.length) ? variant.images : (product.images || [product.image]),
+        quantity: 1
+      };
+      this.items.push(item);
     }
 
     this.saveCart();
