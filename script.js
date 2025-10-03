@@ -359,7 +359,7 @@ class ProductManager {
         variantsContainer.innerHTML = '';
         if (product.variants && Array.isArray(product.variants) && product.variants.length) {
           // helper: reconstruir carrusel con imágenes dadas
-          const buildCarousel = (images) => {
+          const buildCarousel = (images, variantName = null) => {
             modalImgContainer.innerHTML = '';
             const c = document.createElement('div');
             c.className = 'carousel modal-carousel';
@@ -370,12 +370,12 @@ class ProductManager {
               s.className = 'carousel-slide';
               if (idx === 0) s.classList.add('active');
               const im = document.createElement('img');
-              loadImageWithFallback(im, src || '', { product: product.name, variant: v && v.name, idx });
+              loadImageWithFallback(im, src || '', { product: product.name, variant: variantName, idx });
               im.alt = `${product.name} - ${idx + 1}`;
               im.loading = 'lazy';
               im.width = 600; im.height = 600;
               im.classList.add('modal-image');
-              im.onerror = () => { console.error('[Variant Image] failed to load', { src: im.src, product: product.name, variant: v && v.name }); im.onerror = null; im.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>'; };
+              im.onerror = () => { console.error('[Variant Image] failed to load', { src: im.src, product: product.name, variant: variantName }); im.onerror = null; im.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f8fafc"/><text x="200" y="150" text-anchor="middle" fill="%23999" font-size="16">Imagen no disponible</text></svg>'; };
               s.appendChild(im);
               t.appendChild(s);
             });
@@ -429,7 +429,7 @@ class ProductManager {
                 if (src.startsWith('imagenes/') || src.startsWith('./imagenes/') || src.startsWith('/imagenes/')) return src;
                 return `imagenes/${encodeURI(src)}`;
               });
-              buildCarousel(imgs);
+              buildCarousel(imgs, v && v.name);
             };
             variantsContainer.appendChild(b);
           });
