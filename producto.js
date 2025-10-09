@@ -17,6 +17,7 @@ async function loadProductData() {
   renderProduct(producto);
   setupAddToCart(producto);
   loadComentarios(producto.id);
+  renderRelated(producto);
 }
 
 function renderProduct(producto) {
@@ -43,9 +44,11 @@ function renderProduct(producto) {
       const wrap = document.createElement('div'); wrap.className = 'producto-thumb';
       const img = document.createElement('img'); img.src = src; img.alt = `${producto.name} ${i+1}`;
       wrap.appendChild(img);
-      wrap.onclick = () => { galeriaMain.querySelector('img').src = src; };
+      wrap.onclick = () => { galeriaMain.querySelector('img').src = src; openLightbox(imgs, i); };
       galeria.appendChild(wrap);
     });
+    // open lightbox when main image clicked
+    galeriaMain.querySelector('img').onclick = () => openLightbox(imgs, 0);
   }
 
   // Variantes
@@ -97,14 +100,17 @@ function setupAddToCart(producto) {
   document.getElementById('qty-decrease').onclick = () => { if (qty>1) qty--; qtyVal.textContent = qty; };
 
   document.getElementById('btn-agregar-carrito').onclick = () => {
-    // use shoppingCart if available, otherwise save in localStorage simple list
+    // determine selected variant id if any
+    let selectedVariantId = null;
+    const activeVarBtn = document.querySelector('.producto-variantes .active');
+    if (activeVarBtn) selectedVariantId = activeVarBtn.dataset.variantId || null;
     try {
       if (window.shoppingCart && typeof shoppingCart.addToCart === 'function') {
-        shoppingCart.addToCart(producto.id, null);
+        shoppingCart.addToCart(producto.id, selectedVariantId, qty);
         alert('Producto agregado al carrito');
       } else {
         const cart = JSON.parse(localStorage.getItem('cart')||'[]');
-        cart.push({ id: producto.id, qty, name: producto.name, price: producto.price });
+        cart.push({ id: producto.id, qty, name: producto.name, price: producto.price, variantId: selectedVariantId });
         localStorage.setItem('cart', JSON.stringify(cart));
         alert('Producto agregado al carrito');
       }
@@ -115,6 +121,64 @@ function setupAddToCart(producto) {
     const text = `Hola, quiero información sobre el producto ${producto.name} (id:${producto.id})`;
     window.open(`https://wa.me/573115477984?text=${encodeURIComponent(text)}`, '_blank');
   };
+}
+
+/* Lightbox functions */
+function openLightbox(imgs, index) {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  lb.classList.add('show');
+  lb.dataset.images = JSON.stringify(imgs);
+  lb.dataset.index = index;
+  lbImg.src = imgs[index];
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('show');
+}
+function navigateLightbox(dir) {
+  const lb = document.getElementById('lightbox');
+  const imgs = JSON.parse(lb.dataset.images || '[]');
+  let idx = Number(lb.dataset.index || 0);
+  idx = (idx + dir + imgs.length) % imgs.length;
+  lb.dataset.index = idx;
+  document.getElementById('lb-img').src = imgs[idx];
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev = document.getElementById('lb-prev');
+  const lbNext = document.getElementById('lb-next');
+  if (lbClose) lbClose.onclick = closeLightbox;
+  if (lbPrev) lbPrev.onclick = () => navigateLightbox(-1);
+  if (lbNext) lbNext.onclick = () => navigateLightbox(1);
+  document.addEventListener('keydown', (e) => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('show')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+  });
+});
+
+// Render related products (simple: pick 4 products from products.json in same category)
+function renderRelated(producto) {
+  fetch('products.json').then(r=>r.json()).then(list=>{
+    const related = list.filter(p=>p.id!==producto.id && p.category===producto.category).slice(0,4);
+    if (!related || !related.length) return;
+    const container = document.createElement('div'); container.className = 'seccion';
+    const title = document.createElement('h3'); title.textContent = 'También te pueden interesar'; container.appendChild(title);
+    const grid = document.createElement('div'); grid.className = 'related-grid';
+    related.forEach(rp=>{
+      const card = document.createElement('div'); card.className = 'related-card';
+      const img = document.createElement('img'); img.src = (rp.images&&rp.images[0])||rp.image||'';
+      const name = document.createElement('div'); name.textContent = rp.name; name.style.marginTop='8px'; name.style.fontSize='0.95rem';
+      const btn = document.createElement('button'); btn.className='btn btn-primary'; btn.textContent='Agregar al carrito'; btn.onclick = ()=>{ if (window.shoppingCart) shoppingCart.addToCart(rp.id,null,1); };
+      card.appendChild(img); card.appendChild(name); card.appendChild(btn); grid.appendChild(card);
+    });
+    container.appendChild(grid);
+    document.querySelector('.producto-info').appendChild(container);
+  }).catch(()=>{});
 }
 
 // Comentarios almacenados en localStorage por producto

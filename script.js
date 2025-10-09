@@ -822,7 +822,7 @@ class ShoppingCart {
     });
   }
 
-  addToCart(productId, variantId = null) {
+  addToCart(productId, variantId = null, qty = 1) {
     const product = productManager.products.find(p => p.id === productId);
     if (!product) return;
 
@@ -837,7 +837,7 @@ class ShoppingCart {
 
     const existingItem = this.items.find(item => item.key === key);
     if (existingItem) {
-      existingItem.quantity += 1;
+      existingItem.quantity += qty;
     } else {
       const item = {
         key,
@@ -848,7 +848,7 @@ class ShoppingCart {
         price: variant && variant.price ? variant.price : (product.price || 0),
         originalPrice: product.originalPrice || product.price || 0,
         images: (variant && variant.images && variant.images.length) ? variant.images : (product.images || [product.image]),
-        quantity: 1
+        quantity: qty
       };
       this.items.push(item);
     }
