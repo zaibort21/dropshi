@@ -1083,43 +1083,77 @@ class ShoppingCart {
       }
     }
     
-    // Create WhatsApp message
-    let message = "🛍️ *Nuevo Pedido - PremiumDrop*\n\n";
-    message += "*Productos solicitados:*\n";
-    
+    // Create WhatsApp message following the exact template requested
+    let message = "🛍️ Nuevo Pedido - PremiumDrop\n\n";
+    message += "Productos solicitados:\n";
+
     this.items.forEach((item, index) => {
       message += `${index + 1}. ${item.name}\n`;
       message += `   Cantidad: ${item.quantity}\n`;
       message += `   Precio: ${Currency.formatPrice(item.price)}\n`;
       message += `   Subtotal: ${Currency.formatPrice(item.price * item.quantity)}\n\n`;
     });
-    
-    message += `*Total de artículos:* ${itemCount}\n`;
-    message += `*Subtotal:* ${Currency.formatPrice(total)}\n`;
-    
-    if (shippingInfo) {
-      message += shippingInfo;
-    }
-    
-  message += `*Total final:* ${Currency.formatPrice(finalTotal)}\n\n`;
-    message += "📍 *Información importante:*\n";
-    message += "• Los productos son importados directamente de fabricantes internacionales\n";
-    message += "• Tiempo de entrega: 7-15 días hábiles en Colombia\n";
-    message += "• Envío gratuito en pedidos superiores a $200.000 COP\n";
-    message += "• Proceso de importación personalizada\n\n";
-    
-    // Enhance message with automation if location is selected
+
+    message += `Total de artículos: ${itemCount}\n`;
+    message += `Subtotal: ${Currency.formatPrice(total)}\n\n`;
+
+    // Información de envío (summary) - prefer automation if available
+    let shippingSummary = '';
+    let autoDeliverySummary = '';
     if (window.colombiaAutomation) {
       const location = window.colombiaAutomation.getSelectedLocation();
       if (location.department && location.city) {
-        message = window.colombiaAutomation.enhanceWhatsAppMessage(message, location.department, location.city);
+        const dept = window.colombiaAutomation.colombianDepartments[location.department] || {};
+        const shippingCost = (Currency.getPriceValue(total) >= 200000) ? 0 : (dept.shippingCost || 0);
+        shippingSummary += `Información de envío:\n`;
+        shippingSummary += `* Destino: ${location.city}, ${dept.name || ''}\n`;
+        shippingSummary += `* Costo de envío: ${shippingCost > 0 ? Currency.formatPrice(shippingCost) : 'GRATIS'}\n`;
+        shippingSummary += `Total final: ${Currency.formatPrice(shippingCost + Currency.getPriceValue(total))}\n\n`;
+
+        // Información de entrega automática
+        const minDays = (dept.deliveryDays && dept.deliveryDays.min) ? dept.deliveryDays.min : 4;
+        const maxDays = (dept.deliveryDays && dept.deliveryDays.max) ? dept.deliveryDays.max : (minDays + 3);
+        const estimatedDate = new Date();
+        estimatedDate.setDate(estimatedDate.getDate() + minDays);
+        const estDateStr = estimatedDate.toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+        autoDeliverySummary += `📍 Información de entrega automática:\n`;
+        autoDeliverySummary += `* Ubicación: ${location.city}, ${dept.name || ''}\n`;
+        autoDeliverySummary += `* Tiempo estimado: ${minDays}-${maxDays} días hábiles\n`;
+        autoDeliverySummary += `* Costo de envío: ${dept.shippingCost ? Currency.formatPrice(dept.shippingCost) : 'N/A'}\n`;
+        autoDeliverySummary += `* Entrega estimada: ${estDateStr}\n`;
       } else {
-        message += "¿Podrías confirmar tu ciudad en Colombia para el envío?\n\n";
+        shippingSummary += `Información de envío:\n`;
+        shippingSummary += `* Destino: (por confirmar)\n`;
+        shippingSummary += `* Costo de envío: (por confirmar)\n`;
+        shippingSummary += `Total final: ${Currency.formatPrice(total)}\n\n`;
+        autoDeliverySummary += `📍 Información de entrega automática:\n`;
+        autoDeliverySummary += `* Ubicación: (por confirmar)\n`;
+        autoDeliverySummary += `* Tiempo estimado: 4-7 días hábiles\n`;
+        autoDeliverySummary += `* Costo de envío: (por confirmar)\n`;
+        autoDeliverySummary += `* Entrega estimada: (por calcular)\n`;
       }
     } else {
-      message += "¿Podrías confirmar tu ciudad en Colombia para el envío?\n\n";
+      // No automation available: include a minimal shipping summary and ask for city
+      shippingSummary += `Información de envío:\n`;
+      shippingSummary += `* Destino: (por confirmar)\n`;
+      shippingSummary += `* Costo de envío: (por confirmar)\n`;
+      shippingSummary += `Total final: ${Currency.formatPrice(total)}\n\n`;
+      autoDeliverySummary += `📍 Información de entrega automática:\n`;
+      autoDeliverySummary += `* Ubicación: (por confirmar)\n`;
+      autoDeliverySummary += `* Tiempo estimado: 4-7 días hábiles\n`;
+      autoDeliverySummary += `* Costo de envío: (por confirmar)\n`;
+      autoDeliverySummary += `* Entrega estimada: (por calcular)\n`;
     }
-    
+
+    message += shippingSummary;
+    message += `📍 Información importante:\n`;
+    message += `* Los productos son importados directamente de fabricantes internacionales\n`;
+    message += `* Tiempo de entrega: 7-15 días hábiles en Colombia\n`;
+    message += `* Envío gratuito en pedidos superiores a $200.000 COP\n`;
+    message += `* Proceso de importación personalizada\n\n`;
+
+    message += autoDeliverySummary + "\n";
     message += "¡Gracias por elegir PremiumDrop! 🚚\n";
     message += "Nuestro equipo comercial te contactará con todos los detalles.";
     
