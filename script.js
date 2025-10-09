@@ -214,7 +214,7 @@ class ProductManager {
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains('view-details')) {
         const productId = parseInt(e.target.dataset.productId);
-        window.location.href = `producto.html?id=${productId}`;
+        this.showProductDetails(productId);
       }
     });
 
@@ -668,7 +668,7 @@ class ProductManager {
         </div>
         <div class="card-footer">
           <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">🛒 Agregar al Carrito</button>
-          <a class="btn btn-secondary view-details" href="product.html?id=${product.id}">👁️ Ver Detalles</a>
+          <button class="btn btn-secondary view-details" data-product-id="${product.id}">👁️ Ver Detalles</button>
           <button class="btn btn-whatsapp buy-whatsapp" data-product-id="${product.id}">💬 Consultar por WhatsApp</button>
         </div>
       </div>
