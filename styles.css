@@ -397,6 +397,29 @@ body {
   border-radius: var(--radius-lg);
   background: var(--color-surface);
 }
+  /* Fix: ensure images never overflow their slide and maintain aspect ratio */
+  .carousel-slide img, .modal-carousel img, .producto-main img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  /* Prevent thumbnails from overlapping main image */
+  .producto-thumbs { box-sizing: border-box; }
+  .producto-thumb { flex: 0 0 auto; width:72px; height:72px; overflow:hidden; }
+  .producto-thumb img { width:100%; height:100%; object-fit:cover }
+
+  /* Ensure modal image container hides overflow and positions children correctly */
+  .modal-product-image { position: relative; overflow: hidden; }
+
+  /* small screens: cap main image height to avoid overlapping footer CTA */
+  @media (max-width: 420px) {
+    .modal-carousel img, .producto-main img { max-height: 320px !important; }
+  }
 
 /* CTA and WhatsApp floating button styles requested */
 .cta {
