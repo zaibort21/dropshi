@@ -136,7 +136,7 @@ class ProductManager {
           // intento preferente: carpeta `imagenes/` (usada en el repo), luego `assets/images/`
           // encodeURI para espacios y caracteres especiales
           const encoded = encodeURI(src);
-          return `imagenes/${encoded}`;
+          return `./imagenes/${encoded}`;
         });
         // Asegurar que `image` principal apunte a la primera imagen normalizada (evita miniaturas rotas)
         if (!prod.image && prod.images.length) {
@@ -152,7 +152,7 @@ class ProductManager {
                 if (/^(https?:)?\/\//i.test(src) || src.startsWith('/') || src.startsWith('./') || src.includes('/')) {
                   return src;
                 }
-                return `imagenes/${encodeURI(src)}`;
+                return `./imagenes/${encodeURI(src)}`;
               });
             }
             // ensure variant price numeric
@@ -754,14 +754,13 @@ function initCarousels(){
   document.querySelectorAll('.carousel').forEach(car => {
     const track = car.querySelector('.carousel-track');
     const slides = Array.from(track.children);
-    // Ensure each slide takes full carousel width (fix mobile sliding where slides appear cut)
-    const carWidth = car.clientWidth || car.getBoundingClientRect().width;
-    slides.forEach(s => { s.style.flex = '0 0 ' + carWidth + 'px'; });
+    // Ensure each slide takes full carousel width (use percentage-based widths to avoid layout race conditions)
+    slides.forEach(s => { s.style.flex = '0 0 100%'; s.style.maxWidth = '100%'; });
     const prev = car.querySelector('.carousel-btn.prev');
     const next = car.querySelector('.carousel-btn.next');
     const indicators = Array.from(car.querySelectorAll('.carousel-indicators button'));
     let idx = 0;
-    function go(i){ idx = (i+slides.length)%slides.length; track.style.transform = `translateX(-${idx * carWidth}px)`; indicators.forEach((b,bi)=> b.classList.toggle('active', bi===idx)); }
+    function go(i){ idx = (i+slides.length)%slides.length; track.style.transform = `translateX(-${idx * 100}%)`; indicators.forEach((b,bi)=> b.classList.toggle('active', bi===idx)); }
     prev && prev.addEventListener('click', ()=> { go(idx-1); });
     next && next.addEventListener('click', ()=> { go(idx+1); });
     indicators.forEach((btn,i)=> btn.addEventListener('click', ()=> go(i)));
@@ -769,12 +768,12 @@ function initCarousels(){
     let interval = setInterval(()=> go(idx+1), 3500);
     car.addEventListener('mouseenter', ()=> clearInterval(interval));
     car.addEventListener('mouseleave', ()=> interval = setInterval(()=> go(idx+1), 3500));
-    // Recompute slide widths on resize (handles orientation changes)
+    // On resize we keep percentage-based transforms (no need to recalc pixel widths)
     window.addEventListener('resize', () => {
-      const newWidth = car.clientWidth || car.getBoundingClientRect().width;
-      slides.forEach(s => { s.style.flex = '0 0 ' + newWidth + 'px'; });
-      // Reposition track to current index with new width
-      track.style.transform = `translateX(-${idx * newWidth}px)`;
+      // ensure slides still fill the carousel
+      slides.forEach(s => { s.style.flex = '0 0 100%'; s.style.maxWidth = '100%'; });
+      // Reposition track to current index using percent
+      track.style.transform = `translateX(-${idx * 100}%)`;
     });
     // initial
     go(0);
