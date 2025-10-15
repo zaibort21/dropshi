@@ -110,8 +110,8 @@
   "originalPrice": 70000,
     "category": "Hogar",
   "image": "escurridor.png",
-   
-  "description": "Escurridor Soporte De Platos Y Cubiertos   con diseño moderno y calidad superior.",
+  "images": ["escurridor.png","escurridor2.png","escurridor3.png"],
+   "description": "CARACTERÍSTICAS PRINCIPALES:\n\n✅ Instalación sin herramientas: incluye llave hexagonal y sistema de ajuste rápido. ¡Armarlo es facilísimo!\n\n✅ Diseño ergonómico y desmontable: su estructura a presión permite retirarlo fácilmente para una limpieza diaria sin esfuerzo.\n\n✅ Fabricado en acero inoxidable: resistente, duradero, anticorrosión y a prueba de rayones. Soporta hasta 40 kg sin inclinarse ni tambalear.\n\n✅ Base antideslizante: máxima estabilidad incluso con carga completa.\n\n✅ Totalmente personalizable: cuenta con 11 piezas intercambiables que puedes adaptar según tus necesidades de secado y almacenamiento.\n\n📏 ESPECIFICACIONES:\n\nEstructura principal: 48,5 cm (alto) × 31,5 cm (largo) × 65 cm (ancho)\n\nEscurridor superior: 27 × 30 × 8 cm\n\nSoporte para esponjas: 25 × 12 × 7,5 cm\n\nSoporte lateral: 20,5 × 7 × 10 cm\n\nSoporte para cuchillos: 10,5 × 5,5 × 7,5 cm\n\nPeso total: aprox. 5 kg (incluyendo accesorios)\n\n📦 CONTENIDO DEL PAQUETE:\n\n1 Escurridor de platos y cubiertos sobre lavaplatos\n\n1 Escurridor superior\n\n1 Soporte para esponjas\n\n1 Soporte lateral\n\n1 Soporte para cuchillos\n\n🛠 GARANTÍA:\n\n✅ 1 mes de garantía por defectos de fábrica o funcionamiento.\n\n🚚 POLÍTICA DE GARANTÍA Y CAMBIOS\n\nPlazo: 3 días desde la compra para solicitar cambio.\n\nCondiciones: el producto debe estar sin uso, sin daños y con su empaque original.\n\nMotivos válidos: producto defectuoso, dañado o error en el envío.\n\nProceso: contacta nuestro servicio al cliente, sigue las instrucciones de devolución y recibirás tu reemplazo.\n\nSi el error es nuestro o del proveedor, cubrimos el flete.\n\nSi el producto está agotado, puedes elegir otro del mismo valor o pagar la diferencia.\n\n⚙️ NOTAS DE GARANTÍA:\n\nCobertura solo por defectos de fabricación.\n\nEvaluamos tu reclamo en máximo 2 días hábiles.\n\nSoluciones posibles: reparación o reemplazo gratuito.\n\nNo cubre: mal uso, desgaste normal, o modificaciones no autorizadas..",
     "features": [
       "Productos premium",
       "Diseño moderno",
@@ -228,6 +228,72 @@
       "sku": "CUAD-5",
       "description": "Materiales:\n➖ 5 retablos de madera tipo MDF de 9mm de espesor.\n➡️ 1 de 78X24cm\n➡️ 2 de 60X24cm\n➡️ 2 de 45X18 cm\n\n✅ Impresión de alta definición en vinilo adhesivo.\n✅ Caimán para cada retablo que facilita su instalación.\n✅ Medida total del cuadro con los 5 retablos: 114x78cm.",
       "images": ["lienzo1.jpg","lienzo2.jpg","lienzo3.jpg","lienzo4.jpg","lienzo5.jpg","lienzo6.jpg","lienzo7.jpg","lienzo8.jpg","lienzo9.jpg","lienzo10.jpg","lienzo11.jpg"]
+    }
+    ,
+    {
+      "id": 200,
+      "name": "Producto Plantilla 1",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder1.jpg",
+      "images": ["placeholder1.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 201,
+      "name": "Producto Plantilla 2",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder2.jpg",
+      "images": ["placeholder2.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 202,
+      "name": "Producto Plantilla 3",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder3.jpg",
+      "images": ["placeholder3.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 203,
+      "name": "Producto Plantilla 4",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder4.jpg",
+      "images": ["placeholder4.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 204,
+      "name": "Producto Plantilla 5",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder5.jpg",
+      "images": ["placeholder5.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
     }
   ]
 }
