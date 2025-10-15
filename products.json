@@ -229,72 +229,72 @@
       "description": "Materiales:\n➖ 5 retablos de madera tipo MDF de 9mm de espesor.\n➡️ 1 de 78X24cm\n➡️ 2 de 60X24cm\n➡️ 2 de 45X18 cm\n\n✅ Impresión de alta definición en vinilo adhesivo.\n✅ Caimán para cada retablo que facilita su instalación.\n✅ Medida total del cuadro con los 5 retablos: 114x78cm.",
       "images": ["lienzo1.jpg","lienzo2.jpg","lienzo3.jpg","lienzo4.jpg","lienzo5.jpg","lienzo6.jpg","lienzo7.jpg","lienzo8.jpg","lienzo9.jpg","lienzo10.jpg","lienzo11.jpg"]
     }
-    ,
-    {
-      "id": 200,
-      "name": "Producto Plantilla 1",
-      "price": 0,
-      "originalPrice": 0,
-      "category": "Plantilla",
-      "image": "placeholder1.jpg",
-      "images": ["placeholder1.jpg"],
-      "description": "(Rellena la descripción)",
-      "features": [],
-      "rating": 0,
-      "reviews": 0
-    },
-    {
-      "id": 201,
-      "name": "Producto Plantilla 2",
-      "price": 0,
-      "originalPrice": 0,
-      "category": "Plantilla",
-      "image": "placeholder2.jpg",
-      "images": ["placeholder2.jpg"],
-      "description": "(Rellena la descripción)",
-      "features": [],
-      "rating": 0,
-      "reviews": 0
-    },
-    {
-      "id": 202,
-      "name": "Producto Plantilla 3",
-      "price": 0,
-      "originalPrice": 0,
-      "category": "Plantilla",
-      "image": "placeholder3.jpg",
-      "images": ["placeholder3.jpg"],
-      "description": "(Rellena la descripción)",
-      "features": [],
-      "rating": 0,
-      "reviews": 0
-    },
-    {
-      "id": 203,
-      "name": "Producto Plantilla 4",
-      "price": 0,
-      "originalPrice": 0,
-      "category": "Plantilla",
-      "image": "placeholder4.jpg",
-      "images": ["placeholder4.jpg"],
-      "description": "(Rellena la descripción)",
-      "features": [],
-      "rating": 0,
-      "reviews": 0
-    },
-    {
-      "id": 204,
-      "name": "Producto Plantilla 5",
-      "price": 0,
-      "originalPrice": 0,
-      "category": "Plantilla",
-      "image": "placeholder5.jpg",
-      "images": ["placeholder5.jpg"],
-      "description": "(Rellena la descripción)",
-      "features": [],
-      "rating": 0,
-      "reviews": 0
-    }
-  ]
-}
+    ]
+  }
+  ,
+  {
+    "id": 200,
+    "name": "Producto Plantilla 1",
+    "price": 0,
+    "originalPrice": 0,
+    "category": "Plantilla",
+    "image": "placeholder1.jpg",
+    "images": ["placeholder1.jpg"],
+    "description": "(Rellena la descripción)",
+    "features": [],
+    "rating": 0,
+    "reviews": 0
+  },
+  {
+    "id": 201,
+    "name": "Producto Plantilla 2",
+    "price": 0,
+    "originalPrice": 0,
+    "category": "Plantilla",
+    "image": "placeholder2.jpg",
+    "images": ["placeholder2.jpg"],
+    "description": "(Rellena la descripción)",
+    "features": [],
+    "rating": 0,
+    "reviews": 0
+  },
+  {
+    "id": 202,
+    "name": "Producto Plantilla 3",
+    "price": 0,
+    "originalPrice": 0,
+    "category": "Plantilla",
+    "image": "placeholder3.jpg",
+    "images": ["placeholder3.jpg"],
+    "description": "(Rellena la descripción)",
+    "features": [],
+    "rating": 0,
+    "reviews": 0
+  },
+  {
+    "id": 203,
+    "name": "Producto Plantilla 4",
+    "price": 0,
+    "originalPrice": 0,
+    "category": "Plantilla",
+    "image": "placeholder4.jpg",
+    "images": ["placeholder4.jpg"],
+    "description": "(Rellena la descripción)",
+    "features": [],
+    "rating": 0,
+    "reviews": 0
+  },
+  {
+    "id": 204,
+    "name": "Producto Plantilla 5",
+    "price": 0,
+    "originalPrice": 0,
+    "category": "Plantilla",
+    "image": "placeholder5.jpg",
+    "images": ["placeholder5.jpg"],
+    "description": "(Rellena la descripción)",
+    "features": [],
+    "rating": 0,
+    "reviews": 0
+  }
 ]
