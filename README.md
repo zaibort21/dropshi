@@ -193,3 +193,7 @@ For support, email soporte@premiumdrop.com or open an issue on GitHub.
 ---
 
 **Built with ❤️ for modern e-commerce experiences**
+
+## Cambios menores
+
+- **Referencia CSS obsoleta removida:** Se eliminó la referencia a `colombia-automation.css` en `index.html` ya que el archivo no existe en el repositorio y causaba errores 404 en producción. Esto mejora el rendimiento al evitar peticiones HTTP innecesarias.
