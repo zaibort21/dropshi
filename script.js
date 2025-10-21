@@ -933,53 +933,8 @@ class ShoppingCart {
 
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    // Enhanced total display with automation
-    let totalHTML = `<div>Subtotal: ${Currency.formatPrice(total)}</div>`;
-    
-    if (window.colombiaAutomation) {
-      const location = window.colombiaAutomation.getSelectedLocation();
-      if (location.department && location.city) {
-        const dept = window.colombiaAutomation.colombianDepartments[location.department];
-  const subtotalCOP = Currency.getPriceValue(total);
-  const shippingCost = subtotalCOP >= 100000 ? 0 : dept.shippingCost;
-        const finalTotal = subtotalCOP + shippingCost;
-        
-        totalHTML += `
-          <div class="automation-summary">
-            <h4>📍 Resumen de envío a ${location.city}</h4>
-            <div class="summary-line">
-              <span>Subtotal:</span>
-              <span>${Currency.formatPrice(total)}</span>
-            </div>
-            <div class="summary-line">
-              <span>Envío:</span>
-              <span>${shippingCost > 0 ? Currency.formatPrice(shippingCost) : 'GRATIS'}</span>
-            </div>
-            <div class="summary-line" style="font-size:12px;color:#6b7280;">
-              <em>Nota: el costo es aproximado y puede subir o bajar según la ciudad y la transportadora.</em>
-            </div>
-            <div class="summary-line total">
-              <span>Total:</span>
-              <span>${Currency.formatPrice(finalTotal)}</span>
-            </div>
-            <div class="summary-line">
-              <span>Entrega estimada:</span>
-              <span>${dept.deliveryDays.min}-${dept.deliveryDays.max} días</span>
-            </div>
-          </div>
-        `;
-      } else {
-        totalHTML += `
-          <div class="automation-summary">
-            <h4>📍 Selecciona tu ubicación</h4>
-            <p style="font-size: 13px; color: #6b7280; margin: 8px 0;">
-              Elige tu departamento y ciudad arriba para ver el costo de envío y tiempo de entrega exacto.
-            </p>
-          </div>
-        `;
-      }
-    }
-    
+    // Display cart total
+    const totalHTML = `<div>Subtotal: ${Currency.formatPrice(total)}</div>`;
     cartTotalContainer.innerHTML = totalHTML;
   }
 
@@ -1035,16 +990,8 @@ class ShoppingCart {
     message += "Por favor, indica tu ciudad para calcular tiempo exacto de entrega.\n\n";
     message += "¡Gracias! 😊";
     
-    // Enhance message with automation if location is selected
-    if (window.colombiaAutomation) {
-      const location = window.colombiaAutomation.getSelectedLocation();
-      if (location.department && location.city) {
-        message = window.colombiaAutomation.enhanceWhatsAppMessage(message, location.department, location.city);
-      }
-    }
-    
-    // WhatsApp number (3115477984)
-    const whatsappNumber = "573115477984"; // Colombia country code + number
+    // WhatsApp number
+    const whatsappNumber = "573115477984";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
@@ -1065,24 +1012,7 @@ class ShoppingCart {
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const itemCount = this.items.reduce((sum, item) => sum + item.quantity, 0);
     
-    // Calculate total with shipping if automation is available
-    let finalTotal = total;
-    let shippingInfo = "";
-    
-    if (window.colombiaAutomation) {
-      finalTotal = window.colombiaAutomation.calculateTotalWithShipping(Currency.getPriceValue(total));
-      const location = window.colombiaAutomation.getSelectedLocation();
-      
-      if (location.department && location.city) {
-        const dept = window.colombiaAutomation.colombianDepartments[location.department];
-        const shippingCost = finalTotal > Currency.getPriceValue(total) ? dept.shippingCost : 0;
-  shippingInfo = `\n*Información de envío:*\n`;
-  shippingInfo += `• Destino: ${location.city}, ${dept.name}\n`;
-  shippingInfo += `• Costo de envío: ${shippingCost > 0 ? Currency.formatPrice(shippingCost) : 'GRATIS'}\n`;
-      }
-    }
-    
-    // Create WhatsApp message following the exact template requested
+    // Create WhatsApp message
     let message = "🛍️ Nuevo Pedido - PremiumDrop\n\n";
     message += "Productos solicitados:\n";
 
@@ -1095,69 +1025,19 @@ class ShoppingCart {
 
     message += `Total de artículos: ${itemCount}\n`;
     message += `Subtotal: ${Currency.formatPrice(total)}\n\n`;
-
-    // Información de envío (summary) - prefer automation if available
-    let shippingSummary = '';
-    let autoDeliverySummary = '';
-    if (window.colombiaAutomation) {
-      const location = window.colombiaAutomation.getSelectedLocation();
-      if (location.department && location.city) {
-        const dept = window.colombiaAutomation.colombianDepartments[location.department] || {};
-        const shippingCost = (Currency.getPriceValue(total) >= 200000) ? 0 : (dept.shippingCost || 0);
-        shippingSummary += `Información de envío:\n`;
-        shippingSummary += `* Destino: ${location.city}, ${dept.name || ''}\n`;
-        shippingSummary += `* Costo de envío: ${shippingCost > 0 ? Currency.formatPrice(shippingCost) : 'GRATIS'}\n`;
-        shippingSummary += `Total final: ${Currency.formatPrice(shippingCost + Currency.getPriceValue(total))}\n\n`;
-
-        // Información de entrega automática
-        const minDays = (dept.deliveryDays && dept.deliveryDays.min) ? dept.deliveryDays.min : 4;
-        const maxDays = (dept.deliveryDays && dept.deliveryDays.max) ? dept.deliveryDays.max : (minDays + 3);
-        const estimatedDate = new Date();
-        estimatedDate.setDate(estimatedDate.getDate() + minDays);
-        const estDateStr = estimatedDate.toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-
-        autoDeliverySummary += `📍 Información de entrega automática:\n`;
-        autoDeliverySummary += `* Ubicación: ${location.city}, ${dept.name || ''}\n`;
-        autoDeliverySummary += `* Tiempo estimado: ${minDays}-${maxDays} días hábiles\n`;
-        autoDeliverySummary += `* Costo de envío: ${dept.shippingCost ? Currency.formatPrice(dept.shippingCost) : 'N/A'}\n`;
-        autoDeliverySummary += `* Entrega estimada: ${estDateStr}\n`;
-      } else {
-        shippingSummary += `Información de envío:\n`;
-        shippingSummary += `* Destino: (por confirmar)\n`;
-        shippingSummary += `* Costo de envío: (por confirmar)\n`;
-        shippingSummary += `Total final: ${Currency.formatPrice(total)}\n\n`;
-        autoDeliverySummary += `📍 Información de entrega automática:\n`;
-        autoDeliverySummary += `* Ubicación: (por confirmar)\n`;
-        autoDeliverySummary += `* Tiempo estimado: 4-7 días hábiles\n`;
-        autoDeliverySummary += `* Costo de envío: (por confirmar)\n`;
-        autoDeliverySummary += `* Entrega estimada: (por calcular)\n`;
-      }
-    } else {
-      // No automation available: include a minimal shipping summary and ask for city
-      shippingSummary += `Información de envío:\n`;
-      shippingSummary += `* Destino: (por confirmar)\n`;
-      shippingSummary += `* Costo de envío: (por confirmar)\n`;
-      shippingSummary += `Total final: ${Currency.formatPrice(total)}\n\n`;
-      autoDeliverySummary += `📍 Información de entrega automática:\n`;
-      autoDeliverySummary += `* Ubicación: (por confirmar)\n`;
-      autoDeliverySummary += `* Tiempo estimado: 4-7 días hábiles\n`;
-      autoDeliverySummary += `* Costo de envío: (por confirmar)\n`;
-      autoDeliverySummary += `* Entrega estimada: (por calcular)\n`;
-    }
-
-    message += shippingSummary;
+    message += `Información de envío:\n`;
+    message += `* Destino: (por confirmar)\n`;
+    message += `* Costo de envío: (por confirmar)\n\n`;
     message += `📍 Información importante:\n`;
     message += `* Los productos son importados directamente de fabricantes internacionales\n`;
     message += `* Tiempo de entrega: 7-15 días hábiles en Colombia\n`;
     message += `* Envío gratuito en pedidos superiores a $200.000 COP\n`;
     message += `* Proceso de importación personalizada\n\n`;
-
-    message += autoDeliverySummary + "\n";
     message += "¡Gracias por elegir PremiumDrop! 🚚\n";
     message += "Nuestro equipo comercial te contactará con todos los detalles.";
     
-    // WhatsApp number (3115477984)
-    const whatsappNumber = "573115477984"; // Colombia country code + number
+    // WhatsApp number
+    const whatsappNumber = "573115477984";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
@@ -1166,7 +1046,7 @@ class ShoppingCart {
     
     // Show success message and clear cart
     setTimeout(() => {
-      alert('¡Tu pedido ha sido enviado por WhatsApp! Revisa tu app de WhatsApp y confirma tu ubicación.');
+      alert('¡Tu pedido ha sido enviado por WhatsApp! Revisa tu app de WhatsApp.');
       this.clearCart();
       
       // Close modal
