@@ -1,65 +1,65 @@
-# Deployment Guide - PremiumDrop
+# Guía de Despliegue - PremiumDrop
 
-## GitHub Pages Deployment (Current)
+## Despliegue en GitHub Pages (Actual)
 
-This site is optimized for GitHub Pages deployment and is currently configured for:
+Este sitio está optimizado para el despliegue en GitHub Pages y está configurado para:
 - **URL**: `https://zaibort21.github.io/dropshi/`
-- **Branch**: `main`
-- **Path**: `/` (root)
+- **Rama**: `main`
+- **Ruta**: `/` (raíz)
 
-### Current Configuration ✅
-- All paths are relative and work correctly with GitHub Pages
-- Meta tags are properly configured for GitHub Pages URL
-- No build process required (vanilla HTML/CSS/JS)
-- Images are externally hosted (Unsplash) for optimal performance
+### Configuración Actual ✅
+- Todas las rutas son relativas y funcionan correctamente con GitHub Pages
+- Las etiquetas meta están configuradas correctamente para la URL de GitHub Pages
+- No se requiere proceso de construcción (HTML/CSS/JS vanilla)
+- Las imágenes están alojadas externamente (Unsplash) para un rendimiento óptimo
 
-### Deployment Status
-- ✅ Site is ready for GitHub Pages
-- ✅ Relative paths configured correctly
-- ✅ SEO meta tags optimized
-- ✅ Performance optimized with lazy loading
+### Estado del Despliegue
+- ✅ El sitio está listo para GitHub Pages
+- ✅ Rutas relativas configuradas correctamente
+- ✅ Etiquetas meta SEO optimizadas
+- ✅ Rendimiento optimizado con carga diferida
 
-## Alternative Deployment Options
+## Opciones Alternativas de Despliegue
 
-### 1. Netlify Deployment
+### 1. Despliegue en Netlify
 ```bash
-# Build command: Not needed (static files)
-# Publish directory: ./
-# Custom domain: Configure in Netlify settings
+# Comando de construcción: No necesario (archivos estáticos)
+# Directorio de publicación: ./
+# Dominio personalizado: Configurar en configuración de Netlify
 ```
 
-**Benefits:**
-- Faster CDN
-- Branch previews
-- Easy custom domain setup
-- Built-in form handling
+**Beneficios:**
+- CDN más rápido
+- Vistas previas de ramas
+- Configuración fácil de dominio personalizado
+- Manejo integrado de formularios
 
 ### 2. Firebase Hosting
 ```bash
-# Install Firebase CLI
+# Instalar Firebase CLI
 npm install -g firebase-tools
 
-# Initialize Firebase in project
+# Inicializar Firebase en el proyecto
 firebase init hosting
 
-# Deploy
+# Desplegar
 firebase deploy
 ```
 
-**Benefits:**
-- Google CDN
-- SSL certificates
-- Analytics integration
-- Database integration options
+**Beneficios:**
+- CDN de Google
+- Certificados SSL
+- Integración con Analytics
+- Opciones de integración con base de datos
 
-## CI/CD Recommendations
+## Recomendaciones de CI/CD
 
-### GitHub Actions for Automated Deployment
+### GitHub Actions para Despliegue Automatizado
 
-Create `.github/workflows/deploy.yml`:
+Crear `.github/workflows/deploy.yml`:
 
 ```yaml
-name: Deploy to GitHub Pages
+name: Desplegar a GitHub Pages
 
 on:
   push:
@@ -73,17 +73,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Setup Node.js
+    - name: Configurar Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
     
-    - name: Run tests (if any)
+    - name: Ejecutar pruebas (si las hay)
       run: |
-        # Add your test commands here
-        echo "No tests configured yet"
+        # Agregar comandos de prueba aquí
+        echo "Aún no se han configurado pruebas"
     
-    - name: Deploy to GitHub Pages
+    - name: Desplegar a GitHub Pages
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -91,31 +91,31 @@ jobs:
         publish_dir: ./
 ```
 
-### Image Optimization (Future Enhancement)
+### Optimización de Imágenes (Mejora Futura)
 
-**Current Status**: Using Unsplash CDN (optimal for performance)
+**Estado Actual**: Usando CDN de Unsplash (óptimo para rendimiento)
 
-**Future Options**:
-1. **Firebase Storage**: For custom product images
-2. **Cloudinary**: Advanced image optimization
-3. **GitHub LFS**: For large assets
+**Opciones Futuras**:
+1. **Firebase Storage**: Para imágenes personalizadas de productos
+2. **Cloudinary**: Optimización avanzada de imágenes
+3. **GitHub LFS**: Para recursos de gran tamaño
 
-### Performance Optimization Status
+### Estado de Optimización de Rendimiento
 
-✅ **Already Implemented**:
-- Lazy loading for images
-- Minimal CSS/JS
-- CDN-hosted images
-- Optimized file structure
+✅ **Ya Implementado**:
+- Carga diferida para imágenes
+- CSS/JS mínimo
+- Imágenes alojadas en CDN
+- Estructura de archivos optimizada
 
-🔄 **Future Enhancements**:
-- Service worker for offline support
-- WebP image format support
-- CSS/JS minification pipeline
-- Progressive Web App features
+🔄 **Mejoras Futuras**:
+- Service worker para soporte offline
+- Soporte para formato de imagen WebP
+- Pipeline de minificación CSS/JS
+- Características de Progressive Web App
 
-## Support and Maintenance
+## Soporte y Mantenimiento
 
 - **Email**: soporte@premiumdrop.com
 - **WhatsApp**: +57 311 547 7984
-- **Repository**: GitHub Issues for technical support
+- **Repositorio**: GitHub Issues para soporte técnico
