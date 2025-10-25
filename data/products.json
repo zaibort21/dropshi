@@ -1,0 +1,300 @@
+[
+  {
+    "id": 60,
+    "name": "Aspirador De Coche Doble Proposito",
+  "price": 40000,
+  "originalPrice": 40000,
+    "category": "Hogar",
+  "image": "aspiradora 1.png",
+  "images": ["aspiradora 1.png","aspiradora 3.jpeg","aspiradora2.png"],
+"description": "✨ Aspirador de coche 2 en 1: Succión y Soplado 6000 Pa\n\nCaracterísticas principales:\n\n🔋 Motor sin escobillas de cobre puro: potencia real de 6000 Pa para una limpieza profunda y eficiente.\n\n💨 Succión potente y constante: elimina polvo, migas y suciedad persistente sin pérdida de fuerza ni sobrecalentamiento.\n\n🔌 Diseño inalámbrico y portátil: olvídate de los cables, úsalo fácilmente en cualquier lugar.\n\n💧 Uso en seco y húmedo: aspira polvo, agua, arena o grava sin complicaciones, ideal para todo tipo de residuos.\n\n🌀 Función 2 en 1: aspira y sopla: limpia tu coche, teclado o esquinas difíciles, y también infla globos u objetos con rapidez.\n\n🧹 Limpieza multifuncional: accede sin esfuerzo a rincones, grietas, debajo de los asientos y zonas de difícil acceso.",
+    "features": [
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
+    ],
+    "rating": 5,
+    "reviews": 1038
+  },
+  {
+  "id": 36,
+  "name": "Lampara Parlante Led De Astronauta",
+  "price": 120000,
+  "originalPrice": 120000,
+  "category": "Electronica,hogar",
+  "image": "lamparaparlante.webp",
+  "images": ["lamparaparlante.webp","lamparaparlante1.webp","lamparaparlante2.webp"],
+"description": "El Parlante Bluetooth Levitante eleva tu música—literalmente. Su base magnética hace flotar el altavoz mientras proyecta sonido 360° claro y envolvente. Se empareja en segundos con tu móvil, tablet o PC y ofrece horas de reproducción sin cables. Es una pieza decorativa que añade un toque futurista a sala, estudio o escritorio, ideal para relajarte, trabajar o sorprender a tus invitados.\n\nHighlights\n\nLevitación magnética real (efecto “wow”).\n\nAudio 360° equilibrado.\n\nBluetooth estable y de largo alcance.\n\nBatería recargable para uso inalámbrico.\n\nCompatible con iOS/Android/PC.",
+    "features": [
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
+    ],
+    "rating": 5,
+    "reviews": 857
+  },
+  {
+    "id": 53,
+    "name": "Enterizo Atletic Largo",
+  "price": 70000,
+  "originalPrice": 70000,
+    "category": "deportes y aire libre",
+  "image": "Enterizo1.jpg",
+  "images": ["Enterizo1.jpg","Enterizo2.jpg","Enterizo3.jpg","Enterizo4.jpg","Enterizo5.jpg","Enterizo6.jpg","Enterizo7.jpg"],
+  "sizes": {
+    "S": 100,
+    "M": 100,
+    "L": 100,
+    "XL": 100
+  },
+  "colors": {
+    "verde militar": { "S": 100, "M": 100, "L": 100 },
+    "gris claro": { "S": 100, "M": 100, "L": 100 },
+    "negro": { "S": 100, "M": 100, "L": 100 },
+    "blanco": { "S": 100, "M": 100, "L": 100 },
+    "lila": { "S": 100, "M": 100, "L": 100 }
+  },
+  "description": "Enterizo Atletic Largo con diseño moderno y calidad superior.",
+    "features": [
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
+    ],
+    "rating": 5,
+    "reviews": 187
+  },
+  {
+    "id": 18,
+    "name": "Parlante Jbl Xl Xtreme 4",
+  "price": 150000,
+  "originalPrice": 150000,
+    "category": "Electronica,hogar",
+  "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
+  "images": ["ParlanteJBL.webp","bafleJBL.png","bafleJBL.1png.png"],
+"description": "Parlante Bluetooth JBL Xtreme Réplica 1.1\n\nPotencia y diseño que impresionan\nEl JBL Xtreme Réplica 1.1 es el compañero perfecto para tus fiestas y reuniones. Su asa de transporte con correa desmontable le da un toque moderno y práctico, ideal para llevarlo a cualquier lugar. Su diseño robusto y estilo casi militar resalta, mientras sus dos radiadores de graves visibles vibran al ritmo de la música para ofrecer graves profundos y potentes que se sienten.\n\nSonido fuerte y nítido\nGracias a sus cuatro controladores y dos radiadores de graves, este parlante entrega un sonido claro y equilibrado incluso en volúmenes altos, con potencia de salida de 20W RMS (300W PMPO). Perfecto para ambientar espacios grandes sin necesidad de subirlo al máximo.\n\nCaracterísticas principales\n\nMedidas: 30 x 12.8 x 14.5 cm\nMaterial: Plástico + ABS de alta calidad\nBocinas: 78 mm x2 (10W c/u)\nBatería: 1.800 mAh, hasta 6 horas de reproducción (según volumen)\nFrecuencia de respuesta: 80 Hz – 15 kHz\nFunciones: Bocina, Radio FM, entrada TF, USB, AUX, TWS\nPartyBoost: Conecta dos parlantes iguales para duplicar el sonido\nResistencia: Protección contra salpicaduras IPX6\nPeso: 1.3 kg\n\nIncluye en la caja\nParlante JBL Xtreme Réplica 1.1\nCorrea de hombro ajustable\nCable de carga tipo C\nManual de usuario (Empaque protegido con bolsa de burbuja)\n\nRecomendaciones\nPromocionar todos los colores disponibles para atraer más clientes.\nAsegurar que la publicidad refleje fielmente el producto, reduciendo devoluciones por expectativas incorrectas.",
+    "features": [
+      "Filtro HEPA",
+      "Sensores inteligentes",
+      "Funcionamiento silencioso",
+      "Control por app"
+    ],
+    "rating": 4.9,
+    "reviews": 1043
+  },
+  {
+    "id": 12,
+    "name": "Enterizo Corto Deportivo con Cierre y Cuello Alto",
+  "price": 80000,
+  "originalPrice": 80000,
+    "category": "deportes y aire libre",
+  "image": "enterizocorto1.jpg",
+  "images": ["enterizocorto1.jpg","enterizocorto2.jpg","enterizocorto3.jpg","enterizocorto4.jpg","enterizocorto5.jpg","enterizocorto6.jpeg"],
+  "video": "enterizocorto.mp4",
+  "description": "Enterizo Corto Deportivo con Cierre y Cuello Alto con diseño moderno y calidad superior.",  
+    "features": [
+      "Superficie antideslizante",
+      "Acolchado extra",
+      "Correa de transporte",
+      "Ecológica"
+    ],
+    "rating": 4.9,
+    "reviews": 756
+  },
+  {
+    "id": 87,
+    "name": "Escurridor Soporte De Platos Y Cubiertos",
+  "price": 70000,
+  "originalPrice": 70000,
+    "category": "Hogar",
+  "image": "escurridor.png",
+  "images": ["escurridor.png","escurridor2.png","escurridor3.png"],
+   "description": "CARACTERÍSTICAS PRINCIPALES:\n\n✅ Instalación sin herramientas: incluye llave hexagonal y sistema de ajuste rápido. ¡Armarlo es facilísimo!\n\n✅ Diseño ergonómico y desmontable: su estructura a presión permite retirarlo fácilmente para una limpieza diaria sin esfuerzo.\n\n✅ Fabricado en acero inoxidable: resistente, duradero, anticorrosión y a prueba de rayones. Soporta hasta 40 kg sin inclinarse ni tambalear.\n\n✅ Base antideslizante: máxima estabilidad incluso con carga completa.\n\n✅ Totalmente personalizable: cuenta con 11 piezas intercambiables que puedes adaptar según tus necesidades de secado y almacenamiento.\n\n📏 ESPECIFICACIONES:\n\nEstructura principal: 48,5 cm (alto) × 31,5 cm (largo) × 65 cm (ancho)\n\nEscurridor superior: 27 × 30 × 8 cm\n\nSoporte para esponjas: 25 × 12 × 7,5 cm\n\nSoporte lateral: 20,5 × 7 × 10 cm\n\nSoporte para cuchillos: 10,5 × 5,5 × 7,5 cm\n\nPeso total: aprox. 5 kg (incluyendo accesorios)\n\n📦 CONTENIDO DEL PAQUETE:\n\n1 Escurridor de platos y cubiertos sobre lavaplatos\n\n1 Escurridor superior\n\n1 Soporte para esponjas\n\n1 Soporte lateral\n\n1 Soporte para cuchillos\n\n🛠 GARANTÍA:\n\n✅ 1 mes de garantía por defectos de fábrica o funcionamiento.\n\n🚚 POLÍTICA DE GARANTÍA Y CAMBIOS\n\nPlazo: 3 días desde la compra para solicitar cambio.\n\nCondiciones: el producto debe estar sin uso, sin daños y con su empaque original.\n\nMotivos válidos: producto defectuoso, dañado o error en el envío.\n\nProceso: contacta nuestro servicio al cliente, sigue las instrucciones de devolución y recibirás tu reemplazo.\n\nSi el error es nuestro o del proveedor, cubrimos el flete.\n\nSi el producto está agotado, puedes elegir otro del mismo valor o pagar la diferencia.\n\n⚙️ NOTAS DE GARANTÍA:\n\nCobertura solo por defectos de fabricación.\n\nEvaluamos tu reclamo en máximo 2 días hábiles.\n\nSoluciones posibles: reparación o reemplazo gratuito.\n\nNo cubre: mal uso, desgaste normal, o modificaciones no autorizadas..",
+    "features": [
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
+    ],
+    "rating": 4.9,
+    "reviews": 597
+  },
+  {
+    "id": 3,
+    "name": "Diadema Bose 700 Bt Con Estuche",
+  "price": 75000,
+  "originalPrice": 75000,
+    "category": "Electronica,hogar",
+  "image": "bosepubli.png",
+  "images": ["bose.jpg","bose2.jpg","bose3.jpg","bose5.jpg","bose6.jpg","bose7.jpg"],
+"description": "🎧 Diadema Bluetooth 700 – Potencia y Comodidad en un Solo Producto\n\nEnergía y estilo para los amantes de la tecnología.\nSumérgete en una experiencia de sonido de alta definición con una diadema diseñada para acompañarte en cada momento del día. Su diseño elegante, materiales de calidad y controles intuitivos hacen que disfrutes tu música y llamadas sin esfuerzo.\n\n🌟 Características Principales\n\nConexión inalámbrica avanzada: Empareja fácilmente con tu dispositivo vía Bluetooth, cambia de canción, pausa, ajusta el volumen o sintoniza emisoras FM, todo desde los botones integrados.\n\nMicrófono manos libres: Realiza y recibe llamadas sin interrupciones mientras te mueves.\n\nSonido de alta definición con cancelación de ruido: Aíslate del exterior y escucha tu música con máxima claridad.\n\nComodidad prolongada: Almohadillas acolchadas y ajustables de 10 x 8 cm, suaves al tacto para horas de uso sin molestias.\n\nOpciones de reproducción flexibles: Reproduce música desde tarjeta microSD o a través de su puerto 3.5 mm cuando no uses Bluetooth.\n\n💎 Especificaciones Técnicas\n\nEntradas: Auxiliar, tarjeta SD y USB-C (para carga).\n\nDistancia de transmisión: Hasta 8 metros sin obstáculos.\n\nTiempo de reproducción: Aproximadamente 5 horas continuas.\n\nTiempo de carga: Solo 2 horas.\n\nMateriales: Policarbonato resistente y cuero sintético de alta calidad.\n\n📦 Contenido del Paquete\n\n1 Diadema Bluetooth 700.\n\n1 Cable de carga USB-C.\n\n1 Cable auxiliar de 3.5 mm.\n\n1 Manual de usuario.\n\n1 Estuche de transporte.\n\nPor qué elegirla:\nLa Diadema Bluetooth 700 combina tecnología, comodidad y diseño elegante en un solo dispositivo. Perfecta para quienes desean libertad de movimiento, un sonido envolvente y estilo moderno en cualquier lugar.",
+    "features": [
+      "Bloqueo RFID",
+      "Cuero genuino",
+      "Diseño delgado",
+      "Ranuras para tarjetas"
+    ],
+    "rating": 4.9,
+    "reviews": 567
+  },
+  {
+    "id": 84,
+    "name": "Proyector Smart Hy300 Pro",
+  "price": 200000,
+  "originalPrice": 200000,
+    "category": "Hogar",
+  "image": "proyector.jpeg",
+  "images": ["proyector1.jpeg","proyector2.jpeg","proyector3.jpeg","proyector4.jpeg"],
+"description": "Obtén una experiencia visual inmersiva como nunca antes con el HY-300 Pro, tu proyector inteligente diseñado para transformar cualquier espacio en tu propio cine. Con tecnología de lente avanzada, el HY-300 Pro ofrece colores primarios vibrantes y una nitidez sobresaliente que te permite ver cada detalle con claridad profesional.\n\nCaracterísticas destacadas:\n\n- Resolución nativa HD (720p) con soporte para contenido 4K: Disfruta de imágenes nítidas, realistas y definidas, incluso en pantallas de gran tamaño.\n- Sistema operativo Android integrado: Acceso directo a apps como Netflix, YouTube, Prime Video, y miles más. Sin necesidad de dispositivos extra.\n- Conectividad moderna y completa: WiFi dual (2.4G y 5G), Bluetooth, HDMI, USB y entrada/salida de audio. Fácil conexión con tu teléfono, consola o laptop.\n- Proyección flexible y pantalla grande: Capacidad de producir imágenes de entre 40 hasta 130 pulgadas, con corrección trapezoidal automática o manual para alinear con precisión la imagen.\n- Diseño portátil y silencioso: Ligero, compacto y con ventilador de bajo ruido (< 25 dB), ideal para usar en interiores o exteriores.\n- Duración y brillo óptimo: Vida útil estimada de la lámpara de aprox. 50,000 horas, lo que garantiza muchas funciones sin preocupaciones.",
+    "features": [
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
+    ],
+    "rating": 4.9,
+    "reviews": 523
+  },
+  {
+    "id": 67,
+    "name": "Cepillo Secador De Aguacate Nube",
+  "price": 70000,
+  "originalPrice": 70000,
+    "category": "Electronica,hogar",
+  "image": "cepillo.png",
+  "images": ["cepillo1.jpeg","cepillo2.png","cepillo3.png"],
+"description": "Cepillo Secador de Cerámica NUBE\n\nBrillo, suavidad y estilo profesional en minutos\n\nEl Cepillo Secador NUBE combina la potencia de un secador con la precisión de un cepillo de salón, ofreciendo un peinado rápido y resultados dignos de un profesional. Su revestimiento de cerámica y tecnología iónica con extractos de aguacate liberan iones negativos que reducen el frizz, protegen la fibra capilar y dejan el cabello sedoso y brillante.\n\n🌟 Características Destacadas\n\nPotencia de 1300 W: Secado y modelado eficiente para todo tipo de cabello, desde el más fino hasta el más grueso.\n\n3 niveles de calor ajustable: Controla la temperatura según tus necesidades: secado rápido, peinado diario o acabado final.\n\nCalentamiento ultrarrápido: Listo para usar en segundos, ideal para las rutinas más ajetreadas.\n\nCable giratorio 360° y punta fría: Máxima comodidad y libertad de movimiento, sin enredos.\n\nVoltaje universal 110-240 V, 50-60 Hz: Perfecto para viajar, sin necesidad de convertidor.\n\n💇‍♀️ Beneficios\n\nReduce el frizz y aporta un brillo natural gracias a su tecnología iónica.\n\nProtege el cabello mientras seca y estiliza, manteniéndolo suave y saludable.\n\nIdeal tanto para uso doméstico como para salones de belleza, garantizando un acabado profesional en cada pasada.",
+    "features": [
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
+    ],
+    "rating": 4.9,
+    "reviews": 429
+  },
+  {
+    "id": 88,
+    "name": "Secador Profesional Dyson",
+  "price": 120000,
+  "originalPrice": 120000,
+    "category": "Electronica,hogar",
+  "image": "secador.webp",
+  "images": ["secador1.webp","secador3.png","secador2.webp"],
+"description": "🌟 Secador Profesional Dyson Supersonic Iónico – Motor Digital 🌟\n\nTeléfono único de atención ONE TECH: 324 358 5129\n\nRedefine tu rutina de peinado con el Dyson Supersonic, un secador de alto rendimiento diseñado para cuidar la salud de tu cabello mientras logras resultados de salón en casa.\n\n✨ Principales beneficios\n\nSecado ultrarrápido y eficiente: Motor digital Dyson de 1600 W que genera un flujo de aire potente y constante.\n\nTecnología iónica avanzada: Reduce el frizz, aumenta el brillo natural y protege la fibra capilar.\n\nControl total: 3 velocidades y varias configuraciones de calor para un peinado preciso, adaptable a cualquier tipo de cabello.\n\nDiseño ergonómico y profesional: Ligero, balanceado y silencioso, ideal para uso prolongado sin fatiga.\n\n⚡ Especificaciones técnicas\n\nVoltaje: 110 V\n\nPotencia: 1600 W\n\nVelocidades: 3\n\nModo iónico: Sí\n\nUso profesional: Sí",
+    "features": [
+      "Productos premium",
+      "Diseño moderno",
+      "Material duradero",
+      "Fácil de usar"
+    ],
+    "rating": 4.9,
+    "reviews": 305
+  },
+{
+  "id": 98,
+  "name": "Colección Exclusiva de Cuadros para el Hogar",
+  "price": 170000,
+  "originalPrice": 170000,
+  "category": "Hogar",
+  "image": "cuadro4.jpg",
+  "images": ["cuadro1.jpg","cuadro2.jpg","cuadro3.jpg","cuadro4.jpg","cuadro5.jpg","cuadro6.jpg","cuadro7.jpg","cuadro8.jpg","cuadro9.jpg"],
+  "description": "Transforma tus espacios con nuestra colección de cuadros exclusivos, impresos en alta calidad y listos para colgar. Disponibles en dos configuraciones: Retablos de 3 piezas y Retablos de 5 piezas.",
+  "features": [
+    "Impresión premium",
+    "Marco resistente",
+    "Varios tamaños",
+    "Listo para colgar"
+  ],
+  "rating": 4.9,
+  "reviews": 305,
+  "variants": [
+    {
+      "id": "retablos-3",
+      "name": "RETABLOS DE 3 PIEZAS",
+      "price": 170000,
+      "currency": "COP",
+      "sku": "CUAD-3",
+      "description": "Materiales:\n➖ 3 retablos de madera tipo MDF de 12mm de espesor entamborado.\n➡️ 3 de 70x40cm\n✅ Impresión de alta definición en vinilo adhesivo con laminado brillante.\n✅ Fácil instalación.\n✅ Medida total del cuadro con los 3 retablos: 70x120cm.",
+      "images": ["cuadro1.jpg","cuadro2.jpg","cuadro3.jpg","cuadro4.jpg","cuadro5.jpg","cuadro6.jpg","cuadro7.jpg","cuadro8.jpg","cuadro9.jpg"]
+    },
+    {
+      "id": "retablos-5",
+      "name": "RETABLOS DE 5 PIEZAS",
+      "price": 220000,
+      "currency": "COP",
+      "sku": "CUAD-5",
+      "description": "Materiales:\n➖ 5 retablos de madera tipo MDF de 9mm de espesor.\n➡️ 1 de 78X24cm\n➡️ 2 de 60X24cm\n➡️ 2 de 45X18 cm\n\n✅ Impresión de alta definición en vinilo adhesivo.\n✅ Caimán para cada retablo que facilita su instalación.\n✅ Medida total del cuadro con los 5 retablos: 114x78cm.",
+      "images": ["lienzo1.jpg","lienzo2.jpg","lienzo3.jpg","lienzo4.jpg","lienzo5.jpg","lienzo6.jpg","lienzo7.jpg","lienzo8.jpg","lienzo9.jpg","lienzo10.jpg","lienzo11.jpg"]
+    }
+    ,
+    {
+      "id": 200,
+      "name": "Producto Plantilla 1",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder1.jpg",
+      "images": ["placeholder1.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 201,
+      "name": "Producto Plantilla 2",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder2.jpg",
+      "images": ["placeholder2.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 202,
+      "name": "Producto Plantilla 3",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder3.jpg",
+      "images": ["placeholder3.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 203,
+      "name": "Producto Plantilla 4",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder4.jpg",
+      "images": ["placeholder4.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    },
+    {
+      "id": 204,
+      "name": "Producto Plantilla 5",
+      "price": 0,
+      "originalPrice": 0,
+      "category": "Plantilla",
+      "image": "placeholder5.jpg",
+      "images": ["placeholder5.jpg"],
+      "description": "(Rellena la descripción)",
+      "features": [],
+      "rating": 0,
+      "reviews": 0
+    }
+  ]
+}
+]
