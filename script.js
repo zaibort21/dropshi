@@ -171,7 +171,7 @@ class ProductManager {
   async loadProducts() {
     try {
       // Append a timestamp to avoid stale cached responses (helps when deploying updates)
-      const resp = await fetch(`./products.json?t=${Date.now()}`, { cache: 'no-store' });
+      const resp = await fetch(`./data/products.json?t=${Date.now()}`, { cache: 'no-store' });
       this.products = await resp.json();
     } catch (error) {
       console.error('Error cargando productos:', error);
