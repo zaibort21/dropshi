@@ -29,6 +29,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -831,10 +832,7 @@
           <li><a href="#contact">Contacto</a></li>
           <li><a class="cta" href="https://wa.me/573115477984?text=Hola,%20quiero%20ver%20el%20cat%C3%A1logo" target="_blank" rel="noopener">Comprar por WhatsApp</a></li>
         </ul>
-        <div class="cart-icon">
-          🛒
-          <span id="cart-count" class="cart-count" style="display: none;">0</span>
-        </div>
+        <div class="cart-icon"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><span id="cart-count" class="cart-count" style="display: none;">0</span></div>
       </nav>
     </div>
   </header>
@@ -1170,7 +1168,7 @@
               <span id="modal-original-price" class="original-price"></span>
             </div>
             <div class="modal-actions">
-              <button id="modal-add-to-cart" class="btn btn-primary">Agregar al carrito</button>
+                          <button id="modal-add-to-cart" class="btn btn-primary"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Agregar al carrito</button>
             </div>
           </div>
         </div>
@@ -1190,7 +1188,7 @@
         <div id="cart-total" class="cart-total"></div>
         <div class="cart-actions">
           <button id="clear-cart" class="btn btn-secondary">Vaciar carrito</button>
-          <button id="checkout-btn" class="btn btn-primary">💬 Comprar por WhatsApp</button>
+          <button id="checkout-btn" class="btn btn-primary"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Comprar por WhatsApp</button>
         </div>
       </div>
     </div>
@@ -1200,7 +1198,7 @@
   <script src="script.js"></script>
   <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/573115477984?text=Hola,%20quiero%20comprar%20un%20producto%20de%20la%20tienda%20Zaibort." 
-     class="btn-wa" aria-label="WhatsApp comprar ahora" target="_blank" rel="noopener">WhatsApp</a>
+     class="btn-wa" aria-label="WhatsApp comprar ahora" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
   <style>
   .btn-wa{
     position:fixed; right:20px; bottom:20px; z-index:9999;

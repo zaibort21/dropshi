@@ -210,11 +210,17 @@ class ProductManager {
       }
     });
 
-    // View Details functionality
+    // View Details functionality: abrir la página individual del producto
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains('view-details')) {
         const productId = parseInt(e.target.dataset.productId);
-        this.showProductDetails(productId);
+        if (!isNaN(productId)) {
+          // Redirige a la página estática generada para el producto
+          window.location.href = `productos/product-${productId}.html`;
+        } else {
+          // Fallback: si no hay id, abrir modal como antes
+          this.showProductDetails(productId);
+        }
       }
     });
 

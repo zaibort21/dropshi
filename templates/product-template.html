@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{NAME}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Inicio</a>
+    </div>
+  </header>
+
+  <main class="container product-page">
+    <section class="breadcrumb"><a href="index.html">Inicio</a> &gt; <span>{{CATEGORY}}</span> &gt; <span>{{NAME}}</span></section>
+
+    <div class="product-main">
+      <div class="gallery">
+        <div class="main-image">
+          <img id="main-img" src="{{IMG0}}" alt="{{NAME}}">
+        </div>
+        <div class="thumbs">
+          {{THUMBNAILS}}
+        </div>
+      </div>
+
+      <aside class="info">
+        <h1>{{NAME}}</h1>
+        <div class="rating">{{RATING}} ★ ({{REVIEWS}} reseñas)</div>
+        <div class="price">{{PRICE}}</div>
+        <p class="availability">{{AVAILABILITY}}</p>
+        <div class="short-desc">{{SHORT_DESC}}</div>
+
+        <div class="purchase-actions">
+          <label>Cantidad: <input type="number" value="1" min="1" max="10"></label>
+          <button class="btn add-to-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Agregar al Carrito</button>
+          <a class="btn buy-now btn-whatsapp" href="#"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Comprar Ahora</a>
+        </div>
+
+        <ul class="features">{{FEATURES}}</ul>
+      </aside>
+    </div>
+
+    <section class="description">
+      <h2>Descripción</h2>
+      <div>{{DESCRIPTION}}</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">&copy; Sitio 2025</div>
+  </footer>
+
+  <script>
+    // Cambiar imagen principal al hacer click en miniaturas
+    document.addEventListener('click', function(e){
+      if (e.target.classList && e.target.classList.contains('thumb')){
+        document.getElementById('main-img').src = e.target.dataset.src;
+        document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+        e.target.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
