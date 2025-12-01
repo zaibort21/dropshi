@@ -48,14 +48,19 @@
       <aside class="info">
         <h1>Colección Exclusiva de Cuadros para el Hogar</h1>
         <div class="rating">4.9 ★ (305 reseñas)</div>
-        <div class="price">$170000 COP</div>
+        <div class="price" id="product-price">$170000 COP</div>
         <p class="availability">✓ Disponible en stock</p>
         <div class="short-desc">Transforma tus espacios con nuestra colección de cuadros exclusivos, impresos en alta calidad y listos para colgar.</div>
 
         <div class="purchase-actions">
-          <label>Cantidad: <input type="number" value="1" min="1" max="10"></label>
-          <button class="btn add-to-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Agregar al Carrito</button>
-          <a class="btn buy-now btn-whatsapp" target="_blank" href="https://wa.me/573115477984?text=Hola%20me%20interesa%20el%20producto%20Colecci%C3%B3n%20Exclusiva%20de%20Cuadros%20para%20el%20Hogar%20%28ID%2098%29"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Comprar Ahora</a>
+          <label for="size-select">Tipo: </label>
+          <select id="size-select" aria-label="Seleccionar tipo de cuadro">
+            <option value="170000">Retablo estándar · 3 piezas · $170000 COP</option>
+            <option value="250000">Retablo grande · 5 piezas · $250000 COP</option>
+          </select>
+          <label style="margin-left:1rem;">Cantidad: <input id="qty-input" type="number" value="1" min="1" max="10"></label>
+          <button class="btn add-to-cart" id="add-to-cart-btn" data-product-id="98"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Agregar al Carrito</button>
+          <a id="buy-now-btn" class="btn buy-now btn-whatsapp" target="_blank" href="https://wa.me/573115477984?text=Hola%20me%20interesa%20el%20producto%20Colecci%C3%B3n%20Exclusiva%20de%20Cuadros%20para%20el%20Hogar%20%28ID%2098%29"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Comprar Ahora</a>
         </div>
 
         <ul class="features"><li>Impresión premium</li><li>Marco resistente</li><li>Varios tamaños</li><li>Listo para colgar</li></ul>
@@ -76,5 +81,32 @@
   <footer><div class="container">&copy; Sitio 2025</div></footer>
   <script src="../script.js"></script>
   <script src="../product-carousel.js"></script>
+  <script>
+    (function(){
+      const priceEl = document.getElementById('product-price');
+      const sizeSelect = document.getElementById('size-select');
+      const buyBtn = document.getElementById('buy-now-btn');
+      const qtyInput = document.getElementById('qty-input');
+
+      function formatCOP(n){
+        try{ return `$${Number(n).toLocaleString('es-CO')} COP`; }catch(e){ return `$${n} COP`; }
+      }
+
+      function updatePriceAndLink(){
+        const val = Number(sizeSelect.value || 0);
+        priceEl.textContent = formatCOP(val);
+        const qty = Number(qtyInput.value || 1);
+        const msg = `Hola me interesa el producto Colección Exclusiva de Cuadros para el Hogar (ID 98) - Tipo: ${sizeSelect.options[sizeSelect.selectedIndex].text} - Cantidad: ${qty} - Precio unitario: ${formatCOP(val)}`;
+        const encoded = encodeURIComponent(msg);
+        buyBtn.href = `https://wa.me/573115477984?text=${encoded}`;
+      }
+
+      // inicializar
+      updatePriceAndLink();
+
+      sizeSelect.addEventListener('change', updatePriceAndLink);
+      qtyInput.addEventListener('change', updatePriceAndLink);
+    })();
+  </script>
 </body>
 </html>
