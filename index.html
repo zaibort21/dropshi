@@ -861,14 +861,43 @@
   </section>
 
   <!-- Por qué elegirnos (breve) -->
-  <section class="container my-8" aria-labelledby="por-que">
-    <h2 id="por-que" class="section-title">¿Por qué elegirnos?</h2>
-    <ul class="text-secondary" style="max-width:720px;margin:0 auto;list-style:disc;padding-left:1rem;">
-      <li><strong>Cambio fácil en 7 días</strong> — Procesos claros y rápidos para devoluciones.</li>
-      <li><strong>Soporte por WhatsApp</strong> — Atención directa y rápida al número que aparece en pantalla.</li>
-      <li><strong>Envío a todo Colombia</strong> — Entrega en 7–12 días a principales ciudades.</li>
-      <li><strong>Garantía 30 días</strong> — Reemplazo o devolución según condiciones del producto.</li>
-    </ul>
+  <!-- Nuestra historia principal: Potenciamos marcas colombianas (moved arriba) -->
+  <section id="about" class="container my-8" aria-labelledby="por-que">
+    <h2 id="por-que" class="section-title">Más que una Tienda, un Puente para el Talento Colombiano</h2>
+    <div class="max-w-4xl mx-auto mb-16">
+      <div class="bg-white p-6 rounded-lg shadow-sm border-left-accent">
+          <h3 class="text-xl font-semibold mb-4">🇨🇴 Comercio Justo con Emprendedores Colombianos</h3>
+          <p class="text-secondary mb-4">En PremiumDrop conectamos directamente con emprendedores y fabricantes colombianos para llevar productos con historia, diseño y calidad comprobada a tus manos. Nuestro objetivo es potenciar marcas locales con apoyo en diseño, control de calidad y acceso al mercado.</p>
+
+          <ul class="text-secondary" style="margin-left: 1rem; margin-top: 0.5rem;">
+            <li><strong>Modelo de negocio colaborativo:</strong> trabajamos con proveedores colombianos para construir marcas duraderas.</li>
+            <li><strong>Apoyo integral al emprendedor:</strong> ayudamos en diseño, empaque y comercialización para escalar proyectos locales.</li>
+            <li><strong>Productos con identidad:</strong> trazabilidad y marca personal en cada producto.</li>
+            <li><strong>Calidad verificada:</strong> coordinamos controles antes del despacho para garantizar estándares.</li>
+            <li><strong>Atención directa:</strong> comunicación por WhatsApp para seguimiento y soporte cercano.</li>
+          </ul>
+
+          <p class="text-secondary" style="margin-top:0.75rem;"><strong>Cómo funciona:</strong> Al confirmar tu pedido por WhatsApp coordinamos con el proveedor local para preparar, verificar y despachar tu producto. Así ofrecemos atención personalizada, tiempos competitivos y seguimiento en todas las etapas.</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-8 mt-12">
+        <div class="text-center">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="text-xl font-semibold mb-2">Colaboración real</h3>
+          <p class="text-secondary">Alianzas directas con emprendedores en ciudades clave de Colombia.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🌱</div>
+          <h3 class="text-xl font-semibold mb-2">Crecimiento local</h3>
+          <p class="text-secondary">Apoyamos el desarrollo de marcas con identidad y sostenibilidad.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">💬</div>
+          <h3 class="text-xl font-semibold mb-2">Atención cercana</h3>
+          <p class="text-secondary">Seguimiento por WhatsApp y coordinación directa con el proveedor.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Tabla de envíos -->
@@ -914,96 +943,128 @@
       <!-- Products Grid -->
       <div id="products-grid" class="products-grid">
         <!-- Static sample cards (8 productos reales) -->
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/audifonostudio.webp" width="600" height="600" loading="lazy" alt="Audífonos Studio"/>
           <div class="body card-body">
-            <h3>Diadema Bluetooth Studio</h3>
-            <p class="price">$120.000 <span class="badge">-15% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Bogotá</div>
+            <h3 class="product-title">Diadema Bluetooth Studio</h3>
+            <div class="product-rating"><div class="stars">★★★★☆</div><div class="rating-text">4.8 (120 reseñas)</div><span class="badge">+120 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$120.000</span> <span class="original-price">$140.000</span></p>
+            <p class="product-description">Siente un audio profesional con cancelación de ruido y batería de larga duración. Perfecto para trabajo y ocio.</p>
+            <div class="product-features"><span class="feature-tag">Producto Premium</span><span class="feature-tag">Diseño Moderno</span><span class="feature-tag">Material Duradero</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20la%20Diadema%20Bluetooth%20Studio.%20¿Hay%20disponibilidad?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/ParlanteJBL.webp" width="600" height="600" loading="lazy" alt="Parlante JBL"/>
           <div class="body card-body">
-            <h3>Parlante Bluetooth JBL</h3>
-            <p class="price">$180.000 <span class="badge">-10% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Medellín</div>
+            <h3 class="product-title">Parlante Bluetooth JBL</h3>
+            <div class="product-rating"><div class="stars">★★★★★</div><div class="rating-text">4.9 (430 reseñas)</div><span class="badge">+340 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$180.000</span> <span class="original-price">$200.000</span></p>
+            <p class="product-description">Potente sonido portátil con batería de larga duración y conexión multipunto.</p>
+            <div class="product-features"><span class="feature-tag">Producto Premium</span><span class="feature-tag">Portátil</span><span class="feature-tag">Batería 12h</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Parlante%20JBL.%20¿Hay%20stock?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/bose.jpg" width="600" height="600" loading="lazy" alt="Audífonos Bose"/>
           <div class="body card-body">
-            <h3>Audífonos Bose</h3>
-            <p class="price">$320.000 <span class="badge">-20% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Cali</div>
+            <h3 class="product-title">Audífonos Bose</h3>
+            <div class="product-rating"><div class="stars">★★★★☆</div><div class="rating-text">4.7 (210 reseñas)</div><span class="badge">+180 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$320.000</span> <span class="original-price">$400.000</span></p>
+            <p class="product-description">Sonido inmersivo y cancelación activa de ruido para una experiencia superior.</p>
+            <div class="product-features"><span class="feature-tag">Calidad Pro</span><span class="feature-tag">Cancelación de Ruido</span><span class="feature-tag">Comodidad</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesan%20los%20Aud%C3%ADfonos%20Bose.%20¿Precio%20final%3F" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/lamparaparlante.webp" width="600" height="600" loading="lazy" alt="Lámpara parlante"/>
           <div class="body card-body">
-            <h3>Lámpara Parlante</h3>
-            <p class="price">$95.000 <span class="badge">-5% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Barranquilla</div>
+            <h3 class="product-title">Lámpara Parlante</h3>
+            <div class="product-rating"><div class="stars">★★★★☆</div><div class="rating-text">4.6 (95 reseñas)</div><span class="badge">+70 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$95.000</span> <span class="original-price">$100.000</span></p>
+            <p class="product-description">Combina iluminación ambiental con un parlante Bluetooth integrado para ambientar tus espacios.</p>
+            <div class="product-features"><span class="feature-tag">2 en 1</span><span class="feature-tag">Bluetooth</span><span class="feature-tag">Diseño Moderno</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20la%20L%C3%A1mpara%20Parlante.%20¿Tiene%20garant%C3%ADa?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/proyector1.jpeg" width="600" height="600" loading="lazy" alt="Mini Proyector"/>
           <div class="body card-body">
-            <h3>Mini Proyector 720p</h3>
-            <p class="price">$250.000 <span class="badge">-12% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Bogotá</div>
+            <h3 class="product-title">Mini Proyector 720p</h3>
+            <div class="product-rating"><div class="stars">★★★★☆</div><div class="rating-text">4.5 (88 reseñas)</div><span class="badge">+60 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$250.000</span> <span class="original-price">$285.000</span></p>
+            <p class="product-description">Proyector compacto para cine en casa con entrada HDMI y buena luminosidad para espacios reducidos.</p>
+            <div class="product-features"><span class="feature-tag">Compacto</span><span class="feature-tag">HDMI</span><span class="feature-tag">Buena luminosidad</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Mini%20Proyector.%20¿Cu%C3%A1l%20es%20el%20tiempo%20de%20env%C3%ADo?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/aspiradora 1.png" width="600" height="600" loading="lazy" alt="Aspiradora portátil"/>
           <div class="body card-body">
-            <h3>Aspiradora Portátil</h3>
-            <p class="price">$140.000 <span class="badge">-18% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Medellín</div>
+            <h3 class="product-title">Aspiradora Portátil</h3>
+            <div class="product-rating"><div class="stars">★★★★☆</div><div class="rating-text">4.6 (210 reseñas)</div><span class="badge">+150 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$140.000</span> <span class="original-price">$170.000</span></p>
+            <p class="product-description">Potente aspiradora portátil para limpieza rápida del hogar y el carro.</p>
+            <div class="product-features"><span class="feature-tag">Ligera</span><span class="feature-tag">Fuerte Succión</span><span class="feature-tag">Accesorios</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20la%20Aspiradora%20Port%C3%A1til.%20%20%20" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/secadorprofesional.webp" width="600" height="600" loading="lazy" alt="Secador profesional"/>
           <div class="body card-body">
-            <h3>Secador Profesional</h3>
-            <p class="price">$110.000 <span class="badge">-10% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Cali</div>
+            <h3 class="product-title">Secador Profesional</h3>
+            <div class="product-rating"><div class="stars">★★★★☆</div><div class="rating-text">4.7 (312 reseñas)</div><span class="badge">+220 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$110.000</span> <span class="original-price">$120.000</span></p>
+            <p class="product-description">Secador de alto rendimiento con múltiples ajustes de calor y diseño ergonómico.</p>
+            <div class="product-features"><span class="feature-tag">Iónico</span><span class="feature-tag">3 Niveles</span><span class="feature-tag">Ligero</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Secador%20Profesional.%20¿Hay%20oferta%20si%20compro%202%3F" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card product-card">
           <img src="imagenes/leggins.jpeg" width="600" height="600" loading="lazy" alt="Leggins deportivo"/>
           <div class="body card-body">
-            <h3>Leggins deportivo</h3>
-            <p class="price">$55.000 <span class="badge">-25% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
+            <div class="country-badge">🇨🇴 Diseñado en Bogotá</div>
+            <h3 class="product-title">Leggins deportivo</h3>
+            <div class="product-rating"><div class="stars">★★★★☆</div><div class="rating-text">4.8 (95 reseñas)</div><span class="badge">+140 vendidos</span></div>
+            <p class="product-price"><span class="current-price">$55.000</span> <span class="original-price">$73.000</span></p>
+            <p class="product-description">Ajuste perfecto y soporte para entrenamiento con tela transpirable y duradera.</p>
+            <div class="product-features"><span class="feature-tag">Comodidad</span><span class="feature-tag">Secado rápido</span><span class="feature-tag">Elástico</span><span class="feature-tag">Hecho en Colombia</span></div>
+            <div class="meta" style="margin-top:8px;font-size:13px;color:var(--color-text-secondary)">🚚 Envío gratis sobre $200.000 COP · 🛡️ Garantía Premium</div>
             <div class="actions card-footer">
               <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Leggins%20deportivo.%20Talla%20M%20disponible?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
             </div>
@@ -1024,78 +1085,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-surface">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">¿Por qué elegir PremiumDrop?</h2>
-        
-        <!-- Company Mission -->
-        <div class="max-w-4xl mx-auto mb-16">
-          <p class="text-lg text-secondary mb-6">Somos una empresa especializada en importación y distribución de productos premium, enfocada principalmente en Colombia con visión internacional.</p>
-          <div class="bg-white p-6 rounded-lg shadow-sm border-left-accent">
-              <h3 class="text-xl font-semibold mb-4">🏢 Nuestro Modelo de Negocio</h3>
-              <p class="text-secondary mb-4">Colaboramos con proveedores colombianos: emprendedores y fabricantes locales que desarrollan productos propios con visión de marca personal. Nuestro enfoque es potenciar iniciativas nacionales ofreciendo soporte en diseño, calidad y comercialización.</p>
-
-              <ul class="text-secondary" style="margin-left: 1rem; margin-top: 0.5rem;">
-                <li><strong>Apoyo a emprendimientos locales:</strong> trabajamos con marcas y creadores colombianos para impulsar su crecimiento y visibilidad.</li>
-                <li><strong>Productos con identidad propia:</strong> promovemos desarrollos con marca personal, diseño diferenciado y trazabilidad desde su origen.</li>
-                <li><strong>Calidad verificada:</strong> coordinamos controles y verificaciones antes del despacho para garantizar estándares acordes a nuestras políticas.</li>
-                <li><strong>Atención y despacho local:</strong> coordinación directa con el proveedor para tiempos de entrega competitivos y seguimiento personalizado.</li>
-                <li><strong>Relación cercana:</strong> comunicación directa vía WhatsApp para consultas, ajustes y seguimiento postventa.</li>
-              </ul>
-
-              <p class="text-secondary" style="margin-top:0.75rem;"><strong>Proceso de pedidos:</strong> Al confirmar tu pedido por WhatsApp coordinamos con el proveedor local para preparar, verificar y despachar tu producto. Esto nos permite ofrecer atención cercana, tiempos de entrega competitivos y seguimiento personalizado durante todo el proceso.</p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-8 mt-12">
-          <div class="text-center">
-            <div class="text-4xl mb-4">🚚</div>
-            <h3 class="text-xl font-semibold mb-2">Envíos a Colombia</h3>
-            <p class="text-secondary">Entrega en 7-15 días hábiles a toda Colombia. Manejo especializado de importaciones.</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">🛡️</div>
-            <h3 class="text-xl font-semibold mb-2">Garantía Premium</h3>
-            <p class="text-secondary">Productos importados originales con garantía de satisfacción y calidad certificada.</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">💬</div>
-            <h3 class="text-xl font-semibold mb-2">Soporte 24/7</h3>
-            <p class="text-secondary">Atención personalizada por WhatsApp. Seguimiento completo de tu pedido.</p>
-          </div>
-        </div>
-
-        <!-- Shipping Info -->
-        <div class="shipping-widget">
-          <div class="mt-16 bg-white p-8 rounded-lg shadow-sm">
-          <h3 class="text-2xl font-semibold mb-6">📦 Información de Envíos</h3>
-          <div class="grid grid-cols-2 gap-8 text-left">
-            <div>
-              <h4 class="font-semibold mb-3">🇨🇴 Colombia (Principales)</h4>
-              <ul class="text-secondary space-y-2">
-                <li>• Bogotá, Medellín, Cali: 7-10 días hábiles</li>
-                <li>• Principales ciudades: 10-12 días hábiles</li>
-                <li>• Ciudades intermedias: 12-15 días hábiles</li>
-                <li>• Envío gratuito en pedidos superiores a $200.000 COP</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-3">🌎 Visión Internacional</h4>
-              <ul class="text-secondary space-y-2">
-                <li>• Próximamente: Perú, Ecuador, México</li>
-                <li>• Expansión planificada: Centroamérica</li>
-                <li>• Alianzas estratégicas en desarrollo</li>
-                <li>• Consulta disponibilidad por WhatsApp</li>
-              </ul>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- (About section moved earlier) -->
 
   <!-- Footer -->
   <footer id="contact" class="footer">
@@ -1128,11 +1118,16 @@
           <p>📧 Email: soporte@premiumdrop.com</p>
           <p>📱 WhatsApp: <a href="https://wa.me/573115477984" target="_blank" rel="noopener">+57 311 547 7984</a></p>
           <p>📍 Envíos a toda Colombia</p>
-          <div style="margin-top: 16px; padding: 12px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #007aff;">
-            <p style="margin: 0; font-size: 14px; color: #1d1d1f;"><strong>🏢 Importador/Distribuidor:</strong></p>
-            <p style="margin: 4px 0 0 0; font-size: 13px; color: #6b7280;">Los pedidos son procesados por nuestro equipo comercial especializado en importación y distribución de productos premium desde Asia, USA y Europa.</p>
-            <p style="margin: 8px 0 0 0; font-size: 13px; color: #6b7280;"><strong>🌎 Visión Internacional:</strong> Próximamente expandiéndonos a Perú, Ecuador y México.</p>
-            <p style="margin: 4px 0 0 0; font-size: 13px; color: #6b7280;">Contacto directo: <a href="https://wa.me/573115477984" target="_blank" rel="noopener">+57 311 547 7984</a></p>
+          <div style="margin-top: 16px; padding: 12px; background: #f8fafc; border-radius: 8px; border-left: 4px solid var(--color-accent);">
+            <p style="margin: 0; font-size: 14px; color: #1d1d1f;"><strong>🇨🇴 Apoyamos Emprendedores Colombianos</strong></p>
+            <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Trabajamos principalmente con proveedores y marcas locales. Cada pedido busca potenciar negocios colombianos mediante soporte en diseño, calidad y comercialización.</p>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+              <span style="background:#fff;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;">🇨🇴 Productos 100% Colombianos</span>
+              <span style="background:#fff;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;">🛡️ Garantía Premium</span>
+              <span style="background:#fff;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;">🚚 Envíos a Toda Colombia</span>
+              <span style="background:#fff;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;">💬 Soporte WhatsApp</span>
+            </div>
+            <p style="margin: 8px 0 0 0; font-size: 13px; color: #6b7280;">Contacto directo: <a href="https://wa.me/573115477984" target="_blank" rel="noopener">+57 311 547 7984</a></p>
           </div>
         </div>
       </div>
