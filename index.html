@@ -29,6 +29,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -837,10 +838,40 @@
     </div>
   </header>
 
-  <!-- Hero Section (imagen de fondo) -->
-  <section id="home" class="hero-section hero-bg" style="background-image: url('imagenes/fondo.png'); background-size:cover; background-position:center;">
-    <div class="hero-overlay">
-      <!-- Fallback debug img (oculta) -->
+  <!-- Hero Section (Swiper banner) -->
+  <section id="home" class="hero-section hero-bg">
+    <div class="container" style="padding:0;">
+      <div class="swiper mySwiper" style="width:100%;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image:url('imagenes/cuadro1.jpg');background-size:cover;background-position:center;">
+            <div class="slide-content">
+              <h2>Innovación con Sello Colombiano</h2>
+              <p>Productos diseñados y producidos por emprendedores colombianos.</p>
+              <a class="btn btn-primary" href="#products">Ver productos</a>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image:url('imagenes/lienzo1.jpg');background-size:cover;background-position:center;">
+            <div class="slide-content">
+              <h2>Calidad Verificada, Origen Garantizado</h2>
+              <p>Controles de calidad para cada lanzamiento.</p>
+              <a class="btn btn-primary" href="#products">Ver productos</a>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image:url('imagenes/usuario.jpg');background-size:cover;background-position:center;">
+            <div class="slide-content">
+              <h2>Potenciamos el Talento Nacional</h2>
+              <p>Apoyamos a emprendedores para que su marca llegue más lejos.</p>
+              <a class="btn btn-primary" href="#about">Nuestra historia</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div class="hero-overlay" style="background-image: url('imagenes/fondo.png'); background-size:cover; background-position:center;">
       <img src="imagenes/fondo.png" alt="fondo" style="display:none; width:1px; height:1px; object-fit:cover;">
     </div>
     <div class="container">
@@ -1088,6 +1119,61 @@
   <!-- (About section moved earlier) -->
 
   <!-- Footer -->
+  <!-- Testimonials -->
+  <section id="testimonials" class="container my-8">
+    <h2 class="section-title">Testimonios</h2>
+    <div class="grid grid-cols-3 gap-6">
+      <div class="card">
+        <div class="body">
+          <p>"Excelente atención y producto de alta calidad. Llegó en el tiempo indicado."</p>
+          <p style="font-weight:600;margin-top:8px;">— María, Bogotá</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+          <p>"Buena comunicación por WhatsApp y el producto funciona tal cual lo describen."</p>
+          <p style="font-weight:600;margin-top:8px;">— Andrés, Medellín</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+          <p>"Recomiendo la tienda. Apoyo a emprendedores y la calidad está garantizada."</p>
+          <p style="font-weight:600;margin-top:8px;">— Laura, Cali</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog previews -->
+  <section id="blog" class="container my-8">
+    <h2 class="section-title">Desde nuestro Blog</h2>
+    <div class="grid grid-cols-3 gap-6">
+      <article class="card">
+        <img src="imagenes/lienzo3.jpg" alt="Empresas colombianas" loading="lazy">
+        <div class="body">
+          <h3 class="product-title">Cómo apoyar a emprendedores colombianos</h3>
+          <p class="product-description">Consejos prácticos para elegir productos con impacto social y calidad certificada.</p>
+          <a href="#" class="btn btn-secondary">Leer más</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="imagenes/proyector1.jpeg" alt="Empaque sostenible" loading="lazy">
+        <div class="body">
+          <h3 class="product-title">Empaque sostenible que reduce impacto</h3>
+          <p class="product-description">Pequeñas acciones en empaque que ayudan al planeta y mejoran la percepción de marca.</p>
+          <a href="#" class="btn btn-secondary">Leer más</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="imagenes/usuario.jpg" alt="Historias de emprendedores" loading="lazy">
+        <div class="body">
+          <h3 class="product-title">Historias de emprendedores que inspiran</h3>
+          <p class="product-description">Conoce las historias detrás de nuestros productos y los emprendedores que los crean.</p>
+          <a href="#" class="btn btn-secondary">Leer más</a>
+        </div>
+      </article>
+    </div>
+  </section>
   <footer id="contact" class="footer">
     <div class="container">
       <div class="footer-content">
@@ -1191,6 +1277,20 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      if (typeof Swiper !== 'undefined'){
+        const swiper = new Swiper('.mySwiper', {
+          loop: true,
+          autoplay: { delay: 5000, disableOnInteraction: false },
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          effect: 'slide'
+        });
+      }
+    });
+  </script>
   <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/573115477984?text=Hola,%20quiero%20comprar%20un%20producto%20de%20la%20tienda%20Zaibort." 
      class="btn-wa" aria-label="WhatsApp comprar ahora" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>

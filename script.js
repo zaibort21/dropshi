@@ -35,11 +35,13 @@ function imageCandidates(src) {
   const plain = src.replace(/^\.\/|^\//, '');
   candidates.add(`imagenes/${encodeURI(plain)}`);
   candidates.add(`./imagenes/${encodeURI(plain)}`);
+  candidates.add(`../imagenes/${encodeURI(plain)}`);
   candidates.add(encodeURI(plain));
   // lowercase variants
   try {
     const lower = plain.toLowerCase();
     candidates.add(`imagenes/${encodeURI(lower)}`);
+    candidates.add(`../imagenes/${encodeURI(lower)}`);
     candidates.add(encodeURI(lower));
   } catch (e) {}
   return Array.from(candidates);
@@ -136,7 +138,8 @@ class ProductManager {
           // intento preferente: carpeta `imagenes/` (usada en el repo), luego `assets/images/`
           // encodeURI para espacios y caracteres especiales
           const encoded = encodeURI(src);
-          return `./imagenes/${encoded}`;
+          const prefix = (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.indexOf('/productos/') !== -1) ? '../imagenes/' : 'imagenes/';
+          return `${prefix}${encoded}`;
         });
         // Asegurar que `image` principal apunte a la primera imagen normalizada (evita miniaturas rotas)
         if (!prod.image && prod.images.length) {
@@ -152,7 +155,8 @@ class ProductManager {
                 if (/^(https?:)?\/\//i.test(src) || src.startsWith('/') || src.startsWith('./') || src.includes('/')) {
                   return src;
                 }
-                return `./imagenes/${encodeURI(src)}`;
+                const prefix = (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.indexOf('/productos/') !== -1) ? '../imagenes/' : 'imagenes/';
+                return `${prefix}${encodeURI(src)}`;
               });
             }
             // ensure variant price numeric
@@ -268,7 +272,24 @@ class ProductManager {
 
   showProductDetails(productId) {
     const product = this.products.find(p => p.id === productId);
-    if (!product) return;
+    if (!product) {
+      // Fallback: try to build a minimal product object from the current DOM (useful on static product pages)
+      try {
+        const titleEl = document.querySelector('h1');
+        const priceEl = document.querySelector('.price') || document.querySelector('.product-price') || document.querySelector('.current-price');
+        const galleryImgs = Array.from(document.querySelectorAll('.product-carousel img, .gallery img, .producto-main img')).map(img => img.getAttribute('src')) || [];
+        const parsedPrice = priceEl ? (String(priceEl.textContent || priceEl.innerText).replace(/[^0-9]/g, '') : '0');
+        product = {
+          id: Number(productId),
+          name: titleEl ? titleEl.textContent.trim() : (`Producto ${productId}`),
+          price: Number(parsedPrice) || 0,
+          originalPrice: Number(parsedPrice) || 0,
+          images: galleryImgs.length ? galleryImgs : [`imagenes/placeholder.png`]
+        };
+      } catch (e) {
+        return; // cannot recover
+      }
+    }
 
     // Título
     document.getElementById('modal-product-title').textContent = product.name;
@@ -431,9 +452,10 @@ class ProductManager {
               const rawImgs = (v.images && v.images.length) ? v.images : (product.images || []);
               const imgs = rawImgs.map(src => {
                 if (!src) return src;
-                // si ya contiene 'imagenes/' asumir ruta correcta, si no prefix
-                if (src.startsWith('imagenes/') || src.startsWith('./imagenes/') || src.startsWith('/imagenes/')) return src;
-                return `imagenes/${encodeURI(src)}`;
+                // si ya contiene 'imagenes/' (o '../imagenes/') asumir ruta correcta, si no prefix
+                if (src.startsWith('imagenes/') || src.startsWith('./imagenes/') || src.startsWith('/imagenes/') || src.startsWith('../imagenes/')) return src;
+                const base = (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.indexOf('/productos/') !== -1) ? '../imagenes/' : 'imagenes/';
+                return `${base}${encodeURI(src)}`;
               });
               buildCarousel(imgs, v && v.name);
             };
@@ -796,10 +818,24 @@ class ShoppingCart {
 
   setupEventListeners() {
     document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('add-to-cart')) {
-        const productId = parseInt(e.target.dataset.productId);
-        this.addToCart(productId);
-      } else if (e.target.classList.contains('buy-whatsapp')) {
+      if (e.target.classList && e.target.classList.contains('add-to-cart')) {
+        // try to get productId from data attribute; if not present (static product page), parse from URL
+        let productId = parseInt(e.target.dataset.productId);
+        if (isNaN(productId) && typeof window !== 'undefined' && window.location && window.location.pathname) {
+          const m = window.location.pathname.match(/product-(\d+)\.html/);
+          if (m) productId = parseInt(m[1]);
+        }
+
+        // Try to read a nearby quantity input (common in product pages)
+        let quantity = 1;
+        try {
+          const container = e.target.closest('.purchase-actions') || e.target.closest('.card') || document;
+          const qtyInput = container && container.querySelector('input[type="number"]');
+          if (qtyInput) quantity = Math.max(1, parseInt(qtyInput.value) || 1);
+        } catch (err) { /* ignore and use default */ }
+
+        this.addToCart(productId, null, quantity);
+      } else if (e.target.classList && e.target.classList.contains('buy-whatsapp')) {
         const productId = parseInt(e.target.dataset.productId);
         this.buyViaWhatsApp(productId);
       }
@@ -827,8 +863,9 @@ class ShoppingCart {
     });
   }
 
-  addToCart(productId, variantId = null) {
-    const product = productManager.products.find(p => p.id === productId);
+  addToCart(productId, variantId = null, quantity = 1) {
+    if (typeof productId === 'undefined' || productId === null || isNaN(productId)) return;
+    const product = productManager.products.find(p => p.id === Number(productId));
     if (!product) return;
 
     // resolve variant if provided
@@ -842,7 +879,7 @@ class ShoppingCart {
 
     const existingItem = this.items.find(item => item.key === key);
     if (existingItem) {
-      existingItem.quantity += 1;
+      existingItem.quantity += Number(quantity || 1);
     } else {
       const item = {
         key,
@@ -853,7 +890,7 @@ class ShoppingCart {
         price: variant && variant.price ? variant.price : (product.price || 0),
         originalPrice: product.originalPrice || product.price || 0,
         images: (variant && variant.images && variant.images.length) ? variant.images : (product.images || [product.image]),
-        quantity: 1
+        quantity: Number(quantity || 1)
       };
       this.items.push(item);
     }
@@ -919,7 +956,15 @@ class ShoppingCart {
     }
 
       cartItemsContainer.innerHTML = this.items.map(item => {
-        const thumb = safeSrc((item.images && item.images[0]) || item.image || '');
+        let rawThumb = (item.images && item.images[0]) || item.image || '';
+        // If we're on a product page (nested under /productos/), ensure paths to 'imagenes/' are prefixed correctly
+        try {
+          if (rawThumb && typeof window !== 'undefined' && window.location && window.location.pathname.indexOf('/productos/') !== -1) {
+            if (rawThumb.startsWith('imagenes/')) rawThumb = `../${rawThumb}`;
+            if (rawThumb.startsWith('./imagenes/')) rawThumb = rawThumb.replace(/^\.\//, '../');
+          }
+        } catch (e) { /* ignore */ }
+        const thumb = safeSrc(rawThumb);
         return `
         <div class="cart-item">
           <img src="${thumb}" alt="${item.name}" class="cart-item-image">

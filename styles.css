@@ -1070,6 +1070,103 @@ header, .header {
 .product-card .product-description { color: var(--color-text-secondary); margin: 6px 0; }
 .product-card .meta { color: var(--color-text-secondary); font-size: 0.9rem; }
 
+/* Swiper hero refinements: center slide content and ensure legible overlay */
+.mySwiper {
+  width: 100%;
+  height: min(70vh, 640px);
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.mySwiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+.mySwiper .slide-content {
+  max-width: 980px;
+  padding: 36px 28px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.mySwiper .slide-content h2 { font-size: 2rem; margin-bottom: 8px; color: #fff; }
+.mySwiper .slide-content p { color: rgba(255,255,255,0.95); margin-bottom: 12px; }
+
+/* Hide duplicate hero-content when Swiper is present on wide screens to avoid overlapping messages */
+.hero-section .hero-content { display: none; }
+@media (max-width: 900px) {
+  .hero-section .hero-content { display: block; padding: 28px 0; }
+  .mySwiper { height: 44vh; }
+  .mySwiper .slide-content { padding: 18px 14px; }
+}
+
+/* Product card stronger visual treatment */
+.product-card {
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.product-card .image-container { border-radius: 10px; overflow: hidden; height: 260px; display:flex; align-items:center; justify-content:center; background: #fff; }
+.product-card .image-container img { width: auto; max-width: 100%; max-height: 100%; }
+.product-card .product-title { font-size: 1.05rem; font-weight: 700; margin: 0; }
+.product-card .product-description { font-size: 0.95rem; color: var(--color-text-secondary); margin: 6px 0 0; }
+.product-card .product-price { display:flex; align-items: baseline; gap:8px; margin-top:8px; }
+.product-card .current-price { font-size: 1.25rem; font-weight: 800; color: var(--color-primary); }
+.product-card .original-price { font-size: 0.95rem; color: var(--color-text-secondary); text-decoration: line-through; }
+.product-card .country-badge { display:inline-block; padding:6px 10px; background: linear-gradient(135deg,#fff,#f7fbff); border-radius:999px; border:1px solid #eef2ff; font-weight:600; color:var(--color-text-secondary); }
+.product-card .product-features { margin-top:8px; }
+.product-card .feature-tag { background: #f3f6ff; color: #1f2937; padding:6px 8px; border-radius: 999px; font-size: 0.75rem; font-weight:600; }
+.product-card .card-footer { background: transparent; display:flex; gap:8px; padding:0; margin-top:8px; }
+.product-card .card-footer .btn { flex:1; }
+.product-card .btn-whatsapp { background: linear-gradient(135deg,#25D366 0%, #128C7E 100%); color: #fff; border:none; }
+.product-card .btn-whatsapp:hover { filter: brightness(0.96); }
+
+/* Small screens: make product image shorter for better UX */
+@media (max-width: 600px) {
+  .product-card .image-container { height: 200px; }
+  .mySwiper { height: 40vh; }
+}
+
+/* Apply image container styling to static product-card images that aren't wrapped */
+.product-card > img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Ensure card-body spacing in product cards */
+.product-card .body, .product-card .card-body {
+  padding: 12px 10px;
+}
+
+/* Style CTA anchors inside card-footer when not using .btn */
+.product-card .card-footer .cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#25D366 0%, #128C7E 100%);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+.product-card .card-footer .cta:hover { filter: brightness(0.96); transform: translateY(-2px); }
+
 
 @media (max-width: 900px) {
   .product-main { grid-template-columns: 1fr; }
