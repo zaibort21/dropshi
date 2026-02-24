@@ -1,1211 +1,956 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <title>Accesorios tech en Colombia | Zaibort</title>
-  <meta name="description" content="Audífonos, relojes y más con garantía 30 días. Envío 7–12 días. Compra por WhatsApp.">
-  <meta name="keywords" content="audífonos, parlantes, proyector, aspiradora, accesorios, Colombia">
-  <meta name="author" content="Zaibort">
-  <meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PremiumDrop | Importaciones Tech Premium Colombia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Zaibort · Accesorios tech en Colombia">
-  <meta property="og:description" content="Garantía 30 días · Envío 7–12 días · Compra por WhatsApp">
-  <meta property="og:image" content="https://zaibort21.github.io/dropshi/imagenes/logopremium.png">
-  <meta property="og:url" content="https://zaibort21.github.io/dropshi/">
-  <meta property="og:type" content="website">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zaibort · Accesorios tech en Colombia">
-  <meta name="twitter:description" content="Garantía 30 días · Envío 7–12 días · Compra por WhatsApp">
-  <meta name="twitter:image" content="https://zaibort21.github.io/dropshi/imagenes/logopremium.png">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-  </script>
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zaibort",
-    "url": "https://zaibort21.github.io/dropshi/",
-    "logo": "https://zaibort21.github.io/dropshi/imagenes/logopremium.png",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+57-3115477984",
-      "contactType": "customer service",
-      "areaServed": "CO"
-    }]
-  }
-  </script>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  
-  <style>
-    /* Component-specific styles */
-    .header {
-      position: sticky;
-      top: 0;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--color-border-light);
-      z-index: 1000;
-    }
-    
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: var(--spacing-4) 0;
-    }
-    
-    .logo {
-      font-size: var(--font-size-xl);
-      font-weight: 700;
-      color: var(--color-primary);
-      text-decoration: none;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: var(--spacing-6);
-      list-style: none;
-    }
-    
-    .nav-links a {
-      color: var(--color-text-primary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color var(--transition-fast);
-    }
-    
-    .nav-links a:hover {
-      color: var(--color-accent);
-    }
-    
-    .cart-icon {
-      position: relative;
-      cursor: pointer;
-      padding: var(--spacing-2);
-      border-radius: var(--radius-lg);
-      transition: background-color var(--transition-fast);
-    }
-    
-    .cart-icon:hover {
-      background-color: var(--color-surface);
-    }
-    
-    .cart-count {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
-      color: white;
-      border-radius: 50%;
-      width: 22px;
-      height: 22px;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      border: 2px solid white;
-      animation: pulse 2s infinite;
-      box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    }
-    
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-    
-    .hero-section {
-      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-secondary) 100%);
-      padding: var(--spacing-20) 0;
-    }
-    
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .hero-title {
-      font-size: var(--font-size-5xl);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: var(--spacing-6);
-      color: #fff; /* usar color sólido para mejor legibilidad */
-      text-shadow: 0 6px 26px rgba(0,0,0,0.6);
-    }
-    
-    .hero-subtitle {
-      font-size: var(--font-size-xl);
-      color: var(--color-text-secondary);
-      margin-bottom: var(--spacing-8);
-    }
-    
-    .search-container {
-      position: relative;
-      max-width: 500px;
-      margin: 0 auto var(--spacing-8);
-    }
-    
-    .search-input {
-      width: 100%;
-      padding: var(--spacing-4) var(--spacing-6);
-      border: 2px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      font-size: var(--font-size-base);
-      outline: none;
-      transition: border-color var(--transition-fast);
-    }
-    
-    .search-input:focus {
-      border-color: var(--color-accent);
-    }
-    
-    .products-section {
-      padding: var(--spacing-20) 0;
-    }
-    
-    .section-title {
-      font-size: var(--font-size-3xl);
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: var(--spacing-12);
-    }
-    
-    .category-filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--spacing-3);
-      margin-bottom: var(--spacing-12);
-    }
-    
-    .category-filter.active {
-      background-color: var(--color-accent);
-      color: white;
-    }
-    
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--spacing-6);
-      margin-bottom: var(--spacing-12);
-    }
-    
-    .product-card {
-      transition: all var(--transition-normal);
-    }
-    
-    .product-title {
-      font-size: var(--font-size-lg);
-      font-weight: 600;
-      margin-bottom: var(--spacing-2);
-      line-height: 1.4;
-    }
-    
-    .product-description {
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-sm);
-      margin-bottom: var(--spacing-4);
-      line-height: 1.5;
-    }
-    
-    .product-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--spacing-2);
-      margin-bottom: var(--spacing-4);
-    }
-    
-    .feature-tag {
-      background-color: var(--color-surface);
-      color: var(--color-text-tertiary);
-      padding: var(--spacing-1) var(--spacing-2);
-      border-radius: var(--radius-sm);
-      font-size: var(--font-size-xs);
-      font-weight: 500;
-    }
-    
-    .product-rating {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-2);
-      margin-bottom: var(--spacing-4);
-    }
-    
-    .stars {
-      color: #fbbf24;
-      font-size: var(--font-size-sm);
-    }
-    
-    .rating-text {
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-    }
-    
-    .product-price {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-2);
-      margin-bottom: var(--spacing-4);
-    }
-    
-    .current-price {
-      font-size: var(--font-size-xl);
-      font-weight: 700;
-      color: var(--color-primary);
-    }
-    
-    .original-price {
-      font-size: var(--font-size-base);
-      color: var(--color-text-secondary);
-      text-decoration: line-through;
-    }
-    
-    .discount-badge {
-      position: absolute;
-      top: var(--spacing-3);
-      right: var(--spacing-3);
-      background-color: #ef4444;
-      color: white;
-      padding: var(--spacing-1) var(--spacing-2);
-      border-radius: var(--radius-sm);
-      font-size: var(--font-size-xs);
-      font-weight: 600;
-    }
-    
-    .pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: var(--spacing-2);
-    }
-    
-    .pagination-btn {
-      min-width: 40px;
-    }
-    
-    .pagination-ellipsis {
-      padding: var(--spacing-2);
-      color: var(--color-text-secondary);
-    }
-    
-    .notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: var(--color-accent);
-      color: white;
-      padding: var(--spacing-4) var(--spacing-6);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      transform: translateX(100%);
-      transition: transform var(--transition-normal);
-      z-index: 1001;
-    }
-    
-    .notification.show {
-      transform: translateX(0);
-    }
-    
-    .notification.success {
-      background-color: #10b981;
-    }
-    
-    .footer {
-      background-color: var(--color-secondary);
-      color: white;
-      padding: var(--spacing-16) 0 var(--spacing-8);
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--spacing-8);
-      margin-bottom: var(--spacing-8);
-    }
-    
-    .footer-section h3 {
-      margin-bottom: var(--spacing-4);
-      font-size: var(--font-size-lg);
-    }
-    
-    .footer-section p,
-    .footer-section a {
-      color: #d1d5db;
-      text-decoration: none;
-      line-height: 1.6;
-    }
-    
-    .footer-section a:hover {
-      color: white;
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: var(--spacing-8);
-      border-top: 1px solid #374151;
-      color: #9ca3af;
-    }
-    
-    .no-products,
-    .error-message {
-      text-align: center;
-      padding: var(--spacing-12);
-      grid-column: 1 / -1;
-    }
-    
-    .loading-skeleton {
-      height: 200px;
-      background: var(--color-surface);
-      border-radius: var(--radius-lg);
-    }
-    
-    /* Featured Carousel Styles */
-    .featured-section {
-      padding: var(--spacing-16) 0;
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    }
-    
-    .carousel-container {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .carousel-wrapper {
-      overflow: hidden;
-      border-radius: var(--radius-xl);
-    }
-    
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-      gap: var(--spacing-6);
-    }
-    
-    .carousel-item {
-      flex: 0 0 300px;
-      background: white;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      transition: transform var(--transition-normal);
-    }
-    
-    .carousel-item:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* Universal carousel fixes: ensure slides take full width and images are centered */
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      background: transparent;
-    }
+        h1, h2, h3, .brand {
+            font-family: 'Space Grotesk', sans-serif;
+        }
 
-    .carousel .carousel-track {
-      display: flex;
-      transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
-      will-change: transform;
-      align-items: center;
-    }
+        /* Navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
 
-    .carousel .carousel-slide {
-      flex: 0 0 100%;
-      max-width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 8px 12px;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .carousel .carousel-slide img {
-      width: 100%;
-      height: auto;
-      max-height: 400px;
-      object-fit: contain;
-      object-position: center center;  /* centrar la imagen */
-      display: block;
-      margin: 0 auto;
-    }
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    /* Controls positioned over the carousel so they don't create extra space */
-    .carousel .carousel-controls {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transform: translateY(-50%);
-      pointer-events: none;
-      padding: 0 8px;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-    .carousel .carousel-controls .carousel-btn {
-      pointer-events: auto;
-      background: rgba(255,255,255,0.95);
-      border: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: var(--color-primary);
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
 
-    .carousel .carousel-indicators {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      margin-top: 8px;
-    }
-    
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      font-weight: bold;
-      color: var(--color-primary);
-      box-shadow: var(--shadow-md);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      z-index: 10;
-    }
-    
-    .carousel-btn:hover {
-      background: var(--color-accent);
-      color: white;
-      transform: translateY(-50%) scale(1.1);
-    }
-    
-    .carousel-btn-prev {
-      left: -25px;
-    }
-    
-    .carousel-btn-next {
-      right: -25px;
-    }
-    
-    .carousel-indicators {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-2);
-      margin-top: var(--spacing-6);
-    }
-    
-    .carousel-indicator {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--color-border);
-      border: none;
-      cursor: pointer;
-      transition: background var(--transition-fast);
-    }
-    
-    .carousel-indicator.active {
-      background: var(--color-accent);
-    }
-    
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .hero-title {
-        font-size: var(--font-size-3xl);
-      }
-      
-      .hero-subtitle {
-        font-size: var(--font-size-lg);
-      }
-      
-      .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-      
-      .category-filters {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .carousel-item {
-        flex: 0 0 calc(100% - 48px);
-        margin: 0 24px;
-      }
-      
-      .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-      }
-      
-      .carousel-btn-prev {
-        left: -20px;
-      }
-      
-      .carousel-btn-next {
-        right: -20px;
-      }
-    }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
 
-    /* Ensure product card carousels show one slide at a time and center images */
-    .products-grid .carousel,
-    .product-card .carousel {
-      overflow: hidden;
-      position: relative;
-    }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-    .products-grid .carousel .carousel-track,
-    .product-card .carousel .carousel-track {
-      display: flex;
-      transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
-      width: 100%;
-      align-items: center;
-      gap: 0 !important;  /* eliminar separación entre slides */
-    }
+        .cta-nav {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .products-grid .carousel .carousel-slide,
-    .product-card .carousel .carousel-slide {
-      flex: 0 0 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 !important;  /* quitar padding para centrar bien la imagen */
-      box-sizing: border-box;
-    }
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
 
-    .products-grid .carousel .carousel-slide img,
-    .product-card .carousel .carousel-slide img {
-      width: 100%;
-  max-width: 420px;
-  max-height: 300px;
-      height: auto;
-      object-fit: contain;
-      object-position: center center;  /* centrar la imagen */
-      display: block;
-      margin: 0 auto;
-    }
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Modal carousel styles */
-    .modal-body .modal-product-info {
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-      justify-content: center;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
 
-    .modal-product-image {
-      flex: 1 1 50%;
-      max-width: 560px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-height: 400px;
-      overflow: hidden;
-      position: relative;
-    }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
 
-    .modal-product-details {
-      flex: 1 1 50%;
-      max-width: 520px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-6);
-    }
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
 
-    .modal-carousel {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-    }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
 
-    .modal-carousel .carousel-track {
-      display: flex;
-      flex-direction: column;  /* vertical */
-      transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
-    }
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
 
-    .modal-carousel .carousel-slide {
-      flex: none;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .hero h1 span {
+            color: var(--accent);
+            position: relative;
+        }
 
-    .modal-carousel .carousel-slide img {
-      max-height: 100%;
-      width: auto;
-      object-fit: contain;
-      object-position: center center;
-    }
+        .hero-description {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
 
-    .modal-carousel img {
-      width: 100%;
-      height: auto;
-      max-height: 420px;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      background: linear-gradient(180deg, #fff, #f8fafc);
-    }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
 
-    .modal-carousel .carousel-prev,
-    .modal-carousel .carousel-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 20;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
+        .stat {
+            text-align: center;
+        }
 
-    .modal-carousel .carousel-prev { left: 8px; }
-    .modal-carousel .carousel-next { right: 8px; }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
 
-    .modal-carousel .carousel-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 12px;
-    }
+        .stat-label {
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
 
-    .modal-carousel .carousel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.18);
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-    .modal-carousel .carousel-dot.active {
-      background: var(--color-accent);
-      transform: scale(1.18);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
 
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+        }
 
-    /* Force horizontal carousel in modal */
-    .modal-carousel .carousel-track {
-      flex-direction: row !important;
-    }
-    .modal-carousel {
-      height: auto !important;
-    }
-    .modal-product-image {
-      max-height: none !important;
-    }
-    .modal-product-details {
-      display: block !important;
-      grid-template-columns: none !important;
-    }
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    /* Responsive adjustments for modal */
-    @media (max-width: 900px) {
-      .modal-body .modal-product-info { flex-direction: column; }
-      .modal-product-image, .modal-product-details { max-width: 100%; }
-      .modal-carousel img { max-height: 320px; }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
 
-      /* Eliminar espacio y padding en carousel modal para móvil */
-      .modal-carousel .carousel-track {
-        gap: 0 !important;
-        flex-wrap: nowrap !important;
-      }
-      .modal-carousel .carousel-slide {
-        padding: 0 !important;
-      }
-    }
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* Extra-small screens (phones) */
-    @media (max-width: 420px) {
-      .hero-title { font-size: 28px; }
-      .product-card .carousel-track img,
-      .product-card .image-container img { max-height: 300px; }
-      .carousel-btn { display: none; } /* hide big carousel buttons on tiny screens */
-    }
+        .floating-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
 
-    /* Mostrar solo un slide en modal: flex track y overflow oculto */
-.modal-carousel {
-  overflow: hidden;
-}
-.modal-carousel .carousel-track {
-  display: flex;
-  transition: transform 0.3s ease;
-}
-.modal-carousel .carousel-slide {
-  flex: 0 0 100%;
-}
+        .floating-card:nth-child(1) {
+            top: 10%;
+            right: 0;
+            animation-delay: 0s;
+        }
 
-/* Refinamiento modal carousel para un slide visible */
-.modal-product-image .modal-carousel {
-  width: 100% !important;
-  overflow: hidden !important;
-}
-.modal-product-image .modal-carousel .carousel-track {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-}
-.modal-product-image .modal-carousel .carousel-slide {
-  flex: 0 0 100% !important;
-  width: 100% !important;
-  min-width: 100% !important;
-  box-sizing: border-box;
-}
+        .floating-card:nth-child(2) {
+            bottom: 20%;
+            left: -20px;
+            animation-delay: 2s;
+        }
 
-/* Quitar gap y padding en carousel modal */
-.modal-carousel .carousel-track {
-  gap: 0 !important;
-  flex-wrap: nowrap !important;
-}
-.modal-carousel .carousel-slide {
-  padding: 0 !important;
-}
-  </style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .floating-card-text {
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        /* Sección de Confianza */
+        .trust-bar {
+            background: white;
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: transparent;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(245, 158, 11, 0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .feature-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Proceso */
+        .process {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, #f8fafc, white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin: 0 auto 1rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .step:hover .step-number {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .step-desc {
+            font-size: 0.875rem;
+            color: var(--gray);
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-text {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-text {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animaciones de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <a href="#" class="logo">🛍️ PremiumDrop</a>
-        <ul class="nav-links">
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#products">Productos</a></li>
-          <li><a href="#about">Nosotros</a></li>
-          <li><a href="#contact">Contacto</a></li>
-          <li><a class="cta" href="https://wa.me/573115477984?text=Hola,%20quiero%20ver%20el%20cat%C3%A1logo" target="_blank" rel="noopener">Comprar por WhatsApp</a></li>
-        </ul>
-        <div class="cart-icon"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><span id="cart-count" class="cart-count" style="display: none;">0</span></div>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero Section (imagen de fondo) -->
-  <section id="home" class="hero-section hero-bg" style="background-image: url('imagenes/fondo.png'); background-size:cover; background-position:center;">
-    <div class="hero-overlay">
-      <!-- Fallback debug img (oculta) -->
-      <img src="imagenes/fondo.png" alt="fondo" style="display:none; width:1px; height:1px; object-fit:cover;">
-    </div>
-    <div class="container">
-      <div class="hero-content text-center">
-        <h1 class="hero-title">Descubre productos premium</h1>
-        <p class="hero-subtitle">Productos de calidad a precios inmejorables con envío dentro de Colombia</p>
-
-        <div class="search-container">
-          <input type="text" id="search-input" class="search-input" placeholder="Buscar productos...">
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <div class="brand">⚡ PremiumDrop</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#contacto" class="cta-nav">Cotizar Ahora</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="flex justify-center gap-4">
-          <a href="#products" class="btn btn-primary">Comprar ahora</a>
-          <a href="#about" class="btn btn-secondary">Conócenos</a>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>🇨🇴</span> Especialistas en Importación Colombia
+                </div>
+                <h1>Importa Productos <span>Tech Premium</span> Sin Complicaciones</h1>
+                <p class="hero-description">
+                    Conectamos tu emprendimiento con proveedores internacionales. 
+                    Gestión integral de importaciones, logística y cumplimiento aduanero.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Clientes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7-15</span>
+                        <span class="stat-label">Días Entrega</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Garantía</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="https://wa.me/tunumero" class="btn-primary">
+                        📱 Cotizar por WhatsApp
+                    </a>
+                    <a href="#servicios" class="btn-secondary">
+                        Ver Servicios →
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="floating-card-icon">📦</div>
+                    <div class="floating-card-text">Envío Rastreado</div>
+                </div>
+                <div class="floating-card">
+                    <div class="floating-card-icon">✅</div>
+                    <div class="floating-card-text">Verificación de Calidad</div>
+                </div>
+                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.3;">
+                    <circle cx="200" cy="200" r="150" stroke="white" stroke-width="2" stroke-dasharray="10 10"/>
+                    <circle cx="200" cy="200" r="100" stroke="white" stroke-width="2"/>
+                    <circle cx="200" cy="200" r="50" fill="white" fill-opacity="0.1"/>
+                </svg>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Barra de Confianza -->
+    <div class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <span>🔒</span> Pagos Seguros
+            </div>
+            <div class="trust-item">
+                <span>📋</span> Importación Legal
+            </div>
+            <div class="trust-item">
+                <span>🚚</span> Envío Nacional
+            </div>
+            <div class="trust-item">
+                <span>⭐</span> Calidad Verificada
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Por qué elegirnos (breve) -->
-  <section class="container my-8" aria-labelledby="por-que">
-    <h2 id="por-que" class="section-title">¿Por qué elegirnos?</h2>
-    <ul class="text-secondary" style="max-width:720px;margin:0 auto;list-style:disc;padding-left:1rem;">
-      <li><strong>Cambio fácil en 7 días</strong> — Procesos claros y rápidos para devoluciones.</li>
-      <li><strong>Soporte por WhatsApp</strong> — Atención directa y rápida al número que aparece en pantalla.</li>
-      <li><strong>Envío a todo Colombia</strong> — Entrega en 7–12 días a principales ciudades.</li>
-      <li><strong>Garantía 30 días</strong> — Reemplazo o devolución según condiciones del producto.</li>
-    </ul>
-  </section>
+    <!-- Servicios -->
+    <section class="features" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestro Modelo</span>
+                <h2 class="section-title">¿Por qué elegir PremiumDrop?</h2>
+                <p class="section-subtitle">
+                    No solo importamos productos, construemos puentes entre emprendedores colombianos 
+                    y el mercado internacional.
+                </p>
+            </div>
 
-  <!-- Tabla de envíos -->
-  <section class="container my-8" aria-labelledby="envios">
-    <h2 id="envios" class="section-title">Tiempos de envío</h2>
-    <table class="tabla-envio" role="table">
-      <caption>Tiempos de envío estimados</caption>
-      <tr><th>Zona</th><th>Días hábiles</th></tr>
-      <tr><td>Principales ciudades</td><td>7–12</td></tr>
-      <tr><td>Resto del país</td><td>10–15</td></tr>
-    </table>
-  </section>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3 class="feature-title">Apoyo a Emprendimientos Locales</h3>
+                    <p class="feature-text">
+                        Trabajamos directamente con marcas y creadores colombianos para impulsar 
+                        su crecimiento y visibilidad en el mercado.
+                    </p>
+                </div>
 
-  <!-- Featured Products Carousel -->
-  <section id="featured" class="featured-section">
-    <div class="container">
-  <h2 class="section-title">Productos Destacados</h2>
-      <div class="carousel-container">
-        <button class="carousel-btn carousel-btn-prev" id="carousel-prev">‹</button>
-        <div class="carousel-wrapper">
-          <div class="carousel-track" id="carousel-track">
-            <!-- Featured products will be populated by JavaScript -->
-          </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3 class="feature-title">Productos con Identidad Propia</h3>
+                    <p class="feature-text">
+                        Promovemos desarrollos con marca personal, diseño diferenciado y 
+                        trazabilidad completa desde su origen.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Calidad Verificada</h3>
+                    <p class="feature-text">
+                        Coordinamos controles y verificaciones rigurosas antes del despacho 
+                        para garantizar estándares premium.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚛</div>
+                    <h3 class="feature-title">Despacho Local Eficiente</h3>
+                    <p class="feature-text">
+                        Coordinación directa con proveedores para tiempos de entrega 
+                        competitivos y seguimiento personalizado.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Atención Personalizada 24/7</h3>
+                    <p class="feature-text">
+                        Comunicación directa vía WhatsApp para consultas, ajustes y 
+                        seguimiento postventa inmediato.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Garantía de Satisfacción</h3>
+                    <p class="feature-text">
+                        Productos importados originales con garantía de calidad certificada 
+                        y política de devolución clara.
+                    </p>
+                </div>
+            </div>
         </div>
-        <button class="carousel-btn carousel-btn-next" id="carousel-next">›</button>
-      </div>
-      <div class="carousel-indicators" id="carousel-indicators">
-        <!-- Indicators will be populated by JavaScript -->
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Products Section -->
-  <section id="products" class="products-section">
-    <div class="container">
-  <h2 class="section-title">Nuestros Productos</h2>
-      
-      <!-- Category Filters -->
-      <div id="category-filters" class="category-filters">
-        <!-- Categories will be populated by JavaScript -->
-      </div>
-      
-      <!-- Products Grid -->
-      <div id="products-grid" class="products-grid">
-        <!-- Static sample cards (8 productos reales) -->
-        <article class="card">
-          <img src="imagenes/audifonostudio.webp" width="600" height="600" loading="lazy" alt="Audífonos Studio"/>
-          <div class="body card-body">
-            <h3>Diadema Bluetooth Studio</h3>
-            <p class="price">$120.000 <span class="badge">-15% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20la%20Diadema%20Bluetooth%20Studio.%20¿Hay%20disponibilidad?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+    <!-- Proceso -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cómo Funciona</span>
+                <h2 class="section-title">Proceso de Importación Simplificado</h2>
+                <p class="section-subtitle">
+                    Gestión integral desde la cotización hasta la entrega en tu puerta
+                </p>
             </div>
-          </div>
-        </article>
 
-        <article class="card">
-          <img src="imagenes/ParlanteJBL.webp" width="600" height="600" loading="lazy" alt="Parlante JBL"/>
-          <div class="body card-body">
-            <h3>Parlante Bluetooth JBL</h3>
-            <p class="price">$180.000 <span class="badge">-10% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Parlante%20JBL.%20¿Hay%20stock?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4 class="step-title">Cotización</h4>
+                    <p class="step-desc">Nos contactas por WhatsApp con tu producto deseado</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4 class="step-title">Confirmación</h4>
+                    <p class="step-desc">Validamos disponibilidad, precio y tiempos de entrega</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4 class="step-title">Importación</h4>
+                    <p class="step-desc">Gestionamos compra, envío internacional y aduana</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4 class="step-title">Entrega</h4>
+                    <p class="step-desc">Recibes tu producto con garantía y seguimiento completo</p>
+                </div>
             </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="imagenes/bose.jpg" width="600" height="600" loading="lazy" alt="Audífonos Bose"/>
-          <div class="body card-body">
-            <h3>Audífonos Bose</h3>
-            <p class="price">$320.000 <span class="badge">-20% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesan%20los%20Aud%C3%ADfonos%20Bose.%20¿Precio%20final%3F" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="imagenes/lamparaparlante.webp" width="600" height="600" loading="lazy" alt="Lámpara parlante"/>
-          <div class="body card-body">
-            <h3>Lámpara Parlante</h3>
-            <p class="price">$95.000 <span class="badge">-5% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20la%20L%C3%A1mpara%20Parlante.%20¿Tiene%20garant%C3%ADa?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="imagenes/proyector1.jpeg" width="600" height="600" loading="lazy" alt="Mini Proyector"/>
-          <div class="body card-body">
-            <h3>Mini Proyector 720p</h3>
-            <p class="price">$250.000 <span class="badge">-12% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Mini%20Proyector.%20¿Cu%C3%A1l%20es%20el%20tiempo%20de%20env%C3%ADo?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="imagenes/aspiradora 1.png" width="600" height="600" loading="lazy" alt="Aspiradora portátil"/>
-          <div class="body card-body">
-            <h3>Aspiradora Portátil</h3>
-            <p class="price">$140.000 <span class="badge">-18% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20la%20Aspiradora%20Port%C3%A1til.%20%20%20" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="imagenes/secadorprofesional.webp" width="600" height="600" loading="lazy" alt="Secador profesional"/>
-          <div class="body card-body">
-            <h3>Secador Profesional</h3>
-            <p class="price">$110.000 <span class="badge">-10% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Secador%20Profesional.%20¿Hay%20oferta%20si%20compro%202%3F" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="imagenes/leggins.jpeg" width="600" height="600" loading="lazy" alt="Leggins deportivo"/>
-          <div class="body card-body">
-            <h3>Leggins deportivo</h3>
-            <p class="price">$55.000 <span class="badge">-25% HOY</span></p>
-            <p class="ship">Envío 7–12 días a principales ciudades</p>
-            <div class="actions card-footer">
-              <a class="cta" href="https://wa.me/573115477984?text=Hola,%20me%20interesa%20el%20Leggins%20deportivo.%20Talla%20M%20disponible?" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Fallback skeletons for JS population -->
-        <div class="loading-skeleton skeleton"></div>
-        <div class="loading-skeleton skeleton"></div>
-        <div class="loading-skeleton skeleton"></div>
-        <div class="loading-skeleton skeleton"></div>
-      </div>
-      
-      <!-- Pagination -->
-      <div id="pagination" class="pagination">
-        <!-- Pagination will be populated by JavaScript -->
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-surface">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">¿Por qué elegir PremiumDrop?</h2>
-        
-        <!-- Company Mission -->
-        <div class="max-w-4xl mx-auto mb-16">
-          <p class="text-lg text-secondary mb-6">Somos una empresa especializada en importación y distribución de productos premium, enfocada principalmente en Colombia con visión internacional.</p>
-          <div class="bg-white p-6 rounded-lg shadow-sm border-left-accent">
-              <h3 class="text-xl font-semibold mb-4">🏢 Nuestro Modelo de Negocio</h3>
-              <p class="text-secondary mb-4">Colaboramos con proveedores colombianos: emprendedores y fabricantes locales que desarrollan productos propios con visión de marca personal. Nuestro enfoque es potenciar iniciativas nacionales ofreciendo soporte en diseño, calidad y comercialización.</p>
-
-              <ul class="text-secondary" style="margin-left: 1rem; margin-top: 0.5rem;">
-                <li><strong>Apoyo a emprendimientos locales:</strong> trabajamos con marcas y creadores colombianos para impulsar su crecimiento y visibilidad.</li>
-                <li><strong>Productos con identidad propia:</strong> promovemos desarrollos con marca personal, diseño diferenciado y trazabilidad desde su origen.</li>
-                <li><strong>Calidad verificada:</strong> coordinamos controles y verificaciones antes del despacho para garantizar estándares acordes a nuestras políticas.</li>
-                <li><strong>Atención y despacho local:</strong> coordinación directa con el proveedor para tiempos de entrega competitivos y seguimiento personalizado.</li>
-                <li><strong>Relación cercana:</strong> comunicación directa vía WhatsApp para consultas, ajustes y seguimiento postventa.</li>
-              </ul>
-
-              <p class="text-secondary" style="margin-top:0.75rem;"><strong>Proceso de pedidos:</strong> Al confirmar tu pedido por WhatsApp coordinamos con el proveedor local para preparar, verificar y despachar tu producto. Esto nos permite ofrecer atención cercana, tiempos de entrega competitivos y seguimiento personalizado durante todo el proceso.</p>
-          </div>
         </div>
+    </section>
 
-        <div class="grid grid-cols-3 gap-8 mt-12">
-          <div class="text-center">
-            <div class="text-4xl mb-4">🚚</div>
-            <h3 class="text-xl font-semibold mb-2">Envíos a Colombia</h3>
-            <p class="text-secondary">Entrega en 7-15 días hábiles a toda Colombia. Manejo especializado de importaciones.</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">🛡️</div>
-            <h3 class="text-xl font-semibold mb-2">Garantía Premium</h3>
-            <p class="text-secondary">Productos importados originales con garantía de satisfacción y calidad certificada.</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">💬</div>
-            <h3 class="text-xl font-semibold mb-2">Soporte 24/7</h3>
-            <p class="text-secondary">Atención personalizada por WhatsApp. Seguimiento completo de tu pedido.</p>
-          </div>
+    <!-- CTA Final -->
+    <section class="cta-section" id="contacto">
+        <div class="cta-content">
+            <h2 class="cta-title">¿Listo para importar?</h2>
+            <p class="cta-text">
+                Únete a cientos de emprendedores colombianos que confían en nosotros 
+                para hacer crecer sus negocios con productos premium.
+            </p>
+            <a href="https://wa.me/tunumero" class="whatsapp-btn">
+                <span>💬</span> Escríbenos por WhatsApp
+            </a>
+            <p style="margin-top: 2rem; font-size: 0.875rem; opacity: 0.7;">
+                Respuesta en menos de 30 minutos • Asesoría gratuita
+            </p>
         </div>
+    </section>
 
-        <!-- Shipping Info -->
-        <div class="shipping-widget">
-          <div class="mt-16 bg-white p-8 rounded-lg shadow-sm">
-          <h3 class="text-2xl font-semibold mb-6">📦 Información de Envíos</h3>
-          <div class="grid grid-cols-2 gap-8 text-left">
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
             <div>
-              <h4 class="font-semibold mb-3">🇨🇴 Colombia (Principales)</h4>
-              <ul class="text-secondary space-y-2">
-                <li>• Bogotá, Medellín, Cali: 7-10 días hábiles</li>
-                <li>• Principales ciudades: 10-12 días hábiles</li>
-                <li>• Ciudades intermedias: 12-15 días hábiles</li>
-                <li>• Envío gratuito en pedidos superiores a $200.000 COP</li>
-              </ul>
+                <span class="footer-brand">⚡ PremiumDrop</span>
+                <p class="footer-text">
+                    Especialistas en importación y distribución de productos tech premium 
+                    en Colombia. Conectamos emprendedores con el mundo.
+                </p>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">FB</a>
+                    <a href="#">WA</a>
+                </div>
             </div>
             <div>
-              <h4 class="font-semibold mb-3">🌎 Visión Internacional</h4>
-              <ul class="text-secondary space-y-2">
-                <li>• Próximamente: Perú, Ecuador, México</li>
-                <li>• Expansión planificada: Centroamérica</li>
-                <li>• Alianzas estratégicas en desarrollo</li>
-                <li>• Consulta disponibilidad por WhatsApp</li>
-              </ul>
+                <h4 style="color: white; margin-bottom: 1rem;">Servicios</h4>
+                <ul style="list-style: none; line-height: 2;">
+                    <li>Importación Tech</li>
+                    <li>Logística Integral</li>
+                    <li>Verificación de Calidad</li>
+                    <li>Asesoría Aduanera</li>
+                </ul>
             </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact" class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>PremiumDrop</h3>
-          <p>Tu aliado de confianza para productos premium a precios inmejorables. Nos comprometemos a ofrecer excelencia en cada pedido.</p>
-        </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <div class="flex flex-col gap-2">
-            <a href="#home">Inicio</a>
-            <a href="#products">Productos</a>
-            <a href="#about">Nosotros</a>
-            <a href="#contact">Contacto</a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Customer Service</h3>
-          <div class="flex flex-col gap-2">
-            <a href="#">Shipping Info</a>
-            <a href="#">Returns</a>
-            <a href="#">FAQ</a>
-            <a href="#">Size Guide</a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Información de contacto</h3>
-          <p>📧 Email: soporte@premiumdrop.com</p>
-          <p>📱 WhatsApp: <a href="https://wa.me/573115477984" target="_blank" rel="noopener">+57 311 547 7984</a></p>
-          <p>📍 Envíos a toda Colombia</p>
-          <div style="margin-top: 16px; padding: 12px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #007aff;">
-            <p style="margin: 0; font-size: 14px; color: #1d1d1f;"><strong>🏢 Importador/Distribuidor:</strong></p>
-            <p style="margin: 4px 0 0 0; font-size: 13px; color: #6b7280;">Los pedidos son procesados por nuestro equipo comercial especializado en importación y distribución de productos premium desde Asia, USA y Europa.</p>
-            <p style="margin: 8px 0 0 0; font-size: 13px; color: #6b7280;"><strong>🌎 Visión Internacional:</strong> Próximamente expandiéndonos a Perú, Ecuador y México.</p>
-            <p style="margin: 4px 0 0 0; font-size: 13px; color: #6b7280;">Contacto directo: <a href="https://wa.me/573115477984" target="_blank" rel="noopener">+57 311 547 7984</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Zaibort. All rights reserved. &nbsp; <a href="politica-privacidad.html">Política de privacidad</a> · <a href="envios.html">Envíos</a> · <a href="terminos.html">Términos</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Product Details Modal -->
-  <div id="product-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 id="modal-product-title">Detalles del producto</h2>
-        <span class="modal-close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <div class="modal-product-info">
-          <div class="modal-product-image">
-            <div id="modal-product-img-container"></div>
-          </div>
-          <div class="modal-product-details">
-            <p id="modal-product-description"></p>
-            <!-- Variant selector (populated dynamically si el producto tiene variantes) -->
-            <div id="modal-variants" style="margin:8px 0;"></div>
-            <div id="modal-product-features" class="modal-features"></div>
-            <div class="modal-rating">
-              <div id="modal-product-stars"></div>
-              <span id="modal-product-rating"></span>
+            <div>
+                <h4 style="color: white; margin-bottom: 1rem;">Contacto</h4>
+                <ul style="list-style: none; line-height: 2;">
+                    <li>📱 WhatsApp: +57 XXX XXX XXXX</li>
+                    <li>📧 info@premiumdrop.co</li>
+                    <li>📍 Colombia</li>
+                    <li>🕐 Atención: Lun-Sab 8am-8pm</li>
+                </ul>
             </div>
-            <div class="modal-price">
-              <span id="modal-current-price" class="current-price"></span>
-              <span id="modal-original-price" class="original-price"></span>
-            </div>
-            <div class="modal-actions">
-                          <button id="modal-add-to-cart" class="btn btn-primary"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Agregar al carrito</button>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cart Modal -->
-  <div id="cart-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Shopping Cart</h2>
-        <span class="modal-close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <div id="cart-items" class="cart-items"></div>
-        <div id="cart-total" class="cart-total"></div>
-        <div class="cart-actions">
-          <button id="clear-cart" class="btn btn-secondary">Vaciar carrito</button>
-          <button id="checkout-btn" class="btn btn-primary"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Comprar por WhatsApp</button>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PremiumDrop. Todos los derechos reservados.</p>
         </div>
-      </div>
-    </div>
-  </div>
+    </footer>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/573115477984?text=Hola,%20quiero%20comprar%20un%20producto%20de%20la%20tienda%20Zaibort." 
-     class="btn-wa" aria-label="WhatsApp comprar ahora" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
-  <style>
-  .btn-wa{
-    position:fixed; right:20px; bottom:20px; z-index:9999;
-    padding:14px 18px; border-radius:999px; font:600 16px/1.1 system-ui,-apple-system,Segoe UI,Roboto;
-    background:#25D366; color:#fff; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,.2);
-  }
-  .btn-wa:active{ transform:translateY(1px); }
-  </style>
+    <script>
+        // Animación de entrada al scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .step').forEach((el) => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // Efecto de navegación al scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
